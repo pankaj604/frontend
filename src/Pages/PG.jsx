@@ -25,6 +25,7 @@ const PG = () => {
 
   return (
     <div>
+       <h1 className="boys-head">Available PG</h1>
       {pg.map((i) => {
         return (
           <>

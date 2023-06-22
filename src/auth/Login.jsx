@@ -38,7 +38,7 @@ const Login = () => {
   };
   // const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
-  if (isAuthenticated) return <Navigate to={"/header"} />;
+  if (isAuthenticated) return <Navigate to={"/owner"} />;
   return (
     <div class="login-box">
       <h2>Login</h2>

@@ -53,18 +53,17 @@ const Addroom = () => {
       <form onSubmit={handleSubmit}>
         <label>Choose city</label>
         <div class="user-box select">
-        <a>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <select id="option" defaultValue="indore">
-            <option value="indore">Indore</option>
-            <option value="bhopal">Bhopal</option>
-            <option value="mumbai">Mumbai 3</option>
-          </select>
-        </a>
-        
+          <a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <select id="option" defaultValue="indore">
+              <option value="indore">Indore</option>
+              <option value="bhopal">Bhopal</option>
+              <option value="mumbai">Mumbai 3</option>
+            </select>
+          </a>
         </div>
         <div class="user-box">
           <input
@@ -99,14 +98,13 @@ const Addroom = () => {
           <label>Mobile</label>
         </div>
         <div>
-        <a>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <input type="file" onChange={handleFileChange} />
-        </a>
-          
+          <a>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <input type="file" onChange={handleFileChange} />
+          </a>
         </div>
         <a>
           <span></span>

@@ -1,0 +1,28 @@
+.owner-box{
+    background-color: rgb(189, 124, 40);
+    height: 50%;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+    
+}
+
+.owner{
+    margin:2rem;
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 40px ;
+}
+
+.add{
+    margin: 50px;
+}
+.myroom{
+    margin: 50px;
+}
+
+.main-box{
+    margin-top: 10%;
+}

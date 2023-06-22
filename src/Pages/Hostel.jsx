@@ -23,7 +23,7 @@ const Hostel = () => {
     }, []);
   return (
     <div>
-    <h1>Available rooms at hostles</h1>
+    <h1 className='boys-head'>Available rooms at hostles</h1>
 
     {hostles.map((i) => {
       return (

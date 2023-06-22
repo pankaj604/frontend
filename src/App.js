@@ -17,14 +17,15 @@ import Girls from "./Pages/Girls";
 import PG from "./Pages/PG";
 import Hostel from "./Pages/Hostel";
 import Myroom from "./Pages/Myroom";
-
+import "./style/App.css"
+import Owner from "./Pages/Owner";
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Header />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/addroom" element={<Addroom />} />
         <Route path="/home" element={<Home />} />
@@ -38,6 +39,7 @@ function App() {
         <Route path="/hostle" element={<Hostel />} />
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
+        <Route path="/owner" element={<Owner />} />
 
       </Routes>
       <Toaster />

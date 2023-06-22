@@ -24,7 +24,7 @@ const Boys = () => {
 
   return (
     <div>
-      <h1>Available rooms for boys</h1>
+      <h1 className="boys-head">Available rooms for boys</h1>
 
       {boys.map((i) => {
         return (

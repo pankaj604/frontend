@@ -3,26 +3,47 @@ import Login from "../auth/Login";
 import Logout from "../auth/Logout";
 import Addroom from "./Addroom";
 import { Link } from "react-router-dom";
-import "../style/Header.css"
+import "../style/Header.css";
 const Header = () => {
   return (
     <div className="header">
-     
-      <nav class="navMenu">
-        {/* <Link to={"/login"}>Login</Link> */}
-        {/* <Link to={"/profile"}>your profile</Link> */}
-        {/* <Link to={"/Register"} >register</Link> */}
-        <Link className="a" to={"/addroom"}>addroom </Link>
-        <Link className="a" to={"/admin"}>all rooms</Link>
-        <Link className="a" to={"/logout"}>Logout</Link>
-        <Link className="a" to={"/home"}>profile</Link>
-        <Link className="a" to={"/boys"}>Boys</Link>
-        <Link className="a" to={"/girls"}>Girls</Link>
-        <Link className="a" to={"/pg"}>pg</Link>
-        <Link className="a" to={"/hostle"}>Hostles</Link>
-        <Link className="a" to={"/myroom"}>MYrooms</Link>
-        <Link></Link>
-      </nav>
+      <div className="admin">
+        <Link className="a" to={"/login"}>
+          add your rooms
+        </Link>
+      </div>
+      <div className="navHead">
+        <nav className="wel">
+          <h1>Welcome To HSRooms</h1>
+        </nav>
+      </div>
+
+      <div class="navMenu">
+        <nav>
+          <h1>
+            <Link className="a" to={"/boys"}>
+              Boys
+            </Link>
+          </h1>
+          <h1>
+            <Link className="a" to={"/girls"}>
+              Girls
+            </Link>
+          </h1>
+          <h1>
+            {" "}
+            <Link className="a" to={"/pg"}>
+              pg
+            </Link>
+          </h1>
+          <h1>
+            {" "}
+            <Link className="a" to={"/hostle"}>
+              Hostles
+            </Link>
+          </h1>
+        </nav>
+      </div>
     </div>
   );
 };
