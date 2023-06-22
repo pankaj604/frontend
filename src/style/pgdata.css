@@ -1,0 +1,11 @@
+.container-pg {
+  background-color: bisque;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-pg {
+  /* width: 40%; */
+}

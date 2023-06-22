@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-self: center;
+}
+
+img {
+  max-width: 50%;
+  max-height: 50%;
+}
+    
+.text-list{
+    background-color: antiquewhite;
+    margin: 10px;
+}
+.img{
+   
+}
+
+.input{
+
+    width: 10%;
+    height: 10%;
+
+}
+.btn{
+color:red;
+}
+
+.all-room-head{
+  background-color: rgb(238, 255, 0);
+}
+
+.profile{
+  background-color: aqua;
+  margin: 5%;
+  padding:5%;
+  width: 50%;
+  height: 50%;
+}
+
+.p-name{
+  margin-left: 25%;
+}
+.p-email{
+  margin-left: 25%;
+}
