@@ -1,5 +1,27 @@
 .select{
    
     margin-bottom: 10px;
-    padding-left: 38%;
+    padding-left: 25%;
+}
+
+.city-option{
+    color: white;
+}
+
+.select{
+    padding: 0px;
+}
+
+.option-city{
+    margin:auto;
+}
+
+a{
+    margin: 0px;
+    padding: 0px;
+}
+
+.container-option{
+    display: flex;
+    justify-content: center;
 }

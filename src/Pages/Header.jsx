@@ -33,13 +33,16 @@ const Header = () => {
           <h1>
             {" "}
             <Link className="a" to={"/pg"}>
-              pg
+              PG for girls
             </Link>
           </h1>
           <h1>
             {" "}
             <Link className="a" to={"/hostle"}>
-              Hostles
+              Hostle for girls
+            </Link>
+            <Link className="a" to={"/couple"}>
+              Rooms For Couple
             </Link>
           </h1>
         </nav>

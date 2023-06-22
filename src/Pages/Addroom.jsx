@@ -22,14 +22,15 @@ const Addroom = () => {
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
     const citydata = selectBox.value;
-
+    const gender = document.getElementById("for");
+    const value = gender.value;
     const formData = new FormData();
 
     // Append the selected file and article content to the FormData object
     formData.append("image", selectedFile);
     formData.append("city", citydata);
     formData.append("rent", rent);
-    formData.append("forr", forr);
+    formData.append("forr", value);
     formData.append("mobile", mobile);
     formData.append("address", address);
 
@@ -51,19 +52,38 @@ const Addroom = () => {
     <div class="login-box">
       {" "}
       <form onSubmit={handleSubmit}>
-        <label>Choose city</label>
-        <div class="user-box select">
-          <a>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <select id="option" defaultValue="indore">
-              <option value="indore">Indore</option>
-              <option value="bhopal">Bhopal</option>
-              <option value="mumbai">Mumbai 3</option>
-            </select>
-          </a>
+        <div className="user-box">
+          <div className="container-option">
+    
+            <div class="user-box select">
+            <label className="city-option">Choose city</label>
+              <a className="option-city">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <select id="option" defaultValue="indore">
+                  <option value="indore">Indore</option>
+                  <option value="bhopal">Bhopal</option>
+                  <option value="mumbai">Mumbai 3</option>
+                </select>
+              </a>
+            </div>
+           
+            <div class="user-box">
+            <label className="city-option">Choose Gender</label>
+              <a>
+
+                <select id="for" defaultValue="everyone">
+                  <option value="boys">Boys</option>
+                  <option value="girls">Girls</option>
+                  <option value="pg">PG girls</option>
+                  <option value="everyone">Everyone</option>
+                  <option value="hostles">Girls Hostel</option>
+                </select>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="user-box">
           <input
@@ -81,14 +101,7 @@ const Addroom = () => {
           />
           <label>Room Rent</label>
         </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={forr}
-            onChange={(e) => setForr(e.target.value)}
-          />
-          <label>For</label>
-        </div>
+
         <div class="user-box">
           <input
             type="text"

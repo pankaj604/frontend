@@ -19,6 +19,7 @@ import Hostel from "./Pages/Hostel";
 import Myroom from "./Pages/Myroom";
 import "./style/App.css"
 import Owner from "./Pages/Owner";
+import Couple from "./Pages/Couple";
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
@@ -40,6 +41,7 @@ function App() {
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
         <Route path="/owner" element={<Owner />} />
+        <Route path="/couple" element={<Couple />} />
 
       </Routes>
       <Toaster />
