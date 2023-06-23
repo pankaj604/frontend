@@ -1,0 +1,27 @@
+.main-f{
+    background-color: rgb(152, 1, 252);
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top: 5%;
+    
+}
+
+.container-f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.input-f{
+    display: block;
+    margin-bottom: 5px;
+}

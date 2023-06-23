@@ -20,6 +20,8 @@ import Myroom from "./Pages/Myroom";
 import "./style/App.css"
 import Owner from "./Pages/Owner";
 import Couple from "./Pages/Couple";
+import Forget from "./Pages/Forget"
+import Reset from "./Pages/Reset.jsx"
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
@@ -42,6 +44,8 @@ function App() {
         <Route path="/header" element={<Header />} />
         <Route path="/owner" element={<Owner />} />
         <Route path="/couple" element={<Couple />} />
+        <Route path="/forget" element={<Forget />} />
+        <Route path="/reset" element={<Reset/>} />
 
       </Routes>
       <Toaster />

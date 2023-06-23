@@ -72,6 +72,9 @@ const Login = () => {
       <div className="rlogin">
         <Link to="/register">Sign Up</Link>
       </div>
+      <div className="rlogin">
+        <Link to="/forget">forget password</Link>
+      </div>
     </div>
   );
 };
