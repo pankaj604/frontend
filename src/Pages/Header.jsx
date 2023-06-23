@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Login from "../auth/Login";
 import Logout from "../auth/Logout";
 import Addroom from "./Addroom";
 import { Link } from "react-router-dom";
 import "../style/Header.css";
+import { Context } from "..";
 const Header = () => {
+  const {city, setCity} = useContext(Context);
+
+  useEffect(()=>{
+    const initialget = ()=>{
+      const valu = document.getElementById("section")
+      setCity(valu.value)
+    }
+
+    initialget();
+  },[])
+
+  const handleSelectChange = (event) => {
+    const selectedValue = event.target.value;
+    setCity(selectedValue)
+  };
+
+  console.log(city)
+
   return (
     <div className="header">
       <div className="admin">
@@ -14,6 +33,19 @@ const Header = () => {
       </div>
       <div className="navHead">
         <nav className="wel">
+          <select
+            id="section"
+            onChange={handleSelectChange}
+            defaultValue="indore"
+          >
+            <option value="indore">indore</option>
+            <option value="bhopal">bhopal</option>
+            <option value="mumbai">mumbai</option>
+          </select>
+
+          <br />
+          <br />
+          <br />
           <h1>Welcome To HSRooms</h1>
         </nav>
       </div>

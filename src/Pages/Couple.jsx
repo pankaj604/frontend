@@ -1,15 +1,15 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { server } from '..';
+import React, { useContext, useEffect, useState } from 'react'
+import { Context, server } from '..';
 import { toast } from 'react-hot-toast';
 import Coupledata from './Coupledata';
 
 const Couple = () => {
-
+  const {city, setCity} = useContext(Context);
     const [couple, setcouple] = useState([]);
     const both = async () => {
       await axios
-        .get(`${server}/room/everyone`, {
+        .get(`${server}/room/everyone/${city}`, {
           withCredentials: true,
         })
         .then((res) => {

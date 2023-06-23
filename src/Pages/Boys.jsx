@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Boysdata from "./Boysdata";
 import axios from "axios";
-import { server } from "..";
+import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 
 const Boys = () => {
+  const {city, setCity} = useContext(Context);
   const [boys, Rboys] = useState([]);
   const allboys = async () => {
     await axios
-      .get(`${server}/room/boys`, {
+      .get(`${server}/room/boys/${city}`, {
         withCredentials: true,
       })
       .then((res) => {

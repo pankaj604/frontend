@@ -12,7 +12,7 @@ const AppWrapper = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const [refresh ,setRefresh] = useState(false)
-
+  const [city, setCity] = useState('');
   return (
     <Context.Provider
       value={{
@@ -21,7 +21,9 @@ const AppWrapper = () => {
         user,
         setUser,
         refresh,
-        setRefresh
+        setRefresh,
+        city,
+        setCity
       }}
     >
       <App />

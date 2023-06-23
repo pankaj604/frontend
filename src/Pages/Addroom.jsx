@@ -6,7 +6,7 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
 const Addroom = () => {
-  const [city, setCity] = useState("");
+  
   const [rent, setRent] = useState("");
   const [forr, setForr] = useState("");
   const [mobile, setMobile] = useState("");

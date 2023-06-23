@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { server } from "..";
+import { Context, server } from "..";
 import axios from "axios";
 import Girlsdata from "./Girlsdata";
 import Pgdata from "./Pgdata";
 
 const PG = () => {
+  const { city, setCity } = useContext(Context);
   const [pg, setPG] = useState([]);
   const pgroom = async () => {
     await axios
-      .get(`${server}/room/pg`, {
+      .get(`${server}/room/pg/${city}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -25,7 +26,7 @@ const PG = () => {
 
   return (
     <div>
-       <h1 className="boys-head">Available PG</h1>
+      <h1 className="boys-head">Available PG</h1>
       {pg.map((i) => {
         return (
           <>
