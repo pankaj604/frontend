@@ -7,6 +7,7 @@ import Pgdata from "./Pgdata";
 
 const PG = () => {
   const { city, setCity } = useContext(Context);
+  
   const [pg, setPG] = useState([]);
   const pgroom = async () => {
     await axios

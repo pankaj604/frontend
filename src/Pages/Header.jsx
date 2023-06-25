@@ -6,23 +6,23 @@ import { Link } from "react-router-dom";
 import "../style/Header.css";
 import { Context } from "..";
 const Header = () => {
-  const {city, setCity} = useContext(Context);
+  const { city, setCity } = useContext(Context);
 
-  useEffect(()=>{
-    const initialget = ()=>{
-      const valu = document.getElementById("section")
-      setCity(valu.value)
-    }
+  useEffect(() => {
+    const initialget = () => {
+      const valu = document.getElementById("section");
+      setCity(valu.value);
+    };
 
     initialget();
-  },[])
+  }, []);
 
   const handleSelectChange = (event) => {
     const selectedValue = event.target.value;
-    setCity(selectedValue)
+    setCity(selectedValue);
   };
 
-  console.log(city)
+  console.log(city);
 
   return (
     <div className="header">
@@ -70,11 +70,14 @@ const Header = () => {
           </h1>
           <h1>
             {" "}
-            <Link className="a" to={"/hostle"}>
-              Hostle for girls
+            <Link className="a" to={"/hostel"}>
+              Hostels for girls
             </Link>
             <Link className="a" to={"/couple"}>
               Rooms For Couple
+            </Link>
+            <Link className="a" to={"/shop"}>
+              Shops/Offices
             </Link>
           </h1>
         </nav>

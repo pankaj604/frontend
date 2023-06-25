@@ -17,11 +17,17 @@ import Girls from "./Pages/Girls";
 import PG from "./Pages/PG";
 import Hostel from "./Pages/Hostel";
 import Myroom from "./Pages/Myroom";
-import "./style/App.css"
+import "./style/App.css";
 import Owner from "./Pages/Owner";
 import Couple from "./Pages/Couple";
-import Forget from "./Pages/Forget"
-import Reset from "./Pages/Reset.jsx"
+import Forget from "./Pages/Forget";
+import Reset from "./Pages/Reset.jsx";
+import Addshop from "./Pages/Addshop";
+import Shop from "./Pages/Shop";
+import MyShop from "./Pages/MyShop";
+import Addhostel from "./Pages/Addhostel";
+import Myhostel from "./Pages/Myhostel";
+
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
@@ -39,14 +45,18 @@ function App() {
         <Route path="/boys" element={<Boys />} />
         <Route path="/girls" element={<Girls />} />
         <Route path="/pg" element={<PG />} />
-        <Route path="/hostle" element={<Hostel />} />
+        <Route path="/hostel" element={<Hostel />} />
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
         <Route path="/owner" element={<Owner />} />
         <Route path="/couple" element={<Couple />} />
         <Route path="/forget" element={<Forget />} />
-        <Route path="/reset" element={<Reset/>} />
-
+        <Route path="/reset" element={<Reset />} />
+        <Route path="/addshop" element={<Addshop />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/myshop" element={<MyShop />} />
+        <Route path="/addhostel" element={<Addhostel />} />
+        <Route path="/myhostel" element={<Myhostel/>} />
       </Routes>
       <Toaster />
     </Router>

@@ -31,8 +31,20 @@ const Owner = () => {
           <div className="add">
             <Link to={"/addroom"}>AddNewRoom</Link>
           </div>
+          <div className="add">
+            <Link to={"/addshop"}>Add New Shop/Office</Link>
+          </div>
+          <div className="add">
+            <Link to={"/addhostel"}>Add New Hostle</Link>
+          </div>
           <div className="myroom">
             <Link to={"/myroom"}>Your Rooms</Link>
+          </div>
+          <div className="myroom">
+            <Link to={"/myshop"}>Your shop/office</Link>
+          </div>
+          <div className="myroom">
+            <Link to={"/myhostel"}>Your hostels</Link>
           </div>
           <div className="myroom">
             <Link to={"/home"}>Your profile</Link>

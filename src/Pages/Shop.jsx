@@ -1,43 +1,43 @@
 import React, { useContext, useEffect, useState } from "react";
-import Girlsdata from "./Girlsdata";
-import axios from "axios";
 import { Context, server } from "..";
+import axios from "axios";
 import { toast } from "react-hot-toast";
+import Shopdata from "./Shopdata";
 
-const Girls = () => {
-  const {city, setCity} = useContext(Context);
-  const [girls, Rgirls] = useState([]);
-  const allboys = async () => {
+const Shop = () => {
+  const { city, setCity } = useContext(Context);
+  const [shops, setshops] = useState([]);
+  const shop = async () => {
     await axios
-      .get(`${server}/room/girls/${city}`, {
+      .get(`${server}/shop/${city}`, {
         withCredentials: true,
       })
       .then((res) => {
-        Rgirls(res.data.rooms);
+        setshops(res.data.shops);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
       });
   };
   useEffect(() => {
-    allboys();
+    shop();
   }, []);
-console.log(girls)
+
   return (
     <div>
-      <h1  className="boys-head" >Available Rooms For Girls</h1>
-
-      {girls.map((i) => {
+      {shops.map((i) => {
         return (
           <>
-            <Girlsdata
+            <Shopdata
               city={i.city}
               rent={i.rent}
               address={i.address}
               mobile={i.mobile}
+              area={i.area}
+              nearby={i.nearby}
+              size={i.size}
               image={i.image}
             />
-            ;
           </>
         );
       })}
@@ -45,4 +45,4 @@ console.log(girls)
   );
 };
 
-export default Girls;
+export default Shop;
