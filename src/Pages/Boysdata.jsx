@@ -6,10 +6,10 @@ const Boysdata = ({city,rent,address,mobile,image}) => {
       <div className="text-list">
         
         <ol>
-          <li>{city}</li>
-          <li>{rent}</li>
-          <li>{address}</li>
-          <li>{mobile}</li>
+          <li>city is {city}</li>
+          <li> rom rent is {rent}</li>
+          <li>address is <address>{address}</address></li>
+          <li>contact here {mobile}</li>
           
         </ol>
         <div className="img-pg">

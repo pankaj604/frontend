@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 
@@ -15,6 +15,7 @@ const Myshopdata = ({
   status,
   id,
 }) => {
+  const [button, setbutton] = useState(false);
   const { setRefresh, refresh } = useContext(Context);
   let light = false;
   if (`${status}` === "ON") {
@@ -24,6 +25,7 @@ const Myshopdata = ({
   }
   const updateHandler = async (id) => {
     try {
+      
       const { data } = await axios.put(
         `${server}/shop/update/${id}`,
         {},
@@ -40,12 +42,14 @@ const Myshopdata = ({
   };
   const deleteHandler = async (id) => {
     try {
+      setbutton(false)
       const { data } = await axios.delete(`${server}/shop/delet/${id}`, {
         withCredentials: true,
       });
 
       toast.success(data.message);
       setRefresh((prev) => !prev);
+      setbutton(true)
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -73,7 +77,7 @@ const Myshopdata = ({
             />
           </div>
           <div className="button">
-        <button onClick={() => deleteHandler(id)} className="btn">
+        <button disabled={button} onClick={() => deleteHandler(id)} className="btn">
           Delete
         </button>
       </div>

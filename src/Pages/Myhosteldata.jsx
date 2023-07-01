@@ -18,19 +18,20 @@ const Myhosteldata = ({
   id,
   status,
 }) => {
-  const {  refresh,setRefresh } = useContext(Context);
-  const [seat,setSeat] = useState("");
+  const [button, setbutton] = useState(false);
+  const { refresh, setRefresh } = useContext(Context);
+  const [seat, setSeat] = useState("");
   let light = false;
   if (`${status}` === "ON") {
     light = true;
   } else {
     light = false;
   }
-  const updateseats = async ()=>{
+  const updateseats = async () => {
     try {
       const { data } = await axios.put(
         `${server}/hostel/updateseat/${id}`,
-        {seat},
+        { seat },
         {
           withCredentials: true,
         }
@@ -41,7 +42,7 @@ const Myhosteldata = ({
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  }
+  };
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
@@ -61,12 +62,14 @@ const Myhosteldata = ({
 
   const deleteHandler = async (id) => {
     try {
+      setbutton(false);
       const { data } = await axios.delete(`${server}/hostel/delete/${id}`, {
         withCredentials: true,
       });
 
       toast.success(data.message);
       setRefresh((prev) => !prev);
+      setbutton(true);
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -80,7 +83,7 @@ const Myhosteldata = ({
           <li>address {address}</li>
           <li>mobile {mobile}</li>
           <li>available {status}</li>
-          <li>gatetime  {gatetime}</li>
+          <li>gatetime {gatetime}</li>
           <li>facilities {facilites}</li>
           <li> {area}</li>
           <li>available {nearby}</li>
@@ -99,13 +102,12 @@ const Myhosteldata = ({
             placeholder="edite available seats"
             type="number"
             onChange={(e) => setSeat(e.target.value)}
-            
           />
           <button onClick={updateseats}>update seats</button>
         </div>
 
         <div className="button">
-          <button onClick={() => deleteHandler(id)} className="btn">
+          <button disabled={button} onClick={() => deleteHandler(id)} className="btn">
             Delete
           </button>
         </div>

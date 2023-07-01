@@ -6,19 +6,15 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
 const Addroom = () => {
-  
   const [rent, setRent] = useState("");
-  const [forr, setForr] = useState("");
   const [mobile, setMobile] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
-
+  const [button, setbutton] = useState(false);
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
-
   const [address, setAddress] = useState("");
-  const { isAuthenticated, setIsAuthenticated, setLoading } =
-    useContext(Context);
+  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
     const citydata = selectBox.value;
@@ -33,30 +29,29 @@ const Addroom = () => {
     formData.append("forr", value);
     formData.append("mobile", mobile);
     formData.append("address", address);
-
     e.preventDefault();
     try {
+      setbutton(true);
       const { data } = await axios.post(`${server}/room/add`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
       setIsAuthenticated(true);
+      setbutton(false);
     } catch (error) {
       toast.error(error.response.data.message);
       setIsAuthenticated(false);
     }
   };
-
   return (
     <div class="login-box">
       {" "}
       <form onSubmit={handleSubmit}>
         <div className="user-box">
           <div className="container-option">
-    
             <div class="user-box select">
-            <label className="city-option">Choose city</label>
+              <label className="city-option">Choose city</label>
               <a className="option-city">
                 <span></span>
                 <span></span>
@@ -69,11 +64,9 @@ const Addroom = () => {
                 </select>
               </a>
             </div>
-           
             <div class="user-box">
-            <label className="city-option">Choose Gender</label>
+              <label className="city-option">Choose Gender</label>
               <a>
-
                 <select id="for" defaultValue="everyone">
                   <option value="boys">Boys</option>
                   <option value="girls">Girls</option>
@@ -101,7 +94,6 @@ const Addroom = () => {
           />
           <label>Room Rent</label>
         </div>
-
         <div class="user-box">
           <input
             type="text"
@@ -124,7 +116,9 @@ const Addroom = () => {
           <span></span>
           <span></span>
           <span></span>
-          <button type="submit">Submit</button>
+          <button disabled={button} type="submit">
+            Submit
+          </button>
         </a>
       </form>
     </div>

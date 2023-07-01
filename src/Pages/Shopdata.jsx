@@ -6,13 +6,13 @@ const Shopdata = ({city,rent,address,mobile,image,area,nearby,size}) => {
     <div className="text-list">
       <h1>available shops</h1>
       <ol>
-        <li>{city}</li>
-        <li>{rent}</li>
-        <li>{address}</li>
-        <li>{mobile}</li>
-        <li>{area}</li>
-        <li>{nearby}</li>
-        <li>{size}</li>
+        <li>city is {city}</li>
+        <li>rent is {rent}</li>
+        <li>address <address>{address}</address></li>
+        <li>contact here{mobile}</li>
+        <li>area {area}</li>
+        <li>Nearby {nearby}</li>
+        <li>size is {size}</li>
         
       </ol>
       <div className="img-pg">

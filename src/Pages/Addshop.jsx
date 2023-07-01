@@ -11,7 +11,7 @@ const Addshop = () => {
   const [mobile, setMobile] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [address, setAddress] = useState("");
-
+  const [button, setbutton] = useState(false);
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
   };
@@ -31,11 +31,13 @@ const Addshop = () => {
 
     e.preventDefault();
     try {
+      setbutton(false)
       const { data } = await axios.post(`${server}/shop/addshop`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
+      setbutton(true)
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -124,7 +126,7 @@ const Addshop = () => {
             <span></span>
             <span></span>
             <span></span>
-            <button type="submit">Submit</button>
+            <button disabled={button} type="submit">Submit</button>
           </a>
         </form>
       </div>

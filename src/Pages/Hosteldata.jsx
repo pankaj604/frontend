@@ -28,10 +28,10 @@ const Hosteldata = ({
           <li>available {status}</li>
           <li>gatetime  {gatetime}</li>
           <li>facilities {facilites}</li>
-          <li> {area}</li>
-          <li>available {nearby}</li>
-          <li>available {availableseats}</li>
-          <li>available {totalseats}</li>
+          <li> area {area}</li>
+          <li>nearby {nearby}</li>
+          <li>available seats {availableseats}</li>
+          <li>total seats {totalseats}</li>
         </ol>
         </ol>
         <div className="img-pg">

@@ -4,7 +4,7 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 
 const Addhostel = () => {
-
+  const [button, setbutton] = useState(false);
   const [area, setArea] = useState("");
   const [nearby, setNearby] = useState("");
   const [rent, setRent] = useState("");
@@ -37,11 +37,13 @@ const Addhostel = () => {
 
     e.preventDefault();
     try {
+      setbutton(true)
       const { data } = await axios.post(`${server}/hostel/add`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
+      setbutton(false)
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -154,7 +156,7 @@ const Addhostel = () => {
             <span></span>
             <span></span>
             <span></span>
-            <button type="submit">Submit</button>
+            <button disabled={button} type="submit">Submit</button>
           </a>
         </form>
       </div>
