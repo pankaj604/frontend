@@ -71,6 +71,7 @@ const Myhosteldata = ({
       setRefresh((prev) => !prev);
       setbutton(true);
     } catch (error) {
+      setbutton(false);
       toast.error(error.response.data.message);
     }
   };

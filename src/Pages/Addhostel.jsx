@@ -45,6 +45,7 @@ const Addhostel = () => {
       toast.success(data.message);
       setbutton(false)
     } catch (error) {
+      setbutton(false);
       toast.error(error.response.data.message);
     }
   };

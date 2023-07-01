@@ -40,6 +40,7 @@ const Addroom = () => {
       setIsAuthenticated(true);
       setbutton(false);
     } catch (error) {
+      setbutton(false);
       toast.error(error.response.data.message);
       setIsAuthenticated(false);
     }

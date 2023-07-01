@@ -31,14 +31,15 @@ const Addshop = () => {
 
     e.preventDefault();
     try {
-      setbutton(false)
+      setbutton(true)
       const { data } = await axios.post(`${server}/shop/addshop`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
-      setbutton(true)
+      setbutton(false)
     } catch (error) {
+      setbutton(false);
       toast.error(error.response.data.message);
     }
   };
