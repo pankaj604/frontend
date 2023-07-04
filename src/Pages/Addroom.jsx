@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-import { Context } from "..";
+
 import axios from "axios";
 import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
+import { Context } from "..";
 const Addroom = () => {
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
@@ -109,7 +110,13 @@ const Addroom = () => {
             <span></span>
             <span></span>
             <span></span>
+            {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+              <>
+                <h4>photo size should be less than 2 mb</h4>
+              </>
+            )}
             <input type="file" onChange={handleFileChange} />
+        
           </a>
         </div>
         <a>
@@ -117,7 +124,12 @@ const Addroom = () => {
           <span></span>
           <span></span>
           <span></span>
-          <button disabled={button} type="submit">
+          <button
+            disabled={
+              button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+            }
+            type="submit"
+          >
             Submit
           </button>
         </a>

@@ -31,13 +31,13 @@ const Addshop = () => {
 
     e.preventDefault();
     try {
-      setbutton(true)
+      setbutton(true);
       const { data } = await axios.post(`${server}/shop/addshop`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
-      setbutton(false)
+      setbutton(false);
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
@@ -117,8 +117,12 @@ const Addshop = () => {
           </div>
           <div>
             <a>
-             
               <span></span>
+              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+                <>
+                  <h4>photo size should be less than 2 mb</h4>
+                </>
+              )}
               <input type="file" onChange={handleFileChange} />
             </a>
           </div>
@@ -127,7 +131,14 @@ const Addshop = () => {
             <span></span>
             <span></span>
             <span></span>
-            <button disabled={button} type="submit">Submit</button>
+            <button
+              disabled={
+                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+              }
+              type="submit"
+            >
+              Submit
+            </button>
           </a>
         </form>
       </div>

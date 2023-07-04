@@ -37,13 +37,13 @@ const Addhostel = () => {
 
     e.preventDefault();
     try {
-      setbutton(true)
+      setbutton(true);
       const { data } = await axios.post(`${server}/hostel/add`, formData, {
         withCredentials: true,
       });
 
       toast.success(data.message);
-      setbutton(false)
+      setbutton(false);
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
@@ -111,7 +111,7 @@ const Addhostel = () => {
               value={totalseats}
               onChange={(e) => setTotalseats(e.target.value)}
             />
-            <label>Total  Seats</label>
+            <label>Total Seats</label>
           </div>
           <div class="user-box">
             <input
@@ -150,6 +150,11 @@ const Addhostel = () => {
             <a>
               <span></span>
               <input type="file" onChange={handleFileChange} />
+              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+                <>
+                  <h4>photo size should be less than 2 mb</h4>
+                </>
+              )}
             </a>
           </div>
           <a>
@@ -157,7 +162,9 @@ const Addhostel = () => {
             <span></span>
             <span></span>
             <span></span>
-            <button disabled={button} type="submit">Submit</button>
+            <button disabled={button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)} type="submit">
+              Submit
+            </button>
           </a>
         </form>
       </div>

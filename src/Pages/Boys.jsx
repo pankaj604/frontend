@@ -1,12 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
 import Boysdata from "./Boysdata";
 import axios from "axios";
-import { Context, server } from "..";
+
 import { toast } from "react-hot-toast";
+import { Context, server } from "..";
+import { collapseToast } from "react-toastify";
 
 const Boys = () => {
-  const {city, setCity} = useContext(Context);
+  const { city, setCity } = useContext(Context);
   const [boys, Rboys] = useState([]);
+  const [error, seterror] = useState("");
   const allboys = async () => {
     await axios
       .get(`${server}/room/boys/${city}`, {
@@ -17,6 +20,7 @@ const Boys = () => {
       })
       .catch((e) => {
         toast.error(e.response.data.message);
+        seterror(e.response.data.message);
       });
   };
   useEffect(() => {
@@ -26,7 +30,7 @@ const Boys = () => {
   return (
     <div>
       <h1 className="boys-head">Available rooms for boys</h1>
-
+      {error && <h1>{error}</h1>}
       {boys.map((i) => {
         return (
           <>

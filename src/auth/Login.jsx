@@ -9,6 +9,7 @@ const Login = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, seterror] = useState("");
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -32,6 +33,7 @@ const Login = () => {
       toast.success(data.message);
       setIsAuthenticated(true);
     } catch (error) {
+      seterror(error.response.data.message);
       toast.error(error.response.data.message);
       setIsAuthenticated(false);
     }
@@ -62,6 +64,7 @@ const Login = () => {
           <label>Password</label>
         </div>
         <a>
+          {error && <p>{error}</p>}
           <span></span>
           <span></span>
           <span></span>
