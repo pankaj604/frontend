@@ -6,12 +6,14 @@ import Girlsdata from "./Girlsdata";
 import Pgdata from "./Pgdata";
 
 const PG = () => {
-  const { city, setCity } = useContext(Context);
-  
+
+
   const [pg, setPG] = useState([]);
   const pgroom = async () => {
     await axios
-      .get(`${server}/room/pg/${city}`, {
+      .get(`${server}/room/pg/${JSON.parse(
+        window.localStorage.getItem("valu")
+      )}`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -26,22 +28,31 @@ const PG = () => {
   }, []);
 
   return (
-    <div>
-      <h1 className="boys-head">Available PG</h1>
-      {pg.map((i) => {
-        return (
-          <>
-            <Pgdata
-              city={i.city}
-              rent={i.rent}
-              address={i.address}
-              mobile={i.mobile}
-              image={i.image}
-            />
-            ;
-          </>
-        );
-      })}
+    <div className="back">
+      <h5 className="boy">Available PG  For Girls In {JSON.parse(
+          window.localStorage.getItem("valu")
+        )}</h5>
+      <div className="container-fluid">
+        <div className=" row ">
+         
+          {pg.map((i) => {
+            return (
+              <>
+                <Pgdata
+                  city={i.city}
+                  rent={i.rent}
+                  address={i.address}
+                  mobile={i.mobile}
+                  image={i.image}
+                  size={i.size}
+                  facilities={i.facilities}
+                />
+              
+              </>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

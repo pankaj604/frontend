@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import Boysdata from "./Boysdata";
 import axios from "axios";
-
+import "../style/boys.css";
 import { toast } from "react-hot-toast";
 import { Context, server } from "..";
 import { collapseToast } from "react-toastify";
@@ -12,9 +12,14 @@ const Boys = () => {
   const [error, seterror] = useState("");
   const allboys = async () => {
     await axios
-      .get(`${server}/room/boys/${city}`, {
-        withCredentials: true,
-      })
+      .get(
+        `${server}/room/boys/${JSON.parse(
+          window.localStorage.getItem("valu")
+        )}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         Rboys(res.data.rooms);
       })
@@ -23,29 +28,39 @@ const Boys = () => {
         seterror(e.response.data.message);
       });
   };
+
   useEffect(() => {
     allboys();
   }, []);
 
   return (
-    <div>
-      <h1 className="boys-head">Available rooms for boys</h1>
-      {error && <h1>{error}</h1>}
-      {boys.map((i) => {
-        return (
-          <>
-            <Boysdata
-              city={i.city}
-              rent={i.rent}
-              address={i.address}
-              mobile={i.mobile}
-              image={i.image}
-            />
-            ;
-          </>
-        );
-      })}
-    </div>
+    <>
+      <div className="back">
+        <h5 className="boy ">Available rooms for boys in {JSON.parse(
+          window.localStorage.getItem("valu")
+        )}</h5>
+        <div className="container-fluid">
+          <div className=" row ">
+            {error && <h1>{error}</h1>}
+            {boys.map((i) => {
+              return (
+                <>
+                  <Boysdata
+                    city={i.city}
+                    rent={i.rent}
+                    address={i.address}
+                    mobile={i.mobile}
+                    image={i.image}
+                    size={i.size}
+                    facilities={i.facilities}
+                  />
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

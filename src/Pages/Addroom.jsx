@@ -9,6 +9,8 @@ import { Context } from "..";
 const Addroom = () => {
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
+  const[facilities , setfacilities] = useState("");
+  const [size ,setsize] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [button, setbutton] = useState(false);
   const handleFileChange = (event) => {
@@ -30,6 +32,8 @@ const Addroom = () => {
     formData.append("forr", value);
     formData.append("mobile", mobile);
     formData.append("address", address);
+    formData.append("facilities", facilities);
+    formData.append("size", size);
     e.preventDefault();
     try {
       setbutton(true);
@@ -95,6 +99,22 @@ const Addroom = () => {
             onChange={(e) => setRent(e.target.value)}
           />
           <label>Room Rent</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            value={size}
+            onChange={(e) => setsize(e.target.value)}
+          />
+          <label>Room Size</label>
+        </div>
+        <div class="user-box">
+          <input
+            type="text"
+            value={facilities}
+            onChange={(e) => setfacilities(e.target.value)}
+          />
+          <label>Facilities</label>
         </div>
         <div class="user-box">
           <input

@@ -42,6 +42,8 @@ const Myroom = () => {
                   id={i._id}
                   key={i._id}
                   image={i.image}
+                  size={i.size}
+                  facilities={i.facilities}
                 />
                 ;
               </div>

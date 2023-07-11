@@ -42,41 +42,43 @@ const Login = () => {
 
   if (isAuthenticated) return <Navigate to={"/owner"} />;
   return (
-    <div class="login-box">
-      <h2>Login</h2>
-      <form onSubmit={submitHandler}>
-        <div class="user-box">
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <label>Email</label>
+    <div className="mainn">
+      <div class="login-box">
+        <h2>Login</h2>
+        <form onSubmit={submitHandler}>
+          <div class="user-box">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <label>Email</label>
+          </div>
+          <div class="user-box">
+            <input
+              type="password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <label>Password</label>
+          </div>
+          <a>
+            {error && <p>{error}</p>}
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <button type="submit">Login</button>
+          </a>
+        </form>
+        <div className="rlogin">
+          <Link to="/register">Sign Up</Link>
         </div>
-        <div class="user-box">
-          <input
-            type="password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <label>Password</label>
+        <div className="rlogin">
+          <Link to="/forget">Forget Password</Link>
         </div>
-        <a>
-          {error && <p>{error}</p>}
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <button type="submit">Login</button>
-        </a>
-      </form>
-      <div className="rlogin">
-        <Link to="/register">Sign Up</Link>
-      </div>
-      <div className="rlogin">
-        <Link to="/forget">forget password</Link>
       </div>
     </div>
   );

@@ -5,13 +5,15 @@ import { toast } from "react-hot-toast";
 import Shopdata from "./Shopdata";
 
 const Shop = () => {
-  const { city, setCity } = useContext(Context);
   const [shops, setshops] = useState([]);
   const shop = async () => {
     await axios
-      .get(`${server}/shop/${city}`, {
-        withCredentials: true,
-      })
+      .get(
+        `${server}/shop/${JSON.parse(window.localStorage.getItem("valu"))}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setshops(res.data.shops);
       })
@@ -24,23 +26,30 @@ const Shop = () => {
   }, []);
 
   return (
-    <div>
-      {shops.map((i) => {
-        return (
-          <>
-            <Shopdata
-              city={i.city}
-              rent={i.rent}
-              address={i.address}
-              mobile={i.mobile}
-              area={i.area}
-              nearby={i.nearby}
-              size={i.size}
-              image={i.image}
-            />
-          </>
-        );
-      })}
+    <div className="back">
+      <h5 className="boy">available shops/offices in {JSON.parse(
+          window.localStorage.getItem("valu")
+        )}</h5>
+      <div className="container-fluid">
+        <div className="row">
+          {shops.map((i) => {
+            return (
+              <>
+                <Shopdata
+                  city={i.city}
+                  rent={i.rent}
+                  address={i.address}
+                  mobile={i.mobile}
+                  area={i.area}
+                  nearby={i.nearby}
+                  size={i.size}
+                  image={i.image}
+                />
+              </>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 };

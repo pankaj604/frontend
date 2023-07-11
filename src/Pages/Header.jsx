@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "../style/Header.css";
 import { Context } from "..";
 const Header = () => {
-  const { city, setCity } = useContext(Context);
+  const [city, setCity] = useState("");
 
   useEffect(() => {
     const initialget = () => {
@@ -21,66 +21,81 @@ const Header = () => {
     const selectedValue = event.target.value;
     setCity(selectedValue);
   };
-
-  console.log(city);
+  useEffect(() => {
+    window.localStorage.setItem("valu", JSON.stringify(city));
+  }, [city]);
 
   return (
-    <div className="header">
-      <div className="admin">
-        <Link className="a" to={"/login"}>
-          add your rooms
-        </Link>
-      </div>
-      <div className="navHead">
-        <nav className="wel">
-          <select
-            id="section"
-            onChange={handleSelectChange}
-            defaultValue="indore"
-          >
-            <option value="indore">indore</option>
-            <option value="bhopal">bhopal</option>
-            <option value="mumbai">mumbai</option>
-          </select>
-
-          <br />
-          <br />
-          <br />
-          <h1>Welcome To HSRooms</h1>
-        </nav>
+    <div className="body-home">
+      <div className="add-room">
+        <div className="admin">
+          <Link className="a-add" to={"/login"}>
+            add your rooms
+          </Link>
+        </div>
       </div>
 
-      <div class="navMenu">
-        <nav>
-          <h1>
-            <Link className="a" to={"/boys"}>
-              Boys
-            </Link>
-          </h1>
-          <h1>
-            <Link className="a" to={"/girls"}>
-              Girls
-            </Link>
-          </h1>
-          <h1>
-            {" "}
-            <Link className="a" to={"/pg"}>
-              PG for girls
-            </Link>
-          </h1>
-          <h1>
-            {" "}
-            <Link className="a" to={"/hostel"}>
-              Hostels for girls
-            </Link>
-            <Link className="a" to={"/couple"}>
-              Rooms For Couple
-            </Link>
-            <Link className="a" to={"/shop"}>
-              Shops/Offices
-            </Link>
-          </h1>
-        </nav>
+      <div className="main-head">
+        <div className="test">
+          <div className="head-wel">
+            <h1 className="h-test">Welcome To HSRooms</h1>
+          </div>
+          <div className="head-wel">
+            <h1 className="h-test">Are You Looking For Rooms</h1>
+          </div>
+        </div>
+      </div>
+      <div className="city-cs">
+        <div className="wel">
+          <div className="text-c">
+            <h2 className="pcyc">Please Choose Your City</h2>
+          </div>
+          <div>
+            <select
+              id="section"
+              onChange={handleSelectChange}
+              defaultValue={JSON.parse(window.localStorage.getItem("valu"))}
+              className="option-c"
+            >
+              <option value="indore">Indore</option>
+              <option value="bhopal">bhopal</option>
+              <option value="mumbai">mumbai</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div className="room-type">
+        <h1>
+          <Link className="a" to={"/boys"}>
+            Boys
+          </Link>
+        </h1>
+        <h1>
+          <Link className="a" to={"/girls"}>
+            Girls
+          </Link>
+        </h1>
+        <h1>
+          <Link className="a" to={"/pg"}>
+            PG for girls
+          </Link>
+        </h1>
+        <h1>
+          <Link className="a" to={"/hostel"}>
+            Hostels for girls
+          </Link>
+        </h1>
+        <h1>
+          <Link className="a" to={"/couple"}>
+            Rooms For Couple
+          </Link>
+        </h1>
+        <h1>
+          {" "}
+          <Link className="a" to={"/shop"}>
+            Shops/Offices
+          </Link>
+        </h1>
       </div>
     </div>
   );

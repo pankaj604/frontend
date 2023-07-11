@@ -12,6 +12,9 @@ const Myroomdata = ({
   status,
   id,
   image,
+  size,
+  facilities,
+
 }) => {
   const { setRefresh, refresh } = useContext(Context);
   const [button, sebutton] = useState(false);
@@ -64,6 +67,8 @@ const Myroomdata = ({
           <li>mobile {mobile}</li>
           <li>for {forr}</li>
           <li>available {status}</li>
+          <li>size is {size}</li>
+          <li>facilities {facilities}</li>
         </ol>
         <div className="input">
           <input
