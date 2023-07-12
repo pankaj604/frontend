@@ -42,43 +42,46 @@ const Login = () => {
 
   if (isAuthenticated) return <Navigate to={"/owner"} />;
   return (
-    <div className="mainn">
-      <div class="login-box">
-        <h2>Login</h2>
-        <form onSubmit={submitHandler}>
-          <div class="user-box">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <label>Email</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <label>Password</label>
-          </div>
-          <a>
-            {error && <p>{error}</p>}
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <button type="submit">Login</button>
-          </a>
-        </form>
-        <div className="rlogin">
-          <Link to="/register">Sign Up</Link>
+    <div className="wrapper">
+      <h4 className="wl-lgn">WelCome To HSrooms</h4>
+
+      <div className="text-center mt-1 name">Login</div>
+
+      <form className="p-3 mt-3" onSubmit={submitHandler}>
+        <div className="form-field d-flex align-items-center">
+          <span className="far fa-user"></span>
+          <input
+            type="email"
+            required
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-        <div className="rlogin">
-          <Link to="/forget">Forget Password</Link>
+        <div className="form-field d-flex align-items-center">
+          <span className="fas fa-key"></span>
+          <input
+            type="password"
+            required
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
+
+        <button className="btn mt-3" type="submit">
+          Login
+        </button>
+      </form>
+
+      <div className="text-center fs-6">
+        <Link to="/register">
+          <h5>Sign Up</h5>
+        </Link>
+        <br />
+        <Link to="/forget">
+          <h5>Forget Password</h5>
+        </Link>
       </div>
     </div>
   );

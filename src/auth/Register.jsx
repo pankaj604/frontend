@@ -3,7 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { Context, server } from "../index.js";
 import toast from "react-hot-toast";
-
+import "../style/login.css"
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -33,7 +33,7 @@ const Register = () => {
       setIsAuthenticated(true);
     } catch (error) {
       toast.error(error.response.data.message);
-      seterror(error.response.data.message)
+      seterror(error.response.data.message);
       setIsAuthenticated(false);
     }
   };
@@ -41,10 +41,12 @@ const Register = () => {
   if (isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
-    <div class="login-box">
-      <h2>Register with your Email</h2>
-      <form onSubmit={submitHandler}>
-        <div class="user-box">
+    <div className="wrapper">
+      <h4 className="wl-lgn">WelCome To HSrooms</h4>
+      <h4 className="text-center mt-1 name">Register with Email</h4>
+      <form  className="p-3 mt-3" onSubmit={submitHandler}>
+        <div className="form-field d-flex align-items-center">
+        <span className="far fa-user"></span>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -52,9 +54,8 @@ const Register = () => {
             placeholder="Name"
             required
           />
-          <label>Name</label>
         </div>
-        <div class="user-box">
+        <div className="form-field d-flex align-items-center">
           <input
             type="email"
             placeholder="Email"
@@ -62,31 +63,22 @@ const Register = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <label>Email</label>
         </div>
-        <div class="user-box">
+        <div className="form-field d-flex align-items-center">
           <input
             type="password"
-            required 
+            required
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <label>Password</label>
         </div>
-        <a>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          {error && <p>{error}</p>}
-          <button type="submit">Sign Up</button>
-        </a>
-      
 
+        {error && <p>{error}</p>}
+        <button className="btn mt-3" type="submit">Sign Up</button>
       </form>
-      <div className="rlogin">
-        <Link to="/login">Log In</Link>
+      <div className="text-center fs-6">
+        <Link to="/login"><h5>Log In</h5></Link>
       </div>
     </div>
   );
