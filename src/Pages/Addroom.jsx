@@ -9,8 +9,8 @@ import { Context } from "..";
 const Addroom = () => {
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
-  const[facilities , setfacilities] = useState("");
-  const [size ,setsize] = useState("");
+  const [facilities, setfacilities] = useState("");
+  const [size, setsize] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [button, setbutton] = useState(false);
   const handleFileChange = (event) => {
@@ -51,108 +51,97 @@ const Addroom = () => {
     }
   };
   return (
-    <div class="login-box">
-      {" "}
+    <div className="container-fluid d-flex flex-column room">
+      <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add room</h4>{" "}
       <form onSubmit={handleSubmit}>
-        <div className="user-box">
-          <div className="container-option">
-            <div class="user-box select">
-              <label className="city-option">Choose city</label>
-              <a className="option-city">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <select id="option" defaultValue="indore">
-                  <option value="indore">Indore</option>
-                  <option value="bhopal">Bhopal</option>
-                  <option value="mumbai">Mumbai 3</option>
-                </select>
-              </a>
+        <div className="container d-flex flex-column justify-content-center   text text-center">
+          <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
+            <div className="container-option m-2">
+              <h5 className="city-option choice">Choose city</h5>
+
+              <select className="choice" id="option" defaultValue="indore">
+                <option value="indore">Indore</option>
+                <option value="bhopal">Bhopal</option>
+                <option value="mumbai">Mumbai 3</option>
+              </select>
             </div>
-            <div class="user-box">
-              <label className="city-option">Choose Gender</label>
-              <a>
-                <select id="for" defaultValue="everyone">
-                  <option value="boys">Boys</option>
-                  <option value="girls">Girls</option>
-                  <option value="pg">PG girls</option>
-                  <option value="everyone">Everyone</option>
-                  <option value="hostles">Girls Hostel</option>
-                </select>
-              </a>
+            <div class="container-option m-2 ">
+              <h5 className="city-option">Choose Gender</h5>
+
+              <select className="choice" id="for" defaultValue="everyone">
+                <option value="boys">Boys</option>
+                <option value="girls">Girls</option>
+                <option value="pg">PG girls</option>
+                <option value="everyone">Everyone</option>
+              </select>
             </div>
           </div>
+          <div className="input-box d-flex flex-column justify-content-center   text text-center">
+            <div class="user-box align-self-start">
+              <h5>Room Rent</h5>
+              <input
+                type="text"
+                value={rent}
+                onChange={(e) => setRent(e.target.value)}
+              />
+            </div>
+            <div class="user-box align-self-start">
+              <h5>Room Size</h5>
+              <input
+                type="text"
+                value={size}
+                onChange={(e) => setsize(e.target.value)}
+              />
+            </div>
+            <div class="user-box align-self-start">
+              <h5>Facilities</h5>
+              <input
+                type="text"
+                value={facilities}
+                onChange={(e) => setfacilities(e.target.value)}
+              />
+            </div>
+            <div class="user-box align-self-start">
+              <h5>Address</h5>
+              <input
+                className="address"
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+            <div class="user-box align-self-start">
+              <h5>Mobile</h5>
+              <input
+                type="text"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+            </div>
+            <div>
+              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+                <>
+                  <h4>photo size should be less than 2 mb</h4>
+                </>
+              )}
+            </div>
+          </div>
+          <div className="input-box mt-2 d-flex flex-column justify-content-center   text text-center">
+            <div>
+              <input type="file" onChange={handleFileChange} />
+            </div>
+
+            <button
+              className="mt-3"
+              disabled={
+                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+              }
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
         </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-          />
-          <label>Address</label>
-        </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={rent}
-            onChange={(e) => setRent(e.target.value)}
-          />
-          <label>Room Rent</label>
-        </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={size}
-            onChange={(e) => setsize(e.target.value)}
-          />
-          <label>Room Size</label>
-        </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={facilities}
-            onChange={(e) => setfacilities(e.target.value)}
-          />
-          <label>Facilities</label>
-        </div>
-        <div class="user-box">
-          <input
-            type="text"
-            value={mobile}
-            onChange={(e) => setMobile(e.target.value)}
-          />
-          <label>Mobile</label>
-        </div>
-        <div>
-          <a>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
-              <>
-                <h4>photo size should be less than 2 mb</h4>
-              </>
-            )}
-            <input type="file" onChange={handleFileChange} />
-        
-          </a>
-        </div>
-        <a>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <button
-            disabled={
-              button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
-            }
-            type="submit"
-          >
-            Submit
-          </button>
-        </a>
       </form>
     </div>
   );

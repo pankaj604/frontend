@@ -25,7 +25,6 @@ const Myshopdata = ({
   }
   const updateHandler = async (id) => {
     try {
-      
       const { data } = await axios.put(
         `${server}/shop/update/${id}`,
         {},
@@ -42,52 +41,79 @@ const Myshopdata = ({
   };
   const deleteHandler = async (id) => {
     try {
-      setbutton(false)
+      setbutton(false);
       const { data } = await axios.delete(`${server}/shop/delet/${id}`, {
         withCredentials: true,
       });
 
       toast.success(data.message);
       setRefresh((prev) => !prev);
-      setbutton(true)
+      setbutton(true);
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
     }
   };
   return (
-    <div>
-      <div className="container-pg">
-        <div className="text-list">
-          <h1>available shops</h1>
-          <ol>
-            <li>{city}</li>
-            <li>{rent}</li>
-            <li>{address}</li>
-            <li>{mobile}</li>
-            <li>{area}</li>
-            <li>{nearby}</li>
-            <li>{size}</li>
-            <li>available{status}</li>
-          </ol>
-          <div className="input">
+    <>
+      <div div className="one m-3  p-0 col-xl-2 bg-dark text-white">
+        <div className="image p-0">
+          <img className="img-fluid w-100 h-100 " src={image} alt="room" />
+        </div>
+        <div className="text p-1">
+          <h6 className="d-inline m-0 h6">
+            room rent is <p className="m-0 d-inline value">{rent}</p>
+          </h6>
+          <br />
+
+          <h6 className="d-inline m-0 h6">
+            Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Room Size <p className="m-0 d-inline value">{size}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            City <p className="m-0 d-inline value">{city}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Area <p className="m-0 d-inline value">{area}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Facilities <p className="m-0 d-inline value">{nearby}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Address <p className="m-0 d-inline value">{address}</p>
+          </h6>
+          <br />
+        </div>
+
+        <div className="operation d-flex flex-row ">
+          <div className="input d-flex  flex-row m-2">
             <input
+              className="chackbox m-2"
               onChange={() => updateHandler(id)}
               type="checkbox"
               checked={light}
             />
+            <h5 className="choise m-2">ON/OFF</h5>
           </div>
-          <div className="button">
-        <button disabled={button} onClick={() => deleteHandler(id)} className="btn">
-          Delete
-        </button>
-      </div>
-          <div className="img-pg">
-            <img className="image" src={image} alt="room" />
+          <div className="button align-self-end m-2">
+            <button
+              disabled={button}
+              onClick={() => deleteHandler(id)}
+              className="btn"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

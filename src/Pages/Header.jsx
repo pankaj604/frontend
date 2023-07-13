@@ -4,7 +4,8 @@ import Logout from "../auth/Logout";
 import Addroom from "./Addroom";
 import { Link } from "react-router-dom";
 import "../style/Header.css";
-import { Context } from "..";
+import { Context, server } from "..";
+import axios from "axios";
 const Header = () => {
   const [city, setCity] = useState("");
 
@@ -26,76 +27,71 @@ const Header = () => {
   }, [city]);
 
   return (
-    <div className="body-home">
-      <div className="add-room">
-        <div className="admin">
-          <Link className="a-add" to={"/login"}>
-            add your rooms
-          </Link>
-        </div>
+    <div className="container head d-flex flex-column">
+      <div className=" m-1 mb-4 mt-3 p-1 wel-1 text text-center ">
+        <h3 className="wel ">Welcome To HSRooms</h3>
+      </div>
+      <div className="welcome m-1 p-1  text text-center ">
+        <h4 className="wel">Are You Looking For Rooms</h4>
+
+        <h4 className="wel">Please Choose Your City</h4>
       </div>
 
-      <div className="main-head">
-        <div className="test">
-          <div className="head-wel">
-            <h1 className="h-test">Welcome To HSRooms</h1>
-          </div>
-          <div className="head-wel">
-            <h1 className="h-test">Are You Looking For Rooms</h1>
-          </div>
-        </div>
+      <div className="option  text text-center m-1 p-2 ">
+        <select
+          id="section"
+          onChange={handleSelectChange}
+          defaultValue={JSON.parse(window.localStorage.getItem("valu"))}
+          className="option-c"
+        >
+          <option value="indore">Indore</option>
+          <option value="bhopal">bhopal</option>
+          <option value="mumbai">mumbai</option>
+        </select>
       </div>
-      <div className="city-cs">
-        <div className="wel">
-          <div className="text-c">
-            <h2 className="pcyc">Please Choose Your City</h2>
-          </div>
-          <div>
-            <select
-              id="section"
-              onChange={handleSelectChange}
-              defaultValue={JSON.parse(window.localStorage.getItem("valu"))}
-              className="option-c"
-            >
-              <option value="indore">Indore</option>
-              <option value="bhopal">bhopal</option>
-              <option value="mumbai">mumbai</option>
-            </select>
-          </div>
-        </div>
+      <div className="slog m-1 p-2  text text-center ">
+        <h6>From Owner To Renter </h6>
+        <h6>No Brokerage </h6>
       </div>
-      <div className="room-type">
-        <h1>
-          <Link className="a" to={"/boys"}>
+      <div className="FOR d-flex flex-row justify-content-center justify-content-xl-around m-1 p-1  ">
+        <h4 className="d-inline m-2">
+          <Link className="choice" to={"/boys"}>
             Boys
           </Link>
-        </h1>
-        <h1>
-          <Link className="a" to={"/girls"}>
+        </h4>
+        <h4 className="d-inline m-2">
+          <Link className="choice" to={"/girls"}>
             Girls
           </Link>
-        </h1>
-        <h1>
-          <Link className="a" to={"/pg"}>
+        </h4>
+        <h4 className="d-inline m-2">
+          <Link className="choice" to={"/pg"}>
             PG for girls
           </Link>
-        </h1>
-        <h1>
-          <Link className="a" to={"/hostel"}>
+        </h4>
+      </div>
+      <div className="FOR d-flex flex-row justify-content-center justify-content-xl-around text-center m-1 p-1 ">
+        <h4 className="d-inline m-2">
+          <Link className="choice" to={"/hostel"}>
             Hostels for girls
           </Link>
-        </h1>
-        <h1>
-          <Link className="a" to={"/couple"}>
+        </h4>
+        <h4 className="d-inline m-2">
+          <Link className="choice" to={"/couple"}>
             Rooms For Couple
           </Link>
-        </h1>
-        <h1>
+        </h4>
+        <h4 className="d-inline m-2">
           {" "}
-          <Link className="a" to={"/shop"}>
-            Shops/Offices
+          <Link className="choice" to={"/shop"}>
+            Shops or Offices
           </Link>
-        </h1>
+        </h4>
+      </div>
+      <div className=" align-self-end m-2 p-1 add-room">
+        <Link className="choice" to={"/login"}>
+          add your rooms
+        </Link>
       </div>
     </div>
   );

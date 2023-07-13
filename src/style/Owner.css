@@ -1,28 +1,22 @@
-.owner-box{
-    background-color: rgb(189, 124, 40);
-    height: 50%;
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    border-radius: 50px;
+.owner{
+    height: 100vh;
+}
+
+.myroom{
+    color: black ;
+    letter-spacing: 1px;
+    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+      0px -4px 10px rgba(255,255,255,0.3);
+
+}
+
+.owner-nav{
+    background-color: rgb(28, 136, 231);
     
 }
 
-.owner{
-    margin:2rem;
-    padding: 20px;
-    background-color: antiquewhite;
-    border-radius: 40px ;
-}
+.add-rooms{
 
-.add{
-    margin: 50px;
-}
-.myroom{
-    margin: 50px;
-}
-
-.main-box{
-    margin-top: 10%;
+    background-color: aliceblue;
+    
 }

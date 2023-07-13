@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
-
+import "../style/Addroom.css";
 const Addhostel = () => {
   const [button, setbutton] = useState(false);
   const [area, setArea] = useState("");
@@ -51,123 +51,135 @@ const Addhostel = () => {
   };
 
   return (
-    <div className="add-hostel">
-      <div class="login-box">
-        {" "}
-        <form onSubmit={handleSubmit}>
-          <div className="user-box">
-            <div className="container-option">
-              <div class="user-box select">
-                <label className="city-option">Choose city</label>
-                <a className="option-city">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <select id="option" defaultValue="indore">
-                    <option value="indore">Indore</option>
-                    <option value="bhopal">Bhopal</option>
-                    <option value="mumbai">Mumbai 3</option>
-                  </select>
-                </a>
-              </div>
+    <div className="container-fluid d-flex flex-column room">
+      <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add Hostel</h4>{" "}
+      <form onSubmit={handleSubmit}>
+        <div className="container d-flex flex-column justify-content-center   text text-center">
+          <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
+            <div className="container-option m-2">
+              <h5 className="city-option choice">Choose city</h5>
+
+              <select id="option" defaultValue="indore">
+                <option value="indore">Indore</option>
+                <option value="bhopal">Bhopal</option>
+                <option value="mumbai">Mumbai 3</option>
+              </select>
             </div>
           </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <label>Address</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={nearby}
-              onChange={(e) => setNearby(e.target.value)}
-            />
-            <label>Nearby</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={area}
-              onChange={(e) => setArea(e.target.value)}
-            />
-            <label>Area</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={availableseats}
-              onChange={(e) => setAvailableseats(e.target.value)}
-            />
-            <label>Available Seats</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={totalseats}
-              onChange={(e) => setTotalseats(e.target.value)}
-            />
-            <label>Total Seats</label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={gatetime}
-              onChange={(e) => setGatetime(e.target.value)}
-            />
-            <label>Gate time </label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={facilites}
-              onChange={(e) => setFacilites(e.target.value)}
-            />
-            <label>facilities </label>
-          </div>
-          <div class="user-box">
-            <input
-              type="text"
-              value={rent}
-              onChange={(e) => setRent(e.target.value)}
-            />
-            <label>Room Rent</label>
-          </div>
+          <div className="input-box d-flex flex-column justify-content-center   text text-center">
+            <div className="d-flex justify-content-center flex-row">
+              <div class="user-bo">
+                <h5>Available Seats</h5>
 
-          <div class="user-box">
-            <input
-              type="text"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-            />
-            <label>Mobile</label>
-          </div>
-          <div>
-            <a>
-              <span></span>
-              <input type="file" onChange={handleFileChange} />
+                <input
+                  className="text text-center"
+                  type="text"
+                  value={availableseats}
+                  onChange={(e) => setAvailableseats(e.target.value)}
+                />
+              </div>
+              <div class="user-bo">
+                <h5>Total Seats</h5>
+
+                <input
+                  className="text text-center"
+                  type="text"
+                  value={totalseats}
+                  onChange={(e) => setTotalseats(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="d-flex justify-content-center -flex-row">
+              <div class="user-bo">
+                <h5>Gate time </h5>
+
+                <input
+                  className="text text-center"
+                  type="text"
+                  value={gatetime}
+                  onChange={(e) => setGatetime(e.target.value)}
+                />
+              </div>
+              <div class="user-bo">
+                <h5>Room Rent</h5>
+
+                <input
+                  className="text text-center"
+                  type="text"
+                  value={rent}
+                  onChange={(e) => setRent(e.target.value)}
+                />
+              </div>
+            </div>
+            <div class="user-box">
+              <h5>Nearby</h5>
+              <input
+                type="text"
+                value={nearby}
+                onChange={(e) => setNearby(e.target.value)}
+              />
+            </div>
+            <div class="user-box">
+              <h5>Area</h5>
+
+              <input
+                type="text"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
+              />
+            </div>
+
+            <div class="user-box">
+              <h5>facilities </h5>
+
+              <input
+                type="text"
+                value={facilites}
+                onChange={(e) => setFacilites(e.target.value)}
+              />
+            </div>
+
+            <div class="user-box align-self-start">
+              <h5>Address</h5>
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+
+            <div class="user-box">
+              <h5>Mobile</h5>
+
+              <input
+                type="text"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+            </div>
+            <div>
               {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
                 <>
                   <h4>photo size should be less than 2 mb</h4>
                 </>
               )}
-            </a>
+            </div>
           </div>
-          <a>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <button disabled={button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)} type="submit">
+          <div className="input-box mt-2 d-flex flex-column justify-content-center   text text-center">
+            <div>
+              <input type="file" onChange={handleFileChange} />
+            </div>
+            <button
+              disabled={
+                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+              }
+              type="submit"
+            >
               Submit
             </button>
-          </a>
-        </form>
-      </div>
+          </div>
+        </div>
+      </form>
     </div>
   );
 };

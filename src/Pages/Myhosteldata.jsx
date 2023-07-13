@@ -72,52 +72,88 @@ const Myhosteldata = ({
       setbutton(true);
     } catch (error) {
       setbutton(false);
+
       toast.error(error.response.data.message);
     }
   };
   return (
-    <div className="container">
-      <div className="text-list">
-        <ol>
-          <li>city {city}</li>
-          <li>rent {rent}</li>
-          <li>address {address}</li>
-          <li>mobile {mobile}</li>
-          <li>available {status}</li>
-          <li>gatetime {gatetime}</li>
-          <li>facilities {facilites}</li>
-          <li> {area}</li>
-          <li>available {nearby}</li>
-          <li>avaialble{availableseats}</li>
-          <li>total{totalseats}</li>
-        </ol>
-        <div className="input">
-          <input
-            onChange={() => updateHandler(id)}
-            type="checkbox"
-            checked={light}
-          />
+    <>
+      <div div className="one m-3  p-0 col-xl-2 bg-dark text-white">
+        <div className="image p-0">
+          <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>
-        <div className="input">
-          <input
-            placeholder="edite available seats"
-            type="number"
-            onChange={(e) => setSeat(e.target.value)}
-          />
-          <button onClick={updateseats}>update seats</button>
-        </div>
+        <div className="text p-1">
+          <h6 className="d-inline m-0 h6">
+            room rent is <p className="m-0 d-inline value">{rent} </p>
+            City <p className="m-0 d-inline value">{city}</p>
+          </h6>
+          <br />
 
-        <div className="button">
-          <button disabled={button} onClick={() => deleteHandler(id)} className="btn">
-            Delete
-          </button>
+          <h6 className="d-inline m-0 h6">
+            Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Area <p className="m-0 d-inline value">{area}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Nearby <p className="m-0 d-inline value">{nearby}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Available Seat{" "}
+            <p className="m-0 d-inline value">{availableseats} </p>
+            Totalseat <p className="m-0 d-inline value">{totalseats}</p>
+          </h6>
+          <br />
+
+          <h6 className="d-inline m-0 h6">
+            Gatetime <p className="m-0 d-inline value">{gatetime}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Facilities <p className="m-0 d-inline value">{facilites}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Address <p className="m-0 d-inline value">{address}</p>
+          </h6>
+          <br />
+        </div>
+        <div className="operation d-flex flex-row  ">
+          <div className=" d-flex  flex-row m-2">
+            <input
+              className="chackbox mt-2"
+              onChange={() => updateHandler(id)}
+              type="checkbox"
+              checked={light}
+            />
+          </div>
+          <div className="seat d-flex flex-row">
+            <input
+              className="chackbox text text-center m-2 in-seat"
+              placeholder="Seats"
+              type="number"
+              onChange={(e) => setSeat(e.target.value)}
+            />
+            <button className="seat-btn p-2 mt-2 mb-2" onClick={updateseats}>
+              Set
+            </button>
+          </div>
+
+          <div className="button align-self-end m-2">
+            <button
+              disabled={button}
+              onClick={() => deleteHandler(id)}
+              className="btn"
+            >
+              Delete
+            </button>
+          </div>
         </div>
       </div>
-
-      <div className="img">
-        <img className="image" src={image} alt="room" />
-      </div>
-    </div>
+    </>
   );
 };
 

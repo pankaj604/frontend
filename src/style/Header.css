@@ -1,114 +1,61 @@
-.body-home {
-  background-color: #394867;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  color: aliceblue;
-  background: url("C:\Users\DELL\Desktop\wallpaper\other-divan-komnata-televizor-stil-114315.jpeg") no-repeat center
-    center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  margin: 0px;
-  padding: 0px;
+.head{
+  height: 100vh;
 }
-.add-room {
-  margin-top: 20px;
-  margin-left: 10px;
-  display: inline-block;
-  color: red;
-  font-size: 1.1rem;
-  padding: 5px;
-  border-radius: 5px;
+
+.welcome , .option{
   background-color: aliceblue;
-}
-.a-add {
-  color:black;
-  font-size: large;
-}
-.a {
-  color: aliceblue;
-}
-.main-head {
-  background: url("C:\Users\DELL\Desktop\wallpaper\alexandra-gorn-JIUjvqe2ZHg-unsplash.jpg");
+  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  width: 50%;
-  height: 15%;
-  margin-left: 25%;
-  border-radius: 4px;
-  padding-top: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-position: center; 
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+   border-radius: 10px;
 }
-
-.head-wel {
-  display: flexbox;
-  justify-content: center;
-  align-items: center;
-}
-
-.test {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 10px;
-}
-
-.h-test {
-  margin: 0px;
-  color: black;
-  text-shadow: 0 0 5px #f4efef, 0 0 5px #ffffff;
-}
-
-.city-cs {
-  background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360");
+.wel-1{
+  background-color: rgb(28, 136, 231);
+  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  width: 50%;
-  height: 7%;
-  margin-left: 25%;
-  margin-top: 8%;
-  border-radius: 4px;
-  padding-top: 5px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-position: center; 
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+   border-radius: 10px;
 }
 
-.wel {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: row;
-  color: black;
+.wel{
+  letter-spacing: 1px;
+  text-shadow: 2px 7px 5px rgba(255, 248, 248, 0.3), 
+    0px -4px 10px rgba(255, 251, 251, 0.3);
 }
 
-.pcyc {
-  text-shadow: 0 0 5px #f4efef, 0 0 5px #ffffff;
-}
-.option-c {
-  font-size: large;
-}
-
-.room-type {
-  background: url("https://images.pexels.com/photos/673648/pexels-photo-673648.jpeg?auto=compress&cs=tinysrgb&w=600");
+.FOR{
+  background-color: aliceblue;
+  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 25%;
-  width: 90%;
-  margin-top: 15%;
-  margin-left: 5%;
+  background-position: center; 
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
+   color: black;
+   border-radius: 10px;
+}
+
+
+.slog{
+  background-color: yellow;
+  color: red;
   border-radius: 10px;
+
 }
-.a {
+
+.choice{
+  color: black ;
+  letter-spacing: 1px;
+  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
+    0px -4px 10px rgba(255,255,255,0.3);
+}
+
+.add-room{
+  background-color: rgb(28, 136, 231);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
   color: black;
-  text-shadow: 0 0 5px #f4efef, 0 0 5px #ffffff;
+  border-radius: 10px;
 }

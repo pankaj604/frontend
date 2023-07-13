@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
-
+import "../style/Addroom.css"
 const Addshop = () => {
   const [size, setSize] = useState("");
   const [area, setArea] = useState("");
@@ -44,104 +44,97 @@ const Addshop = () => {
     }
   };
   return (
-    <div>
-      <div class="login-box">
-        {" "}
-        <form onSubmit={handleSubmit}>
-          <div className="user-box">
-            <div className="container-option">
-              <div class="user-box select">
-                <label className="city-option">Choose city</label>
-                <a className="option-city">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <select id="option" defaultValue="indore">
-                    <option value="indore">Indore</option>
-                    <option value="bhopal">Bhopal</option>
-                    <option value="mumbai">Mumbai 3</option>
-                  </select>
-                </a>
-              </div>
+    <div className="container-fluid d-flex flex-column room">
+      <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add Shop</h4>{" "}
+      <form onSubmit={handleSubmit}>
+        <div className="container d-flex flex-column justify-content-center   text text-center">
+          <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
+            <div className="container-option m-2">
+              <h5 className="city-option choice">Choose city</h5>
+
+              <select className="choice" id="option" defaultValue="indore">
+                <option value="indore">Indore</option>
+                <option value="bhopal">Bhopal</option>
+                <option value="mumbai">Mumbai 3</option>
+              </select>
             </div>
           </div>
+       
+        <div className="input-box d-flex flex-column justify-content-center   text text-center">
           <div class="user-box">
-            <input
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
-            <label>Address</label>
-          </div>
-          <div class="user-box">
+            <h5>Nearby</h5>
             <input
               type="text"
               value={nearby}
               onChange={(e) => setNearby(e.target.value)}
             />
-            <label>Nearby</label>
           </div>
           <div class="user-box">
+            <h5>Area</h5>
             <input
               type="text"
               value={area}
               onChange={(e) => setArea(e.target.value)}
             />
-            <label>Area</label>
           </div>
           <div class="user-box">
+            <h5>Size</h5>
             <input
               type="text"
               value={size}
               onChange={(e) => setSize(e.target.value)}
             />
-            <label>Size</label>
           </div>
           <div class="user-box">
+            <h5>Room Rent</h5>
             <input
               type="text"
               value={rent}
               onChange={(e) => setRent(e.target.value)}
             />
-            <label>Room Rent</label>
           </div>
 
-          <div class="user-box">
+          <div class="user-box align-self-start">
+            <h5>Mobile</h5>
             <input
               type="text"
               value={mobile}
               onChange={(e) => setMobile(e.target.value)}
             />
-            <label>Mobile</label>
+          </div>
+          <div class="user-box align-self-start">
+            <h5>Address</h5>
+            <input
+              className="address"
+              type="text"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+            />
           </div>
           <div>
-            <a>
-              <span></span>
-              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
-                <>
-                  <h4>photo size should be less than 2 mb</h4>
-                </>
-              )}
-              <input type="file" onChange={handleFileChange} />
-            </a>
+            {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+              <>
+                <h4>photo size should be less than 2 mb</h4>
+              </>
+            )}
           </div>
-          <a>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <button
-              disabled={
-                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
-              }
-              type="submit"
-            >
-              Submit
-            </button>
-          </a>
-        </form>
-      </div>
+        </div>
+        <div className=" input-box mt-2 d-flex flex-column justify-content-center   text text-center">
+          <div>
+            <input type="file" onChange={handleFileChange} />
+          </div>
+          <button
+            className="mt-3"
+            disabled={
+              button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+            }
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+        </div>
+      </form>
     </div>
   );
 };

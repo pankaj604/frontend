@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import Myroomdata from "./Myroomdata";
-
+import "../style/boys.css";
 const Myroom = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [myroom, setMyroom] = useState([]);
@@ -26,32 +26,34 @@ const Myroom = () => {
   }, [refresh]);
 
   return (
-    <div>
-      {myroom.map((i) => {
-        return (
-          <>
-            <div className="main-room-data">
-              <div className="container">
-                <Myroomdata
-                  city={i.city}
-                  rent={i.rent}
-                  address={i.address}
-                  mobile={i.mobile}
-                  forr={i.forr}
-                  status={i.status ? "ON" : "OFF"}
-                  id={i._id}
-                  key={i._id}
-                  image={i.image}
-                  size={i.size}
-                  facilities={i.facilities}
-                />
-                ;
-              </div>
-            </div>
-          </>
-        );
-      })}
-    </div>
+    <>
+      <div className="back">
+        <h5 className="choice text text-center"> Your Rooms</h5>
+        <div className="container-fluid">
+          <div className="row">
+            {myroom.map((i) => {
+              return (
+                <>
+                  <Myroomdata
+                    city={i.city}
+                    rent={i.rent}
+                    address={i.address}
+                    mobile={i.mobile}
+                    forr={i.forr}
+                    status={i.status ? "ON" : "OFF"}
+                    id={i._id}
+                    key={i._id}
+                    image={i.image}
+                    size={i.size}
+                    facilities={i.facilities}
+                  />
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

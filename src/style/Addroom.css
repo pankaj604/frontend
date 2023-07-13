@@ -1,27 +1,16 @@
-.select{
-   
-    margin-bottom: 10px;
-    padding-left: 25%;
+.room{
+    height: 100vh;
 }
 
-.city-option{
-    color: white;
+.options{
+    background-color: aliceblue;
+    width: 100vw;
+    border-radius: 10px;
 }
 
-.select{
-    padding: 0px;
+.user-box{
+    width: 100vw;
 }
-
-.option-city{
-    margin:auto;
-}
-
-a{
-    margin: 0px;
-    padding: 0px;
-}
-
-.container-option{
-    display: flex;
-    justify-content: center;
+.address{
+    height: 10vh;
 }

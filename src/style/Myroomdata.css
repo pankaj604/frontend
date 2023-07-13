@@ -1,48 +1,29 @@
-.container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-self: center;
+.operation {
+  background-color: azure;
 }
 
-img {
-  max-width: 50%;
-  max-height: 50%;
-}
-    
-.text-list{
-    background-color: antiquewhite;
-    margin: 10px;
-}
-.img{
-   
-}
-
-.input{
-
-    width: 10%;
-    height: 10%;
-
-}
-.btn{
-color:red;
-}
-
-.all-room-head{
-  background-color: rgb(238, 255, 0);
-}
-
-.profile{
-  background-color: aqua;
-  margin: 5%;
-  padding:5%;
+.input {
+  background-color: rgb(83, 83, 199);
   width: 50%;
-  height: 50%;
+  border-radius: 7px;
+}
+.seat{
+    width: 60%;
+    background-color: aliceblue;
+}
+.chackbox {
+  line-height: normal;
+  width: 20px;
+  height: 20px;
 }
 
-.p-name{
-  margin-left: 25%;
+.btn {
+  background-color: red;
 }
-.p-email{
-  margin-left: 25%;
+.in-seat {
+  width: 60%;
+  height: 40px;
+}
+.seat-btn {
+    border-radius: 10px;
 }
