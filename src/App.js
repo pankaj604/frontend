@@ -30,7 +30,7 @@ import Myhostel from "./Pages/Myhostel";
 
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
-
+  window.ResizeObserver = undefined;
   return (
     <Router>
       <Routes>

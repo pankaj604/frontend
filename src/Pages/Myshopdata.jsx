@@ -41,14 +41,19 @@ const Myshopdata = ({
   };
   const deleteHandler = async (id) => {
     try {
-      setbutton(false);
-      const { data } = await axios.delete(`${server}/shop/delet/${id}`, {
-        withCredentials: true,
-      });
+      const resul = window.confirm("are you sure to delet");
+      if (resul) {
+        setbutton(false);
+        const { data } = await axios.delete(`${server}/shop/delet/${id}`, {
+          withCredentials: true,
+        });
 
-      toast.success(data.message);
-      setRefresh((prev) => !prev);
-      setbutton(true);
+        toast.success(data.message);
+        setRefresh((prev) => !prev);
+        setbutton(true);
+      } else {
+        return;
+      }
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);

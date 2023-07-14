@@ -29,16 +29,21 @@ const Myhosteldata = ({
   }
   const updateseats = async () => {
     try {
-      const { data } = await axios.put(
-        `${server}/hostel/updateseat/${id}`,
-        { seat },
-        {
-          withCredentials: true,
-        }
-      );
+      const result = window.confirm("sure to update");
+      if (result) {
+        const { data } = await axios.put(
+          `${server}/hostel/updateseat/${id}`,
+          { seat },
+          {
+            withCredentials: true,
+          }
+        );
 
-      toast.success(data.message);
-      setRefresh((prev) => !prev);
+        toast.success(data.message);
+        setRefresh((prev) => !prev);
+      } else {
+        return;
+      }
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -62,14 +67,19 @@ const Myhosteldata = ({
 
   const deleteHandler = async (id) => {
     try {
-      setbutton(false);
-      const { data } = await axios.delete(`${server}/hostel/delete/${id}`, {
-        withCredentials: true,
-      });
+      const resultt = window.confirm("are you sure to delet");
+      if (resultt) {
+        setbutton(false);
+        const { data } = await axios.delete(`${server}/hostel/delete/${id}`, {
+          withCredentials: true,
+        });
 
-      toast.success(data.message);
-      setRefresh((prev) => !prev);
-      setbutton(true);
+        toast.success(data.message);
+        setRefresh((prev) => !prev);
+        setbutton(true);
+      } else {
+        return;
+      }
     } catch (error) {
       setbutton(false);
 

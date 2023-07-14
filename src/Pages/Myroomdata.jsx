@@ -42,14 +42,17 @@ const Myroomdata = ({
   };
   const deleteHandler = async (id) => {
     try {
-      sebutton(false);
-      const { data } = await axios.delete(`${server}/room/delet/${id}`, {
-        withCredentials: true,
-      });
+      const resu = window.confirm("are you sure to delet");
+      if (resu) {
+        sebutton(false);
+        const { data } = await axios.delete(`${server}/room/delet/${id}`, {
+          withCredentials: true,
+        });
 
-      toast.success(data.message);
-      sebutton(true);
-      setRefresh((prev) => !prev);
+        toast.success(data.message);
+        sebutton(true);
+        setRefresh((prev) => !prev);
+      }
     } catch (error) {
       sebutton(false);
       toast.error(error.response.data.message);
