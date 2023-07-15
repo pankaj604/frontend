@@ -9,8 +9,12 @@
 }
 
 .user-box{
-    width: 100vw;
+    
 }
 .address{
     height: 10vh;
+}
+
+.seat-wid{
+    width: 80vw;
 }

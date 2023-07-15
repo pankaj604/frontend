@@ -77,7 +77,7 @@ const Addroom = () => {
             </div>
           </div>
           <div className="input-box d-flex flex-column justify-content-center   text text-center">
-            <div class="user-box align-self-start">
+            <div class="user-box  align-self-mid">
               <h5>Room Rent</h5>
               <input
                 type="text"
@@ -85,7 +85,7 @@ const Addroom = () => {
                 onChange={(e) => setRent(e.target.value)}
               />
             </div>
-            <div class="user-box align-self-start">
+            <div class="user-box align-self-mid">
               <h5>Room Size</h5>
               <input
                 type="text"
@@ -93,7 +93,7 @@ const Addroom = () => {
                 onChange={(e) => setsize(e.target.value)}
               />
             </div>
-            <div class="user-box align-self-start">
+            <div class="user-box align-self-mid">
               <h5>Facilities</h5>
               <input
                 type="text"
@@ -101,7 +101,7 @@ const Addroom = () => {
                 onChange={(e) => setfacilities(e.target.value)}
               />
             </div>
-            <div class="user-box align-self-start">
+            <div class="user-box align-self-mid">
               <h5>Address</h5>
               <input
                 className="address"
@@ -110,7 +110,7 @@ const Addroom = () => {
                 onChange={(e) => setAddress(e.target.value)}
               />
             </div>
-            <div class="user-box align-self-start">
+            <div class="user-box align-self-mid">
               <h5>Mobile</h5>
               <input
                 type="text"

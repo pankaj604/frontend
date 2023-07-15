@@ -6,10 +6,10 @@
 }
 
 .boy{
-    margin-left: 30%;
-    background-color: aliceblue;
-    margin-right: 40%;
-    text-align: center;
+  background-color: aliceblue;
+
+  text-align: center;
+  width: 100vw;
 }
 
 .h6{

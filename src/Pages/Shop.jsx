@@ -27,7 +27,7 @@ const Shop = () => {
 
   return (
     <div className="back">
-      <h5 className="boy">available shops/offices in {JSON.parse(
+      <h5 className="boy m-0">available shops/offices in {JSON.parse(
           window.localStorage.getItem("valu")
         )}</h5>
       <div className="container-fluid">

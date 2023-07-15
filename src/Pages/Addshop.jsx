@@ -94,7 +94,7 @@ const Addshop = () => {
             />
           </div>
 
-          <div class="user-box align-self-start">
+          <div class="user-box align-self-mid">
             <h5>Mobile</h5>
             <input
               type="text"
@@ -102,7 +102,7 @@ const Addshop = () => {
               onChange={(e) => setMobile(e.target.value)}
             />
           </div>
-          <div class="user-box align-self-start">
+          <div class="user-box align-self-mid">
             <h5>Address</h5>
             <input
               className="address"

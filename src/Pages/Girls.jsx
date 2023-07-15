@@ -29,7 +29,7 @@ const Girls = () => {
   console.log(girls);
   return (
     <div className="back">
-      <h5 className="boy">Available Rooms For Girls in {JSON.parse(
+      <h5 className="boy m-0">Available Rooms For Girls in {JSON.parse(
           window.localStorage.getItem("valu")
         )}</h5>
       <div className="container-fluid">

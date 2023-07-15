@@ -1,21 +1,21 @@
-.back{
-    background: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600");
+.back {
+  background: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.boy{
-    margin-left: 30%;
-    background-color: aliceblue;
-    margin-right: 40%;
-    text-align: center;
+.boy {
+  background-color: aliceblue;
+
+  text-align: center;
+  width: 100vw;
 }
 
-.h6{
+.h6 {
   color: rgb(252, 3, 3);
 }
 
-.value{
+.value {
   color: yellow;
 }

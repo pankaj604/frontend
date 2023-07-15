@@ -66,10 +66,10 @@ const Addhostel = () => {
               </select>
             </div>
           </div>
-          <div className="input-box d-flex flex-column justify-content-center   text text-center">
-            <div className="d-flex justify-content-center flex-row">
-              <div class="user-bo">
-                <h5>Available Seats</h5>
+          <div className="input-box seat-wid d-flex flex-column justify-content-center   text text-center">
+            <div className="d-flex seat-wid  justify-content-center flex-row">
+              <div class="user-bo seat-wid  m-1">
+                <h5 className="d-flex">Available Seats</h5>
 
                 <input
                   className="text text-center"
@@ -78,7 +78,7 @@ const Addhostel = () => {
                   onChange={(e) => setAvailableseats(e.target.value)}
                 />
               </div>
-              <div class="user-bo">
+              <div class="m-1 user-bo">
                 <h5>Total Seats</h5>
 
                 <input
@@ -89,8 +89,8 @@ const Addhostel = () => {
                 />
               </div>
             </div>
-            <div className="d-flex justify-content-center -flex-row">
-              <div class="user-bo">
+            <div className="d-flex seat-wid justify-content-center -flex-row">
+              <div class="user-bo m-1">
                 <h5>Gate time </h5>
 
                 <input
@@ -100,7 +100,7 @@ const Addhostel = () => {
                   onChange={(e) => setGatetime(e.target.value)}
                 />
               </div>
-              <div class="user-bo">
+              <div class="user-bo m-1">
                 <h5>Room Rent</h5>
 
                 <input
@@ -139,7 +139,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box align-self-start">
+            <div class="user-box align-self-">
               <h5>Address</h5>
               <input
                 type="text"
