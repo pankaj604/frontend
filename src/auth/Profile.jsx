@@ -14,6 +14,7 @@ const Profile = () => {
       })
       .then((res) => {
         setUser(res.data.user);
+        console.log(res.data.user)
         setIsAuthenticated(true);
       })
       .catch((error) => {

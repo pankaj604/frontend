@@ -6,10 +6,32 @@ import { Link } from "react-router-dom";
 import "../style/Header.css";
 import { Context, server } from "..";
 import axios from "axios";
-const Header = () => {
+const Header = (req, res) => {
+  const { isAuthenticated, loading, user } = useContext(Context);
+  const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
   const [city, setCity] = useState("");
+  const bio = () => {
+    axios
+      .get(`${server}/user/check`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUser(res.data.user);
+        if (!res.data.user._id) {
+          setIsAuthenticated(false);
+        }
+        else{
+          setIsAuthenticated(true)
+        }
+      })
+      .catch((error) => {
+        setUser({});
+        setIsAuthenticated(false);
+      });
+  };
 
   useEffect(() => {
+    bio();
     const initialget = () => {
       const valu = document.getElementById("section");
       setCity(valu.value);

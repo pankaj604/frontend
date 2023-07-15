@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Header from "./Pages/Header";
 
 import Profile from "./auth/Profile";
@@ -57,6 +57,7 @@ function App() {
         <Route path="/myshop" element={<MyShop />} />
         <Route path="/addhostel" element={<Addhostel />} />
         <Route path="/myhostel" element={<Myhostel/>} />
+      
       </Routes>
       <Toaster />
     </Router>
