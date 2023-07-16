@@ -51,7 +51,7 @@ const Addhostel = () => {
   };
 
   return (
-    <div className="container-fluid d-flex flex-column room">
+    <div className="container  overflow-auto d-flex flex-column room">
       <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add Hostel</h4>{" "}
       <form onSubmit={handleSubmit}>
         <div className="container d-flex flex-column justify-content-center   text text-center">
@@ -66,51 +66,48 @@ const Addhostel = () => {
               </select>
             </div>
           </div>
-          <div className="input-box seat-wid d-flex flex-column justify-content-center   text text-center">
-            <div className="d-flex seat-wid  justify-content-center flex-row">
-              <div class="user-bo seat-wid  m-1">
-                <h5 className="d-flex">Available Seats</h5>
-
-                <input
-                  className="text text-center"
-                  type="text"
-                  value={availableseats}
-                  onChange={(e) => setAvailableseats(e.target.value)}
-                />
-              </div>
-              <div class="m-1 user-bo">
-                <h5>Total Seats</h5>
-
-                <input
-                  className="text text-center"
-                  type="text"
-                  value={totalseats}
-                  onChange={(e) => setTotalseats(e.target.value)}
-                />
-              </div>
+          <div className="input-box  d-flex flex-column align-items-center justify-content-center   text text-center">
+            <div class="user-box">
+              <h5>Available Seats</h5>
+              <input
+                className="text text-center"
+                type="text"
+                value={availableseats}
+                onChange={(e) => setAvailableseats(e.target.value)}
+              />
             </div>
-            <div className="d-flex seat-wid justify-content-center -flex-row">
-              <div class="user-bo m-1">
-                <h5>Gate time </h5>
+            <div class="user-box">
+              <h5>Total Seats</h5>
 
-                <input
-                  className="text text-center"
-                  type="text"
-                  value={gatetime}
-                  onChange={(e) => setGatetime(e.target.value)}
-                />
-              </div>
-              <div class="user-bo m-1">
-                <h5>Room Rent</h5>
-
-                <input
-                  className="text text-center"
-                  type="text"
-                  value={rent}
-                  onChange={(e) => setRent(e.target.value)}
-                />
-              </div>
+              <input
+                className="text text-center"
+                type="text"
+                value={totalseats}
+                onChange={(e) => setTotalseats(e.target.value)}
+              />
             </div>
+
+            <div class="user-box">
+              <h5>Gate time </h5>
+
+              <input
+                className="text text-center"
+                type="text"
+                value={gatetime}
+                onChange={(e) => setGatetime(e.target.value)}
+              />
+            </div>
+            <div class="user-box">
+              <h5>Room Rent</h5>
+
+              <input
+                className="text text-center"
+                type="text"
+                value={rent}
+                onChange={(e) => setRent(e.target.value)}
+              />
+            </div>
+
             <div class="user-box">
               <h5>Nearby</h5>
               <input

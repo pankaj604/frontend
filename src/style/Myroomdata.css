@@ -3,9 +3,9 @@
 }
 
 .input {
-  background-color: rgb(83, 83, 199);
+  background-color: rgb(3, 3, 113);
   width: 50%;
-  border-radius: 7px;
+  
 }
 .seat{
     width: 60%;
@@ -23,7 +23,4 @@
 .in-seat {
   width: 60%;
   height: 40px;
-}
-.seat-btn {
-    border-radius: 10px;
 }

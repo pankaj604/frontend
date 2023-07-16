@@ -60,7 +60,7 @@ const Myroomdata = ({
   };
   return (
     <>
-      <div div className="one m-3  p-0 col-xl-2 bg-dark text-white">
+      <div div className="one m-3  p-0 col-xl-2  text-white">
         <div className="image p-0">
           <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>
@@ -95,23 +95,23 @@ const Myroomdata = ({
           </h6>
           <br />
         </div>
-        <div className="operation d-flex flex-row  ">
-          <div className="input d-flex  flex-row m-2">
+        <div className="operation  d-flex flex-row  ">
+          <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
             <input
-              className="chackbox m-2"
+              className="chackbox "
               disabled={button}
               onChange={() => updateHandler(id)}
               type="checkbox"
               checked={light}
             />
-            <h5 className="choise m-2">ON/OFF</h5>
+            <h5 className="m-1 choise">Available</h5>
           </div>
 
           <div className="button align-self-end m-2">
             <button
               disabled={button}
               onClick={() => deleteHandler(id)}
-              className="btn"
+              className="btn text-light  btn-danger"
             >
               Delete
             </button>

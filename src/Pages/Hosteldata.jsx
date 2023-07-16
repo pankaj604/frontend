@@ -14,7 +14,7 @@ const Hosteldata = ({
 }) => {
   return (
     <>
-      <div className=" one m-3  p-0 col-xl-2 bg-dark text-white">
+      <div className=" one m-3  p-0 col-xl-2  text-white">
         <div className="image p-0">
           <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>
@@ -40,7 +40,7 @@ const Hosteldata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Address <p className="m-0 d-inline value">{address}</p>
+            Address - <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

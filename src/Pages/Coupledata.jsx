@@ -12,10 +12,7 @@ const Coupledata = ({ city, rent, address, mobile, image , size ,facilities }) =
             room rent is <p className="m-0 d-inline value">{rent}</p>
           </h6>
           <br />
-          <h6 className="d-inline m-0 h6">
-            Address <p className="m-0 d-inline value">{address}</p>
-          </h6>
-          <br />
+        
           <h6 className="d-inline m-0 h6">
             Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
           </h6>
@@ -26,6 +23,10 @@ const Coupledata = ({ city, rent, address, mobile, image , size ,facilities }) =
           <br />
           <h6 className="d-inline m-0 h6">
             Facilities <p className="m-0 d-inline value">{facilities}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Address -  <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
         </div>

@@ -4,17 +4,15 @@
 
 .options{
     background-color: aliceblue;
-    
-    border-radius: 10px;
+ 
 }
 
-.user-box{
-    
+.check{
+    width: 70vw;
 }
+
 .address{
     height: 10vh;
 }
 
-.seat-wid{
-    width: 80vw;
-}
+

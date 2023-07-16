@@ -10,8 +10,8 @@
 }
 
 body {
-    background: #ecf0f3;
-    background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360");
+    background: gainsboro;
+    /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

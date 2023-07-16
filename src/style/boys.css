@@ -1,5 +1,5 @@
 .back {
-  background: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600");
+  /* background: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12,9 +12,7 @@
   width: 100vw;
 }
 
-.h6 {
-  color: rgb(252, 3, 3);
-}
+
 
 .value {
   color: yellow;

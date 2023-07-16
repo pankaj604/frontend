@@ -134,7 +134,7 @@ const Addroom = () => {
             <button
               className="mt-3"
               disabled={
-                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+                button || (selectedFile && selectedFile.size > 5 * 1024 * 1024)
               }
               type="submit"
             >

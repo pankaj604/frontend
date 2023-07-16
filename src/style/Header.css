@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center; 
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-   border-radius: 10px;
+
 }
 .wel-1{
   background-color: rgb(28, 136, 231);
@@ -18,7 +18,7 @@
   background-repeat: no-repeat;
   background-position: center; 
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-   border-radius: 10px;
+
 }
 
 .wel{
@@ -35,14 +35,14 @@
   background-position: center; 
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
    color: black;
-   border-radius: 10px;
+
 }
 
 
 .slog{
   background-color: yellow;
   color: red;
-  border-radius: 10px;
+
 
 }
 
@@ -51,11 +51,17 @@
   letter-spacing: 1px;
   text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
     0px -4px 10px rgba(255,255,255,0.3);
+   
 }
-
+.underline{
+  text-decoration: underline;
+}
 .add-room{
   background-color: rgb(28, 136, 231);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
   color: black;
-  border-radius: 10px;
+;
+}
+.add{
+  color: white;
 }
