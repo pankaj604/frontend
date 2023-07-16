@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
+import imageCompression from "browser-image-compression";
 const Addhostel = () => {
   const [button, setbutton] = useState(false);
   const [area, setArea] = useState("");
@@ -15,8 +16,20 @@ const Addhostel = () => {
   const [totalseats, setTotalseats] = useState("");
   const [gatetime, setGatetime] = useState("");
   const [facilites, setFacilites] = useState("");
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const handleFileChange = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+      
+    };
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile(compressedFile);
+      console.log(compressedFile.size/1024/1024);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
@@ -168,7 +181,7 @@ const Addhostel = () => {
             </div>
             <button
               disabled={
-                button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+                button
               }
               type="submit"
             >

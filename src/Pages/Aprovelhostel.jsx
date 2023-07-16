@@ -5,13 +5,14 @@ import { toast } from "react-hot-toast";
 import Myshopdata from "./Myshopdata";
 import Myhosteldata from "./Myhosteldata";
 import "../style/Myroomdata.css";
-const Myhostel = () => {
+import Aprovelhosteldata from "./Aprovelhosteldata";
+const Aprovelhostel = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [hostel, setMyhostel] = useState([]);
 
   const mydata = async () => {
     await axios
-      .get(`${server}/hostel/myhostel`, {
+      .get(`${server}/hostel/all`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -35,7 +36,7 @@ const Myhostel = () => {
             {hostel.map((i) => {
               return (
                 <>
-                  <Myhosteldata
+                  <Aprovelhosteldata
                     city={i.city}
                     rent={i.rent}
                     address={i.address}
@@ -49,8 +50,8 @@ const Myhostel = () => {
                     image={i.image}
                     id={i._id}
                     status={i.status ? "ON" : "OFF"}
-                    key={i._id}
                     isApproved={i.isApproved}
+                    key={i._id}
                   />
                 </>
               );
@@ -62,4 +63,4 @@ const Myhostel = () => {
   );
 };
 
-export default Myhostel;
+export default Aprovelhostel;

@@ -46,6 +46,7 @@ const Myroom = () => {
                     image={i.image}
                     size={i.size}
                     facilities={i.facilities}
+                    isApproved={i.isApproved}
                   />
                 </>
               );

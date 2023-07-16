@@ -14,6 +14,7 @@ const Myroomdata = ({
   image,
   size,
   facilities,
+  isApproved,
 }) => {
   const { setRefresh, refresh } = useContext(Context);
   const [button, sebutton] = useState(false);
@@ -96,17 +97,22 @@ const Myroomdata = ({
           <br />
         </div>
         <div className="operation  d-flex flex-row  ">
-          <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
-            <input
-              className="chackbox "
-              disabled={button}
-              onChange={() => updateHandler(id)}
-              type="checkbox"
-              checked={light}
-            />
-            <h5 className="m-1 choise">Available</h5>
-          </div>
-
+          {isApproved ? (
+            <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
+              <input
+                className="chackbox "
+                disabled={button}
+                onChange={() => updateHandler(id)}
+                type="checkbox"
+                checked={light}
+              />
+              <h5 className="m-1 choise">Available</h5>
+            </div>
+          ) : (
+            <div className="btn btn-warning ">
+              <h6>Waiting for Approval</h6>
+            </div>
+          )}
           <div className="button align-self-end m-2">
             <button
               disabled={button}

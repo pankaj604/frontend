@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css"
+import imageCompression from "browser-image-compression";
 const Addshop = () => {
   const [size, setSize] = useState("");
   const [area, setArea] = useState("");
@@ -12,8 +13,20 @@ const Addshop = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [address, setAddress] = useState("");
   const [button, setbutton] = useState(false);
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+  const handleFileChange = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+      
+    };
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile(compressedFile);
+      console.log(compressedFile.size/1024/1024);
+    } catch (error) {
+      console.log(error);
+    }
   };
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
@@ -126,7 +139,7 @@ const Addshop = () => {
           <button
             className="mt-3"
             disabled={
-              button || (selectedFile && selectedFile.size > 2 * 1024 * 1024)
+              button
             }
             type="submit"
           >

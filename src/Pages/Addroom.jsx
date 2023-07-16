@@ -6,6 +6,7 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
 import { Context } from "..";
+import imageCompression from "browser-image-compression";
 const Addroom = () => {
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
@@ -13,9 +14,26 @@ const Addroom = () => {
   const [size, setsize] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [button, setbutton] = useState(false);
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
+
+  //
+
+  const handleFileChange = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+      
+    };
+    try {
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile(compressedFile);
+      console.log(compressedFile.size/1024/1024);
+    } catch (error) {
+      console.log(error);
+    }
   };
+  //
+
   const [address, setAddress] = useState("");
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const handleSubmit = async (e) => {
@@ -134,7 +152,7 @@ const Addroom = () => {
             <button
               className="mt-3"
               disabled={
-                button || (selectedFile && selectedFile.size > 5 * 1024 * 1024)
+                button
               }
               type="submit"
             >

@@ -7,7 +7,7 @@ import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Owner.css";
 const Owner = () => {
-  const { setUser, isAuthenticated, setIsAuthenticated, setLoading , user} =
+  const { setUser, isAuthenticated, setIsAuthenticated, setLoading, user } =
     useContext(Context);
 
   const logoutHandler = async () => {
@@ -29,42 +29,68 @@ const Owner = () => {
       <div className=" d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
         <h4 className=" text text-center mt-1 ">WelCome {user?.name}</h4>
       </div>
-         <div className="owner-nav d-flex flex-row justify-content-center  text text-center">
+      <div className="owner-nav d-flex flex-row justify-content-center  text text-center">
         <div className="myroom m-3">
-          <Link className="choice" to={"/header"}>Home</Link>
+          <Link className="choice" to={"/header"}>
+            Home
+          </Link>
         </div>
         <div className="myroom m-3 ">
-          <Link  className="choice" to={"/profile"}>Your profile</Link>
+          <Link className="choice" to={"/profile"}>
+            Your profile
+          </Link>
         </div>
 
         <div className="myroom m-3">
-          <Link className="choice" onClick={logoutHandler}>Logout</Link>
+          <Link className="choice" onClick={logoutHandler}>
+            Logout
+          </Link>
+        </div>
+      </div>
+      
+      <div className="add-rooms help d-flex justify-content-center mt-2 flex-row text text-center">
+        <div className="myroom m-2">
+          <h6 className="choice" to={"/myroom"}>
+            Call me for any help +919685290529
+          </h6>
         </div>
       </div>
       <div className="add-rooms mt-2 d-flex flex-row justify-content-center text text-center">
         <div className="add m-2">
-          <Link className="choice" to={"/addroom"}>Add New Room</Link>
+          <Link className="choice" to={"/addroom"}>
+            Add New Room
+          </Link>
         </div>
         <div className="add m-2">
-          <Link className="choice" to={"/addshop"}>Add New Shop/Office</Link>
+          <Link className="choice" to={"/addshop"}>
+            Add New Shop/Office
+          </Link>
         </div>
         <div className="add m-2">
-          <Link className="choice" to={"/addhostel"}>Add New Hostle</Link>
+          <Link className="choice" to={"/addhostel"}>
+            Add New Hostle
+          </Link>
         </div>
       </div>
 
       <div className="add-rooms d-flex justify-content-center flex-row text text-center">
         <div className="myroom m-2">
-          <Link className="choice" to={"/myroom"}>Your Rooms</Link>
+          <Link className="choice" to={"/myroom"}>
+            Your Rooms
+          </Link>
         </div>
         <div className="myroom m-2">
-          <Link className="choice" to={"/myshop"}>Your shop/office</Link>
+          <Link className="choice" to={"/myshop"}>
+            Your shop/office
+          </Link>
         </div>
         <div className="myroom m-2">
-          <Link className="choice" to={"/myhostel"}>Your hostels</Link>
+          <Link className="choice" to={"/myhostel"}>
+            Your hostels
+          </Link>
         </div>
       </div>
-   
+
     </div>
   );
 };

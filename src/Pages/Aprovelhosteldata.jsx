@@ -3,7 +3,7 @@ import { Context, server } from "..";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 
-const Myhosteldata = ({
+const Aprovelhosteldata = ({
   city,
   rent,
   address,
@@ -17,7 +17,7 @@ const Myhosteldata = ({
   image,
   id,
   status,
-  isApproved
+  isApproved,
 }) => {
   const [button, setbutton] = useState(false);
   const { refresh, setRefresh } = useContext(Context);
@@ -52,7 +52,7 @@ const Myhosteldata = ({
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
-        `${server}/hostel/update/${id}`,
+        `${server}/hostel/approveHostel/${id}`,
         {},
         {
           withCredentials: true,
@@ -71,9 +71,12 @@ const Myhosteldata = ({
       const resultt = window.confirm("are you sure to delet");
       if (resultt) {
         setbutton(false);
-        const { data } = await axios.delete(`${server}/hostel/delete/${id}`, {
-          withCredentials: true,
-        });
+        const { data } = await axios.delete(
+          `${server}/hostel/approveHostel/${id}`,
+          {
+            withCredentials: true,
+          }
+        );
 
         toast.success(data.message);
         setRefresh((prev) => !prev);
@@ -133,33 +136,15 @@ const Myhosteldata = ({
           <br />
         </div>
         <div className="operation d-flex flex-row  ">
-
-          {isApproved ? (
-          <div className=" d-flex  flex-row m-2">
+          <div className=" d-flex bg-dark flex-row m-2">
             <input
               className="chackbox mt-2"
               onChange={() => updateHandler(id)}
               type="checkbox"
-              checked={light}
+              checked={isApproved}
             />
-          </div>):
-          (  <div className="btn btn-warning ">
-          <h6>Waiting for Approval</h6>
-        </div>)}
-
-          {isApproved &&
-          <div className="seat d-flex flex-row">
-            <input
-              className="chackbox text text-center m-2 in-seat"
-              placeholder="Seats"
-              type="number"
-              onChange={(e) => setSeat(e.target.value)}
-            />
-            <button className="seat-btn p-2 mt-2 mb-2" onClick={updateseats}>
-              Set
-            </button>
+            <h5 className="m-1 choise">Approved</h5>
           </div>
-          }
 
           <div className="button align-self-end m-2">
             <button
@@ -176,4 +161,4 @@ const Myhosteldata = ({
   );
 };
 
-export default Myhosteldata;
+export default Aprovelhosteldata;

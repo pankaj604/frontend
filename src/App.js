@@ -27,6 +27,10 @@ import Shop from "./Pages/Shop";
 import MyShop from "./Pages/MyShop";
 import Addhostel from "./Pages/Addhostel";
 import Myhostel from "./Pages/Myhostel";
+import Aprovel from "./Pages/Aprovel";
+import Aprovelshop from "./Pages/Aprovelshop";
+import Aprovelshopdata from "./Pages/Aprovelshopdata";
+import Aprovelhostel from "./Pages/Aprovelhostel";
 
 function App() {
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
@@ -57,6 +61,9 @@ function App() {
         <Route path="/myshop" element={<MyShop />} />
         <Route path="/addhostel" element={<Addhostel />} />
         <Route path="/myhostel" element={<Myhostel/>} />
+        <Route path="/admin/room-aprovel" element={<Aprovel/>} />
+        <Route path="/admin/shop-aprovel" element={<Aprovelshop/>} />
+        <Route path="/admin/hostel-aprovel" element={<Aprovelhostel/>} />
       
       </Routes>
       <Toaster />

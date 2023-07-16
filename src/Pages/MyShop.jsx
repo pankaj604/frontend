@@ -47,6 +47,7 @@ const MyShop = () => {
                     image={i.image}
                     id={i._id}
                     status={i.status ? "ON" : "OFF"}
+                    isApproved={i.isApproved}
                   />
                 </>
               );

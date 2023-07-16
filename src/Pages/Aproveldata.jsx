@@ -2,24 +2,23 @@ import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
-
-const Myshopdata = ({
+import "../style/Myroomdata.css";
+const Aproveldata = ({
   city,
   rent,
   address,
   mobile,
-  image,
-  area,
-  nearby,
-  size,
-  status,
+  forr,
   id,
-  isApproved
+  image,
+  size,
+  facilities,
+  isApproved,
 }) => {
-  const [button, setbutton] = useState(false);
   const { setRefresh, refresh } = useContext(Context);
+  const [button, sebutton] = useState(false);
   let light = false;
-  if (`${status}` === "ON") {
+  if (`${isApproved}` === "ON") {
     light = true;
   } else {
     light = false;
@@ -27,7 +26,7 @@ const Myshopdata = ({
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
-        `${server}/shop/update/${id}`,
+        `${server}/room/aprovedRoom/${id}`,
         {},
         {
           withCredentials: true,
@@ -35,6 +34,7 @@ const Myshopdata = ({
       );
 
       toast.success(data.message);
+
       setRefresh((prev) => !prev);
     } catch (error) {
       toast.error(error.response.data.message);
@@ -42,21 +42,19 @@ const Myshopdata = ({
   };
   const deleteHandler = async (id) => {
     try {
-      const resul = window.confirm("are you sure to delet");
-      if (resul) {
-        setbutton(false);
-        const { data } = await axios.delete(`${server}/shop/delet/${id}`, {
+      const resu = window.confirm("are you sure to delet");
+      if (resu) {
+        sebutton(false);
+        const { data } = await axios.delete(`${server}/room/delet/${id}`, {
           withCredentials: true,
         });
 
         toast.success(data.message);
+        sebutton(true);
         setRefresh((prev) => !prev);
-        setbutton(true);
-      } else {
-        return;
       }
     } catch (error) {
-      setbutton(false);
+      sebutton(false);
       toast.error(error.response.data.message);
     }
   };
@@ -85,11 +83,11 @@ const Myshopdata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Area <p className="m-0 d-inline value">{area}</p>
+            For <p className="m-0 d-inline value">{forr}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Facilities <p className="m-0 d-inline value">{nearby}</p>
+            Facilities <p className="m-0 d-inline value">{facilities}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
@@ -97,31 +95,23 @@ const Myshopdata = ({
           </h6>
           <br />
         </div>
-
-        <div className="operation d-flex justify-content-around flex-row ">
-          <div className="input d-flex justify-content-center  flex-row m-2">
-          {isApproved ? (
-            <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
-              <input
-                className="chackbox "
-                disabled={button}
-                onChange={() => updateHandler(id)}
-                type="checkbox"
-                checked={light}
-              />
-              <h5 className="m-1 choise">Available</h5>
-            </div>
-          ) : (
-            <div className="btn btn-warning ">
-              <h6>Waiting for Approval</h6>
-            </div>
-          )}
+        <div className="operation  d-flex flex-row  ">
+          <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
+            <input
+              className="chackbox "
+              disabled={button}
+              onChange={() => updateHandler(id)}
+              type="checkbox"
+              checked={light}
+            />
+            <h5 className="m-1 choise">Approved</h5>
           </div>
+
           <div className="button align-self-end m-2">
             <button
               disabled={button}
               onClick={() => deleteHandler(id)}
-              className="btn text-light"
+              className="btn text-light  btn-danger"
             >
               Delete
             </button>
@@ -132,4 +122,4 @@ const Myshopdata = ({
   );
 };
 
-export default Myshopdata;
+export default Aproveldata;

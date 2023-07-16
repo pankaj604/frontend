@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 
-const Myshopdata = ({
+const Aprovelshopdata = ({
   city,
   rent,
   address,
@@ -12,22 +12,16 @@ const Myshopdata = ({
   area,
   nearby,
   size,
-  status,
   id,
-  isApproved
+  isApproved,
 }) => {
   const [button, setbutton] = useState(false);
-  const { setRefresh, refresh } = useContext(Context);
-  let light = false;
-  if (`${status}` === "ON") {
-    light = true;
-  } else {
-    light = false;
-  }
+  const {refresh,setRefresh } = useContext(Context);
+
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
-        `${server}/shop/update/${id}`,
+        `${server}/shop/approveShop/${id}`,
         {},
         {
           withCredentials: true,
@@ -100,22 +94,16 @@ const Myshopdata = ({
 
         <div className="operation d-flex justify-content-around flex-row ">
           <div className="input d-flex justify-content-center  flex-row m-2">
-          {isApproved ? (
             <div className="input d-flex justify-content-center align-items-center  flex-row m-2">
               <input
                 className="chackbox "
                 disabled={button}
                 onChange={() => updateHandler(id)}
                 type="checkbox"
-                checked={light}
+                checked={isApproved}
               />
-              <h5 className="m-1 choise">Available</h5>
+              <h5 className="m-1 choise">Approved</h5>
             </div>
-          ) : (
-            <div className="btn btn-warning ">
-              <h6>Waiting for Approval</h6>
-            </div>
-          )}
           </div>
           <div className="button align-self-end m-2">
             <button
@@ -132,4 +120,4 @@ const Myshopdata = ({
   );
 };
 
-export default Myshopdata;
+export default Aprovelshopdata;
