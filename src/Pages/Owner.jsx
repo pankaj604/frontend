@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Addroom from "./Addroom";
 import { Link, Navigate } from "react-router-dom";
 import "../style/Owner.css";
@@ -7,6 +7,27 @@ import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Owner.css";
 const Owner = () => {
+  const role = false;
+  const bio = () => {
+    axios
+      .get(`${server}/user/me`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUser(res.data.user);
+
+        setIsAuthenticated(true);
+      })
+      .catch((error) => {
+        setUser({});
+        setIsAuthenticated(false);
+      });
+  };
+
+  useEffect(() => {
+    //Runs only on the first render
+    bio();
+  }, []);
   const { setUser, isAuthenticated, setIsAuthenticated, setLoading, user } =
     useContext(Context);
 
@@ -29,6 +50,7 @@ const Owner = () => {
       <div className=" d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
         <h4 className=" text text-center mt-1 ">WelCome {user?.name}</h4>
       </div>
+
       <div className="owner-nav d-flex flex-row justify-content-center  text text-center">
         <div className="myroom m-3">
           <Link className="choice" to={"/header"}>
@@ -47,7 +69,29 @@ const Owner = () => {
           </Link>
         </div>
       </div>
-      
+      {user && user.role === 'admin'  ? (
+        <div className="admin d-flex flex-row justify-content-center mt-2  text text-center">
+          <div className="myroom m-3">
+            <Link className="choice" to={"/admin/room-aprovel"}>
+              Room Aprovel
+            </Link>
+          </div>
+          <div className="myroom m-3 ">
+            <Link className="choice" to={"/admin/shop-aprovel"}>
+              Shop Aprovel
+            </Link>
+          </div>
+
+          <div className="myroom m-3">
+            <Link className="choice" to={"/admin/hostel-aprovel"}>
+              Hostel Aproval
+            </Link>
+          </div>
+        </div>
+      ) : (
+        <div> </div>
+      )}
+
       <div className="add-rooms help d-flex justify-content-center mt-2 flex-row text text-center">
         <div className="myroom m-2">
           <h6 className="choice" to={"/myroom"}>
@@ -90,7 +134,6 @@ const Owner = () => {
           </Link>
         </div>
       </div>
-
     </div>
   );
 };

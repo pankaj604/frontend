@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context, server } from '..';
 import Logout from './Logout';
 import axios from 'axios';
@@ -23,8 +23,10 @@ const Profile = () => {
       });
   };
 
-  bio();
-  
+  useEffect(() => {
+    //Runs only on the first render
+    bio()
+  }, []);
   return (
     <div className='profile-nav text text-center'>
       <h2 className=''>Your Profile</h2>

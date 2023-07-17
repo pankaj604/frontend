@@ -22,7 +22,7 @@ const Aprovel = () => {
         toast.error(e.response.data.message);
       });
   };
-  console.log(myroom)
+
   useEffect(() => {
     mydata();
   }, [refresh]);
@@ -33,7 +33,7 @@ const Aprovel = () => {
         <h5 className="choice text text-center"> Your Rooms</h5>
         <div className="container-fluid">
           <div className="row">
-            {myroom &&  myroom.map((i) => {
+            { myroom &&  myroom.map((i) => {
               return (
                 <>
                   <Aproveldata
