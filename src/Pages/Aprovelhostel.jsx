@@ -9,7 +9,9 @@ import Aprovelhosteldata from "./Aprovelhosteldata";
 const Aprovelhostel = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [hostel, setMyhostel] = useState([]);
-
+  const [count, setcount] = useState("");
+  const [coun, setcoun] = useState("");
+  const [total, settotal] = useState("");
   const mydata = async () => {
     await axios
       .get(`${server}/hostel/all`, {
@@ -17,6 +19,9 @@ const Aprovelhostel = () => {
       })
       .then((res) => {
         setMyhostel(res.data.hostel);
+        settotal(res.data.total)
+        setcount(res.data.count)
+        setcoun(res.data.coun)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -30,7 +35,9 @@ const Aprovelhostel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center">Your Hostles</h5>
+        <h5 className="choice text text-center"> total Hostles {total}</h5>
+        <h5 className="choice text text-center"> approval {count} </h5>
+        <h5 className="choice text text-center"> not approval {coun} </h5>
         <div className="container-fluid">
           <div className="row">
             {hostel.map((i) => {

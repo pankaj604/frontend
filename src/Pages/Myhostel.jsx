@@ -8,7 +8,9 @@ import "../style/Myroomdata.css";
 const Myhostel = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [hostel, setMyhostel] = useState([]);
-
+  const [count, setcount] = useState("");
+  const [coun, setcoun] = useState("");
+  const [total, settotal] = useState("");
   const mydata = async () => {
     await axios
       .get(`${server}/hostel/myhostel`, {
@@ -16,6 +18,9 @@ const Myhostel = () => {
       })
       .then((res) => {
         setMyhostel(res.data.hostel);
+        settotal(res.data.total)
+        setcount(res.data.count)
+        setcoun(res.data.coun)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -29,7 +34,9 @@ const Myhostel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center">Your Hostles</h5>
+      <h5 className="choice text text-center"> Your total hostals room {total}</h5>
+        <h5 className="choice text text-center"> room available {count}</h5>
+        <h5 className="choice text text-center"> not available {coun}</h5>
         <div className="container-fluid">
           <div className="row">
             {hostel.map((i) => {

@@ -6,6 +6,7 @@ import { Context, server } from "../index.js";
 import { useEffect } from "react";
 import "../style/login.css";
 const Login = () => {
+  
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,3 +89,4 @@ const Login = () => {
 };
 
 export default Login;
+

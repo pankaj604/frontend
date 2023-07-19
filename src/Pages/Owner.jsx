@@ -70,10 +70,10 @@ const Owner = () => {
         </div>
       </div>
       {user && user.role === 'admin'  ? (
-        <div className="admin d-flex flex-row justify-content-center mt-2  text text-center">
-          <div className="myroom m-3">
+        <div className="admin d-flex flex-row justify-content-center text-light mt-2  text text-center">
+          <div className="myroom  m-3">
             <Link className="choice" to={"/admin/room-aprovel"}>
-              Room Aprovel
+              Room Aprovel 
             </Link>
           </div>
           <div className="myroom m-3 ">

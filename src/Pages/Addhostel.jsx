@@ -21,12 +21,12 @@ const Addhostel = () => {
 
     const options = {
       maxSizeMB: 1,
-      
     };
     try {
+      setbutton(true);
       const compressedFile = await imageCompression(imageFile, options);
       setSelectedFile(compressedFile);
-      console.log(compressedFile.size/1024/1024);
+      setbutton(false);
     } catch (error) {
       console.log(error);
     }
@@ -179,12 +179,8 @@ const Addhostel = () => {
             <div>
               <input type="file" onChange={handleFileChange} />
             </div>
-            <button
-              disabled={
-                button
-              }
-              type="submit"
-            >
+            {button ? <h6>image loading</h6> : <></>}
+            <button disabled={button} type="submit">
               Submit
             </button>
           </div>

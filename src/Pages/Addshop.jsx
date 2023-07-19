@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
-import "../style/Addroom.css"
+import "../style/Addroom.css";
 import imageCompression from "browser-image-compression";
 const Addshop = () => {
   const [size, setSize] = useState("");
@@ -18,12 +18,12 @@ const Addshop = () => {
 
     const options = {
       maxSizeMB: 1,
-      
     };
     try {
+      setbutton(true);
       const compressedFile = await imageCompression(imageFile, options);
       setSelectedFile(compressedFile);
-      console.log(compressedFile.size/1024/1024);
+      setbutton(false);
     } catch (error) {
       console.log(error);
     }
@@ -72,80 +72,75 @@ const Addshop = () => {
               </select>
             </div>
           </div>
-       
-        <div className="input-box d-flex flex-column justify-content-center   text text-center">
-          <div class="user-box">
-            <h5>Nearby</h5>
-            <input
-              type="text"
-              value={nearby}
-              onChange={(e) => setNearby(e.target.value)}
-            />
-          </div>
-          <div class="user-box">
-            <h5>Area</h5>
-            <input
-              type="text"
-              value={area}
-              onChange={(e) => setArea(e.target.value)}
-            />
-          </div>
-          <div class="user-box">
-            <h5>Size</h5>
-            <input
-              type="text"
-              value={size}
-              onChange={(e) => setSize(e.target.value)}
-            />
-          </div>
-          <div class="user-box">
-            <h5>Room Rent</h5>
-            <input
-              type="text"
-              value={rent}
-              onChange={(e) => setRent(e.target.value)}
-            />
-          </div>
 
-          <div class="user-box align-self-mid">
-            <h5>Mobile</h5>
-            <input
-              type="text"
-              value={mobile}
-              onChange={(e) => setMobile(e.target.value)}
-            />
+          <div className="input-box d-flex flex-column justify-content-center   text text-center">
+            <div class="user-box">
+              <h5>Nearby</h5>
+              <input
+                type="text"
+                value={nearby}
+                onChange={(e) => setNearby(e.target.value)}
+              />
+            </div>
+            <div class="user-box">
+              <h5>Area</h5>
+              <input
+                type="text"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
+              />
+            </div>
+            <div class="user-box">
+              <h5>Size</h5>
+              <input
+                type="text"
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
+              />
+            </div>
+            <div class="user-box">
+              <h5>Room Rent</h5>
+              <input
+                type="text"
+                value={rent}
+                onChange={(e) => setRent(e.target.value)}
+              />
+            </div>
+
+            <div class="user-box align-self-mid">
+              <h5>Mobile</h5>
+              <input
+                type="text"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+              />
+            </div>
+            <div class="user-box align-self-mid">
+              <h5>Address</h5>
+              <input
+                className="address"
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+              />
+            </div>
+            <div>
+              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
+                <>
+                  <h4>photo size should be less than 2 mb</h4>
+                </>
+              )}
+            </div>
           </div>
-          <div class="user-box align-self-mid">
-            <h5>Address</h5>
-            <input
-              className="address"
-              type="text"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-            />
+          <div className=" input-box mt-2 d-flex flex-column justify-content-center   text text-center">
+            <div>
+              <input type="file" onChange={handleFileChange} />
+            </div>
+            {button ? <h6>image loading</h6> : <></>}
+            <button className="mt-3" disabled={button} type="submit">
+              Submit
+            </button>
           </div>
-          <div>
-            {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
-              <>
-                <h4>photo size should be less than 2 mb</h4>
-              </>
-            )}
-          </div>
-        </div>
-        <div className=" input-box mt-2 d-flex flex-column justify-content-center   text text-center">
-          <div>
-            <input type="file" onChange={handleFileChange} />
-          </div>
-          <button
-            className="mt-3"
-            disabled={
-              button
-            }
-            type="submit"
-          >
-            Submit
-          </button>
-        </div>
         </div>
       </form>
     </div>

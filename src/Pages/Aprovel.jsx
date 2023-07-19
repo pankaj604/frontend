@@ -5,10 +5,14 @@ import { toast } from "react-hot-toast";
 import Myroomdata from "./Myroomdata";
 import "../style/boys.css";
 import Aproveldata from "./Aproveldata";
+import { Link } from "react-router-dom";
 const Aprovel = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [myroom, setMyroom] = useState([]);
-  
+  const [count, setcount] = useState("");
+  const [coun, setcoun] = useState("");
+  const [total, settotal] = useState("");
+
   const mydata = async () => {
     await axios
       .get(`${server}/room/all`, {
@@ -16,7 +20,9 @@ const Aprovel = () => {
       })
       .then((res) => {
         setMyroom(res.data.rooms);
-       
+        settotal(res.data.total);
+        setcount(res.data.count);
+        setcoun(res.data.coun);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -30,29 +36,33 @@ const Aprovel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center"> Your Rooms</h5>
+        <h5 className="choice text text-center"> total Rooms {total}</h5>
+        <h5 className="choice text text-center"> approval {count} </h5>
+        <h5 className="choice text text-center"> not approval {coun} </h5>
+
         <div className="container-fluid">
           <div className="row">
-            { myroom &&  myroom.map((i) => {
-              return (
-                <>
-                  <Aproveldata
-                    city={i.city}
-                    rent={i.rent}
-                    address={i.address}
-                    mobile={i.mobile}
-                    forr={i.forr}
-                    status={i.status ? "ON" : "OFF"}
-                    id={i._id}
-                    key={i._id}
-                    image={i.image}
-                    size={i.size}
-                    facilities={i.facilities}
-                    isApproved={i.isApproved ? "ON" : "OFF"}
-                  />
-                </>
-              );
-            })}
+            {myroom &&
+              myroom.map((i) => {
+                return (
+                  <>
+                    <Aproveldata
+                      city={i.city}
+                      rent={i.rent}
+                      address={i.address}
+                      mobile={i.mobile}
+                      forr={i.forr}
+                      status={i.status ? "ON" : "OFF"}
+                      id={i._id}
+                      key={i._id}
+                      image={i.image}
+                      size={i.size}
+                      facilities={i.facilities}
+                      isApproved={i.isApproved ? "ON" : "OFF"}
+                    />
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>
