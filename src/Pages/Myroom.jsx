@@ -33,9 +33,9 @@ const Myroom = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center"> Your total Rooms {total}</h5>
-        <h5 className="choice text text-center">available {count}</h5>
-        <h5 className="choice text text-center"> not available {coun}</h5>
+        <h5 className="choice text text-center"> Your Total Rooms {total}</h5>
+        <h5 className="choice text text-center">Available {count}</h5>
+        <h5 className="choice text text-center"> Not Available {coun}</h5>
         <div className="container-fluid">
           <div className="row">
             {myroom.map((i) => {

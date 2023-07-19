@@ -36,7 +36,7 @@ const Boys = () => {
   return (
     <>
       <div className="back">
-        <h5 className=" boy m-0 ">Available rooms for boys in {JSON.parse(
+        <h5 className=" boy m-0 ">Available Rooms For Boys In {JSON.parse(
           window.localStorage.getItem("valu")
         )}</h5>
         <div className="container-fluid">

@@ -34,9 +34,9 @@ const Myhostel = () => {
   return (
     <>
       <div className="back">
-      <h5 className="choice text text-center"> Your total hostals room {total}</h5>
-        <h5 className="choice text text-center"> room available {count}</h5>
-        <h5 className="choice text text-center"> not available {coun}</h5>
+      <h5 className="choice text text-center"> Your Total Hostals Room {total}</h5>
+        <h5 className="choice text text-center"> Room Available {count}</h5>
+        <h5 className="choice text text-center"> Not Available {coun}</h5>
         <div className="container-fluid">
           <div className="row">
             {hostel.map((i) => {

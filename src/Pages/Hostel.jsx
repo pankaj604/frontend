@@ -31,7 +31,7 @@ const Hostel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="boy m-0">Available rooms at hostles in {JSON.parse(
+        <h5 className="boy m-0">Available Rooms At Hostles In {JSON.parse(
           window.localStorage.getItem("valu")
         )} </h5>
         <div className="container-fluid">

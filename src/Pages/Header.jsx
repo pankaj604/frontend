@@ -74,29 +74,31 @@ const Header = (req, res) => {
         <h6>From Owner To Renter </h6>
         <h6>No Brokerage </h6>
       </div>
-      <div className="FOR d-flex flex-row justify-content-center justify-content-xl-around m-1 p-1  ">
+      <div className="FOR d-flex flex-row justify-content-around justify-content-xl-around text-center m-1 p-1  ">
         <h4 className="d-inline m-2">
           <Link className="choice underline " to={"/boys"}>
-            Boys
+            For Boys
           </Link>
         </h4>
         <h4 className="d-inline m-2">
           <Link className="choice underline" to={"/girls"}>
-            Girls
-          </Link>
-        </h4>
-        <h4 className="d-inline m-2">
-          <Link className="choice underline" to={"/pg"}>
-            PG for girls
+           For  Girls
           </Link>
         </h4>
       </div>
-      <div className="FOR d-flex flex-row justify-content-center justify-content-xl-around text-center m-1 p-1 ">
+      <div className="FOR d-flex flex-row justify-content-around  justify-content-xl-around text-center m-1 p-1 ">
         <h4 className="d-inline m-2">
-          <Link className="choice underline" to={"/hostel"}>
-            Hostels for girls
+          <Link className="choice underline" to={"/pg"}>
+            PG For Girls
           </Link>
         </h4>
+        <h4 className="d-inline m-2">
+          <Link className="choice underline" to={"/hostel"}>
+            Hostels For Girls
+          </Link>
+        </h4>
+      </div>
+      <div className="FOR d-flex flex-row justify-content-around  justify-content-xl-around text-center m-1 p-1 ">
         <h4 className="d-inline m-2">
           <Link className="choice underline" to={"/couple"}>
             Rooms For Couple
@@ -105,16 +107,13 @@ const Header = (req, res) => {
         <h4 className="d-inline  m-2">
           {" "}
           <Link className="choice underline " to={"/shop"}>
-            Shops or Offices
+            Shops Or Offices
           </Link>
         </h4>
       </div>
       <div className=" align-self-end  m-2  add-room">
-        <Link
-          className="head-add p-1 text-decoration-none"
-          to={"/login"}
-        >
-          add your rooms
+        <Link className="head-add p-1 text-decoration-none" to={"/login"}>
+          Add your Rooms
         </Link>
       </div>
     </div>
