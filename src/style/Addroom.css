@@ -2,11 +2,9 @@
     height: 100vh;
 }
 
-.options{
-    background-color: aliceblue;
- 
+h5{
+    color: #e7eaf6;
 }
-
 .check{
     width: 70vw;
 }

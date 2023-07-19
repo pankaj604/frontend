@@ -105,7 +105,7 @@ const Myhosteldata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Area <p className="m-0 d-inline value">{area}</p>
+            Hostel Name <p className="m-0 d-inline value">{area}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

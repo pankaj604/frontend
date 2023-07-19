@@ -1,32 +1,22 @@
-.owner{
-    height: 100vh;
+.owner {
+  height: 100vh;
 }
 
-.myroom{
-    color: black ;
-    letter-spacing: 1px;
-    text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
-      0px -4px 10px rgba(255,255,255,0.3);
-
+.myroom {
+  color: rgb(0, 0, 0);
+  letter-spacing: 1px;
+ 
 }
 
-
-.owner-nav{
-    background-color: rgb(28, 136, 231);
-    
+.owner-nav {
+    background-color: #22559c;
 }
 
-.add-rooms{
-
-    background-color: aliceblue;
-    
+.help {
+  background-color: #385170;
 }
 
-.help{
-  background-color: aqua;
-}
-
-.admin{
-    background-color: rgb(236, 48, 208);
-    color: aliceblue;
+.admin {
+  background-color: rgb(236, 48, 208);
+  color: #e7eaf6;
 }

@@ -58,14 +58,14 @@ const Addshop = () => {
   };
   return (
     <div className="container-fluid d-flex flex-column room">
-      <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add Shop</h4>{" "}
+      <h4 className="wel-1 wel text text-center mt-1 "> Add Shop</h4>{" "}
       <form onSubmit={handleSubmit}>
         <div className="container d-flex flex-column justify-content-center   text text-center">
           <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
             <div className="container-option m-2">
               <h5 className="city-option choice">Choose city</h5>
 
-              <select className="choice" id="option" defaultValue="indore">
+              <select className="" id="option" defaultValue="indore">
                 <option value="indore">Indore</option>
                 <option value="bhopal">Bhopal</option>
                 <option value="mumbai">Mumbai 3</option>
@@ -136,7 +136,7 @@ const Addshop = () => {
             <div>
               <input type="file" onChange={handleFileChange} />
             </div>
-            {button ? <h6>image loading</h6> : <></>}
+            {button ? <h5>Loading</h5> : <></>}
             <button className="mt-3" disabled={button} type="submit">
               Submit
             </button>

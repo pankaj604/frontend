@@ -1,67 +1,44 @@
-.head{
+.head {
   height: 100vh;
 }
 
-.welcome , .option{
-  background-color: aliceblue;
-  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
 
-}
-.wel-1{
-  background-color: rgb(28, 136, 231);
-  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-
+.wel-1 {
+  /* background-color: #385170; */
+  border-radius: 12px;
 }
 
-.wel{
+.test {
   letter-spacing: 1px;
-  text-shadow: 2px 7px 5px rgba(255, 248, 248, 0.3), 
-    0px -4px 10px rgba(255, 251, 251, 0.3);
+  color: #e7eaf6;
+}
+.wel {
+  color: #e7eaf6;
 }
 
-.FOR{
-  background-color: aliceblue;
-  /* background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; 
-   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-   color: black;
-
+.FOR {
 }
 
-
-.slog{
-  background-color: yellow;
-  color: red;
-
-
-}
-
-.choice{
-  color: black ;
+.slog {
   letter-spacing: 1px;
-  text-shadow: 2px 7px 5px rgba(0,0,0,0.3), 
-    0px -4px 10px rgba(255,255,255,0.3);
-   
+  color: #e7eaf6;
+
+  border-radius: 15px;
 }
-.underline{
+
+.choice {
+  color: #e7eaf6;
+  letter-spacing: 1px;
+}
+.underline {
   text-decoration: underline;
 }
-.add-room{
-  background-color: rgb(28, 136, 231);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;;
-  color: black;
-;
+.add-room {
+  background-color: #edf7fa;
+  border-radius: 5px;
+
 }
-.add{
-  color: white;
+.head-add{
+  color: #385170;
 }
+

@@ -20,9 +20,11 @@ const Hosteldata = ({
         </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            room rent is <p className="m-0 d-inline value">{rent}</p>
+            Seat rent is <p className="m-0 d-inline value">{rent}</p>
             <br />
-            area <p className="m-0 d-inline value">{area}</p>
+            <p className="m-0 d-inline  hostel-name">
+              Hostel Name -  <p className="m-0 d-inline ">{area}</p>
+            </p>
             <br />
             Nearby <p className="m-0 d-inline value">{nearby}</p>
           </h6>

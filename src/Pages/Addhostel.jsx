@@ -64,8 +64,8 @@ const Addhostel = () => {
   };
 
   return (
-    <div className="container  overflow-auto d-flex flex-column room">
-      <h4 className="wel-1 wel text text-center mt-1 ">HS rooms Add Hostel</h4>{" "}
+    <div className="container   d-flex flex-column  room">
+      <h4 className="wel-1 wel text text-center mt-1 ">Add Hostel</h4>{" "}
       <form onSubmit={handleSubmit}>
         <div className="container d-flex flex-column justify-content-center   text text-center">
           <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
@@ -79,7 +79,16 @@ const Addhostel = () => {
               </select>
             </div>
           </div>
-          <div className="input-box  d-flex flex-column align-items-center justify-content-center   text text-center">
+          <div className="input-box  d-flex flex-column  align-items-center justify-content-center   text text-center">
+            <div class="user-box">
+              <h5>Hostel Name</h5>
+
+              <input
+                type="text"
+                value={area}
+                onChange={(e) => setArea(e.target.value)}
+              />
+            </div>
             <div class="user-box">
               <h5>Available Seats</h5>
               <input
@@ -129,15 +138,6 @@ const Addhostel = () => {
                 onChange={(e) => setNearby(e.target.value)}
               />
             </div>
-            <div class="user-box">
-              <h5>Area</h5>
-
-              <input
-                type="text"
-                value={area}
-                onChange={(e) => setArea(e.target.value)}
-              />
-            </div>
 
             <div class="user-box">
               <h5>facilities </h5>
@@ -179,7 +179,7 @@ const Addhostel = () => {
             <div>
               <input type="file" onChange={handleFileChange} />
             </div>
-            {button ? <h6>image loading</h6> : <></>}
+            {button ? <h5>Loading</h5> : <></>}
             <button disabled={button} type="submit">
               Submit
             </button>

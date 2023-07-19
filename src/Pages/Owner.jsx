@@ -47,7 +47,7 @@ const Owner = () => {
   if (!isAuthenticated) return <Navigate to={"/header"} />;
   return (
     <div className="container d-flex flex-column  owner">
-      <div className=" d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
+      <div className=" wel welcome d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
         <h4 className=" text text-center mt-1 ">WelCome {user?.name}</h4>
       </div>
 

@@ -19,9 +19,8 @@ const Header = (req, res) => {
         setUser(res.data.user);
         if (!res.data.user._id) {
           setIsAuthenticated(false);
-        }
-        else{
-          setIsAuthenticated(true)
+        } else {
+          setIsAuthenticated(true);
         }
       })
       .catch((error) => {
@@ -51,7 +50,7 @@ const Header = (req, res) => {
   return (
     <div className="container head d-flex flex-column">
       <div className=" m-1 mb-4 mt-3 p-1 wel-1 text text-center ">
-        <h3 className="wel ">Welcome To HSRooms</h3>
+        <h4 className="test ">WELCOME TO HSROOMS</h4>
       </div>
       <div className="welcome m-1 p-1  text text-center ">
         <h4 className="wel">Are You Looking For Rooms</h4>
@@ -111,7 +110,10 @@ const Header = (req, res) => {
         </h4>
       </div>
       <div className=" align-self-end  m-2  add-room">
-        <Link className="choice bg-success text-light p-1 text-decoration-none" to={"/login"}>
+        <Link
+          className="head-add p-1 text-decoration-none"
+          to={"/login"}
+        >
           add your rooms
         </Link>
       </div>

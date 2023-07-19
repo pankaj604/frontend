@@ -6,14 +6,15 @@
 }
 
 .boy {
-  background-color: aliceblue;
-
   text-align: center;
   width: 100vw;
 }
 
-
-
 .value {
   color: yellow;
+}
+
+.hostel-name{
+  background-color: #e7eaf6;
+  color: #385170;
 }
