@@ -1,11 +1,11 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #385170;
+  background-color:#332d51;
 }
 
 .back {
- background-color: #385170;
+  background-color:#272343;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13,7 +13,7 @@ body {
 
 .boy {
   margin-left: 30%;
- background-color: #385170;
+  background-color:#1c1833;
   margin-right: 40%;
   text-align: center;
 }
@@ -27,4 +27,7 @@ color: aliceblue;
 }
 .one{
   background-color:black;
+}
+.detail{
+  background-color: #5c5470;
 }

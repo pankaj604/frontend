@@ -110,7 +110,7 @@ const Myroomdata = ({
             </div>
           ) : (
             <div className="btn btn-warning ">
-              <h6>Waiting for Approval</h6>
+              <h6 className="choice">Waiting for Approval</h6>
             </div>
           )}
           <div className="button align-self-end m-2">

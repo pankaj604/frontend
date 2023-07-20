@@ -4,6 +4,7 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
 import imageCompression from "browser-image-compression";
+import { Navigate } from "react-router-dom";
 const Addhostel = () => {
   const [button, setbutton] = useState(false);
   const [area, setArea] = useState("");
@@ -16,6 +17,7 @@ const Addhostel = () => {
   const [totalseats, setTotalseats] = useState("");
   const [gatetime, setGatetime] = useState("");
   const [facilites, setFacilites] = useState("");
+  const [isAuthenticated, setisAuthenticated] = useState(false);
   const handleFileChange = async (e) => {
     const imageFile = e.target.files[0];
 
@@ -55,13 +57,15 @@ const Addhostel = () => {
         withCredentials: true,
       });
 
-      toast.success(data.message);
+      toast.success(data.massage);
       setbutton(false);
+      setisAuthenticated(true);
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
     }
   };
+  if (isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
     <div className="container   d-flex flex-column  room">
@@ -80,7 +84,7 @@ const Addhostel = () => {
             </div>
           </div>
           <div className="input-box  d-flex flex-column  align-items-center justify-content-center   text text-center">
-            <div class="user-box">
+            <div className="user-box">
               <h5>Hostel Name</h5>
 
               <input
@@ -89,7 +93,7 @@ const Addhostel = () => {
                 onChange={(e) => setArea(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Available Seats</h5>
               <input
                 className="text text-center"
@@ -98,7 +102,7 @@ const Addhostel = () => {
                 onChange={(e) => setAvailableseats(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Total Seats</h5>
 
               <input
@@ -109,7 +113,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box">
+            <div className="user-box">
               <h5>Gate time </h5>
 
               <input
@@ -119,7 +123,7 @@ const Addhostel = () => {
                 onChange={(e) => setGatetime(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Room Rent</h5>
 
               <input
@@ -130,7 +134,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box">
+            <div className="user-box">
               <h5>Nearby</h5>
               <input
                 type="text"
@@ -139,7 +143,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box">
+            <div className="user-box">
               <h5>facilities </h5>
 
               <input
@@ -149,7 +153,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box align-self-">
+            <div className="user-box align-self-">
               <h5>Address</h5>
               <input
                 type="text"
@@ -158,7 +162,7 @@ const Addhostel = () => {
               />
             </div>
 
-            <div class="user-box">
+            <div className="user-box">
               <h5>Mobile</h5>
 
               <input

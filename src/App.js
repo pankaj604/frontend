@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import Header from "./Pages/Header";
 
 import Profile from "./auth/Profile";
@@ -41,7 +46,6 @@ function App() {
         <Route path="/" element={<Header />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/addroom" element={<Addroom />} />
-     
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
@@ -60,11 +64,10 @@ function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/myshop" element={<MyShop />} />
         <Route path="/addhostel" element={<Addhostel />} />
-        <Route path="/myhostel" element={<Myhostel/>} />
-        <Route path="/admin/room-aprovel" element={<Aprovel/>} />
-        <Route path="/admin/shop-aprovel" element={<Aprovelshop/>} />
-        <Route path="/admin/hostel-aprovel" element={<Aprovelhostel/>} />
-      
+        <Route path="/myhostel" element={<Myhostel />} />
+        <Route path="/admin/room-aprovel" element={<Aprovel />} />
+        <Route path="/admin/shop-aprovel" element={<Aprovelshop />} />
+        <Route path="/admin/hostel-aprovel" element={<Aprovelhostel />} />
       </Routes>
       <Toaster />
     </Router>

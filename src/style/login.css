@@ -18,11 +18,8 @@ body {
 }
 
 .wl-lgn{
-  color: black;
-  background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: aliceblue;
+    
   padding: 10px;
   border-radius: 5px;
 }

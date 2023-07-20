@@ -11,6 +11,7 @@ const Hosteldata = ({
   gatetime,
   facilites,
   image,
+
 }) => {
   return (
     <>

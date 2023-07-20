@@ -4,8 +4,8 @@
 
 
 .wel-1 {
-  /* background-color: #385170; */
-  border-radius: 12px;
+  background-color:#272343;
+  border-radius: 7px;
 }
 
 .test {
@@ -22,7 +22,7 @@
 .slog {
   letter-spacing: 1px;
   color: #e7eaf6;
-
+  background-color: #2b2648;
   border-radius: 15px;
 }
 
@@ -34,11 +34,15 @@
   text-decoration: underline;
 }
 .add-room {
-  background-color: #edf7fa;
+  background-color: rgb(43, 46, 53);
   border-radius: 5px;
 
 }
 .head-add{
-  color: #385170;
+  color: #f2f5f8;
 }
 
+.links{
+  background-color: #272343;
+  border-radius: 7px;
+}

@@ -44,7 +44,7 @@ const Login = () => {
   if (isAuthenticated) return <Navigate to={"/owner"} />;
   return (
     <div className="wrapper">
-      <h4 className="wl-lgn">WelCome To HSrooms</h4>
+      <h4 className="wl-lgn wel-1">WelCome To HSrooms</h4>
 
       <div className="text-center mt-1 name">Login</div>
 
@@ -77,11 +77,11 @@ const Login = () => {
 
       <div className="text-center fs-6">
         <Link to="/register">
-          <h5>Sign Up</h5>
+          <h5 className="links p-1">Sign Up</h5>
         </Link>
         <br />
-        <Link to="/forget">
-          <h5>Forget Password</h5>
+        <Link  to="/forget">
+          <h5 className=" links p-1 ">Forget Password</h5>
         </Link>
       </div>
     </div>

@@ -17,9 +17,9 @@ const Myroom = () => {
       })
       .then((res) => {
         setMyroom(res.data.room);
-        settotal(res.data.total)
-        setcount(res.data.count)
-        setcoun(res.data.coun)
+        settotal(res.data.total);
+        setcount(res.data.count);
+        setcoun(res.data.coun);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -33,9 +33,15 @@ const Myroom = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center"> Your Total Rooms {total}</h5>
-        <h5 className="choice text text-center">Available {count}</h5>
-        <h5 className="choice text text-center"> Not Available {coun}</h5>
+        <div className="detail p-1">
+          <h6 className="choice text text-center">
+            {" "}
+            Your Total Rooms - {total}
+          </h6>
+          <h6 className=" choice text text-center">
+            Available - {count} || Not Available - {coun}
+          </h6>
+        </div>
         <div className="container-fluid">
           <div className="row">
             {myroom.map((i) => {

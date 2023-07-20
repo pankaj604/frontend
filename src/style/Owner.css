@@ -3,20 +3,25 @@
 }
 
 .myroom {
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
   letter-spacing: 1px;
  
 }
 
 .owner-nav {
-    background-color: #22559c;
+  background-color: #2b2648;
+  border-radius: 10px;
 }
 
 .help {
-  background-color: #385170;
+  background-color: #2d4059;
+  border-radius: 10px;
 }
 
 .admin {
   background-color: rgb(236, 48, 208);
   color: #e7eaf6;
+}
+.add-rooms{
+  background-color: #302b50;
 }

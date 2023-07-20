@@ -47,8 +47,8 @@ const Owner = () => {
   if (!isAuthenticated) return <Navigate to={"/header"} />;
   return (
     <div className="container d-flex flex-column  owner">
-      <div className=" wel welcome d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
-        <h4 className=" text text-center mt-1 ">WelCome {user?.name}</h4>
+      <div className=" wel-1 d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
+        <h4 className=" text wel text-center mt-1 ">WelCome {user?.name}</h4>
       </div>
 
       <div className="owner-nav d-flex flex-row justify-content-center  text text-center">
@@ -92,7 +92,7 @@ const Owner = () => {
         <div> </div>
       )}
 
-      <div className="add-rooms help d-flex justify-content-center mt-2 flex-row text text-center">
+      <div className=" help d-flex justify-content-center mt-2 flex-row text text-center">
         <div className="myroom m-2">
           <h6 className="choice" to={"/myroom"}>
             Call me for any help +919685290529

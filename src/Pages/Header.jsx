@@ -70,11 +70,11 @@ const Header = (req, res) => {
           <option value="mumbai">mumbai</option>
         </select>
       </div>
-      <div className="slog m-1 p-2  text text-center ">
+      <div className="slog m-1 p-1  text text-center ">
         <h6>From Owner To Renter </h6>
         <h6>No Brokerage </h6>
       </div>
-      <div className="FOR d-flex flex-row justify-content-around justify-content-xl-around text-center m-1 p-1  ">
+      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
         <h4 className="d-inline m-2">
           <Link className="choice underline " to={"/boys"}>
             For Boys
@@ -82,23 +82,23 @@ const Header = (req, res) => {
         </h4>
         <h4 className="d-inline m-2">
           <Link className="choice underline" to={"/girls"}>
-           For  Girls
+            For Girls
           </Link>
         </h4>
       </div>
-      <div className="FOR d-flex flex-row justify-content-around  justify-content-xl-around text-center m-1 p-1 ">
+      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
         <h4 className="d-inline m-2">
           <Link className="choice underline" to={"/pg"}>
-            PG For Girls
+            PG Girls
           </Link>
         </h4>
-        <h4 className="d-inline m-2">
+        <h4 className="d-inline  m-2">
           <Link className="choice underline" to={"/hostel"}>
-            Hostels For Girls
+            Hostel Girls
           </Link>
         </h4>
       </div>
-      <div className="FOR d-flex flex-row justify-content-around  justify-content-xl-around text-center m-1 p-1 ">
+      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
         <h4 className="d-inline m-2">
           <Link className="choice underline" to={"/couple"}>
             Rooms For Couple

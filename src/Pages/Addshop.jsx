@@ -4,6 +4,7 @@ import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
 import imageCompression from "browser-image-compression";
+import { Navigate } from "react-router-dom";
 const Addshop = () => {
   const [size, setSize] = useState("");
   const [area, setArea] = useState("");
@@ -13,6 +14,7 @@ const Addshop = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [address, setAddress] = useState("");
   const [button, setbutton] = useState(false);
+  const [isAuthenticated, setisAuthenticated] = useState(false);
   const handleFileChange = async (e) => {
     const imageFile = e.target.files[0];
 
@@ -49,13 +51,15 @@ const Addshop = () => {
         withCredentials: true,
       });
 
-      toast.success(data.message);
+      toast.success(data.massage);
       setbutton(false);
+      setisAuthenticated(true)
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
     }
   };
+  if (isAuthenticated) return <Navigate to={"/login"} />;
   return (
     <div className="container-fluid d-flex flex-column room">
       <h4 className="wel-1 wel text text-center mt-1 "> Add Shop</h4>{" "}
@@ -74,7 +78,7 @@ const Addshop = () => {
           </div>
 
           <div className="input-box d-flex flex-column justify-content-center   text text-center">
-            <div class="user-box">
+            <div className="user-box">
               <h5>Nearby</h5>
               <input
                 type="text"
@@ -82,7 +86,7 @@ const Addshop = () => {
                 onChange={(e) => setNearby(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Area</h5>
               <input
                 type="text"
@@ -90,7 +94,7 @@ const Addshop = () => {
                 onChange={(e) => setArea(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Size</h5>
               <input
                 type="text"
@@ -98,7 +102,7 @@ const Addshop = () => {
                 onChange={(e) => setSize(e.target.value)}
               />
             </div>
-            <div class="user-box">
+            <div className="user-box">
               <h5>Room Rent</h5>
               <input
                 type="text"
@@ -107,7 +111,7 @@ const Addshop = () => {
               />
             </div>
 
-            <div class="user-box align-self-mid">
+            <div className="user-box align-self-mid">
               <h5>Mobile</h5>
               <input
                 type="text"
@@ -115,7 +119,7 @@ const Addshop = () => {
                 onChange={(e) => setMobile(e.target.value)}
               />
             </div>
-            <div class="user-box align-self-mid">
+            <div className="user-box align-self-mid">
               <h5>Address</h5>
               <input
                 className="address"

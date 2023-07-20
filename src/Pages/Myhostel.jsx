@@ -18,9 +18,9 @@ const Myhostel = () => {
       })
       .then((res) => {
         setMyhostel(res.data.hostel);
-        settotal(res.data.total)
-        setcount(res.data.count)
-        setcoun(res.data.coun)
+        settotal(res.data.total);
+        setcount(res.data.count);
+        setcoun(res.data.coun);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -34,9 +34,17 @@ const Myhostel = () => {
   return (
     <>
       <div className="back">
-      <h5 className="choice text text-center"> Your Total Hostals Room {total}</h5>
-        <h5 className="choice text text-center"> Room Available {count}</h5>
-        <h5 className="choice text text-center"> Not Available {coun}</h5>
+        <div className="detail p-1">
+          <h6 className="choice text text-center">
+            {" "}
+            Your Total Hostals Room -  {total}
+          </h6>
+          <h6 className="choice text text-center">
+            {" "}
+            Room Available - {count} || Not Available - {coun}
+          </h6>
+          
+        </div>
         <div className="container-fluid">
           <div className="row">
             {hostel.map((i) => {
