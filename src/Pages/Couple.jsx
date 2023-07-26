@@ -3,17 +3,21 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import Coupledata from "./Coupledata";
+import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
+import { Link } from "react-router-dom";
 
 const Couple = () => {
-
   const [couple, setcouple] = useState([]);
   const both = async () => {
     await axios
-      .get(`${server}/room/everyone/${JSON.parse(
-        window.localStorage.getItem("valu")
-      )}`, {
-        withCredentials: true,
-      })
+      .get(
+        `${server}/room/everyone/${JSON.parse(
+          window.localStorage.getItem("valu")
+        )}`,
+        {
+          withCredentials: true,
+        }
+      )
       .then((res) => {
         setcouple(res.data.rooms);
       })
@@ -26,31 +30,41 @@ const Couple = () => {
   }, []);
 
   return (
-    <div className="back">
-      <h5 className="boy m-0">Available Rooms For Couple in {JSON.parse(
-          window.localStorage.getItem("valu")
-        )}</h5>
-      <div className="container-fluid">
-        <div className="row">
-          {" "}
-          {couple.map((i) => {
-            return (
-              <>
-                <Coupledata
-                  city={i.city}
-                  rent={i.rent}
-                  address={i.address}
-                  mobile={i.mobile}
-                  image={i.image}
-                  size={i.size}
-                  facilities={i.facilities}
-                />
-              </>
-            );
-          })}
+    <>
+      <div className="nav-main-cont d-flex flex-row justify-content-center mt-1  text text-center">
+        <div className="m-0 p-1">
+          <Link className="go-back text-decoration-none" to={"/header"}>
+            Go Back To Home <KeyboardReturnOutlinedIcon />
+          </Link>
         </div>
       </div>
-    </div>
+      <div className="back">
+        <h5 className="boy m-0">
+          Available Rooms For Couple in{" "}
+          {JSON.parse(window.localStorage.getItem("valu"))}
+        </h5>
+        <div className="container-fluid">
+          <div className="row">
+            {" "}
+            {couple.map((i) => {
+              return (
+                <>
+                  <Coupledata
+                    city={i.city}
+                    rent={i.rent}
+                    address={i.address}
+                    mobile={i.mobile}
+                    image={i.image}
+                    size={i.size}
+                    facilities={i.facilities}
+                  />
+                </>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 

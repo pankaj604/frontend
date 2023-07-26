@@ -17,7 +17,8 @@ const Myhosteldata = ({
   image,
   id,
   status,
-  isApproved
+  isApproved,
+  hostelfor
 }) => {
   const [button, setbutton] = useState(false);
   const { refresh, setRefresh } = useContext(Context);
@@ -102,6 +103,9 @@ const Myhosteldata = ({
 
           <h6 className="d-inline m-0 h6">
             Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+          </h6>
+          <h6 className="d-inline m-0 h6">
+            Hostelfor <p className="m-0 d-inline value">{hostelfor}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

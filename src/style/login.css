@@ -25,14 +25,13 @@ body {
 }
 .wrapper {
     max-width: 350px;
-    min-height: 500px;
+   
+ 
     margin: 80px auto;
     padding: 40px 30px 30px 30px;
     background-color: #ecf0f3;
-    background: url("https://img.freepik.com/premium-photo/green-armchair-white-living-room-interior-with-copy-space-mockup_43614-814.jpg?w=360");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
     border-radius: 15px;
     /* box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff; */
 }
@@ -42,6 +41,9 @@ body {
     height: 40px;
     background-color: #03A9F4;
     
+}
+.login-div{
+    height: 85vh;
 }
 
 .logo img {

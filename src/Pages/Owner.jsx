@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 import "../style/Owner.css";
 const Owner = () => {
   const role = false;
+
   const bio = () => {
     axios
       .get(`${server}/user/me`, {
@@ -44,97 +45,93 @@ const Owner = () => {
       setIsAuthenticated(true);
     }
   };
-  if (!isAuthenticated) return <Navigate to={"/header"} />;
+  if (!isAuthenticated) return <Navigate to={"/"} />;
   return (
-    <div className="container d-flex flex-column  owner">
-      <div className=" wel-1 d-flex flex-row justify-content-center mb-1 mt-2  text text-center">
-        <h4 className=" text wel text-center mt-1 ">WelCome {user?.name}</h4>
-      </div>
-
-      <div className="owner-nav d-flex flex-row justify-content-center  text text-center">
-        <div className="myroom m-3">
-          <Link className="choice" to={"/header"}>
-            Home
-          </Link>
-        </div>
-        <div className="myroom m-3 ">
-          <Link className="choice" to={"/profile"}>
-            Your profile
-          </Link>
-        </div>
-
-        <div className="myroom m-3">
-          <Link className="choice" onClick={logoutHandler}>
-            Logout
-          </Link>
+    <>
+      <div className="container-fluid d-flex justify-content-center  logo-landing">
+        <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
+          <div className=" d-inline logo-img  col-3 p-0  ">
+            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
+          </div>
+          <div className="col p-0 ">
+            {" "}
+            <h5 className=" welcome-hs">WelCome {user?.name}</h5>
+          </div>
         </div>
       </div>
-      {user && user.role === 'admin'  ? (
-        <div className="admin d-flex flex-row justify-content-center text-light mt-2  text text-center">
-          <div className="myroom  m-3">
-            <Link className="choice" to={"/admin/room-aprovel"}>
-              Room Aprovel 
+
+      <div></div>
+      <div className="container d-flex flex-column  owner">
+        <div className="owner-nav d-flex flex-row justify-content-center mt-1  text text-center">
+          <div className="myroom m-3">
+            <Link className="choice" to={"/"}>
+              Home
             </Link>
           </div>
           <div className="myroom m-3 ">
-            <Link className="choice" to={"/admin/shop-aprovel"}>
-              Shop Aprovel
+            <Link className="choice " to={"/profile"}>
+              Your profile
             </Link>
           </div>
 
           <div className="myroom m-3">
-            <Link className="choice" to={"/admin/hostel-aprovel"}>
-              Hostel Aproval
+            <Link className="choice" onClick={logoutHandler}>
+              Logout
             </Link>
           </div>
         </div>
-      ) : (
-        <div> </div>
-      )}
+        
+        <div className="container banner-3 p-3 my-3">
+          <h4 className="owner-lines text-center"> Rooms Management </h4>
+          <h4 className="easy text-center">आसानी से पाए किरायेदार </h4>
 
-      <div className=" help d-flex justify-content-center mt-2 flex-row text text-center">
-        <div className="myroom m-2">
-          <h6 className="choice" to={"/myroom"}>
-            Call me for any help +919685290529
-          </h6>
+          <h4 className="d-inline mx-1 text-center ">
+            यहाँ केवल रूम और फ्लैट्स जोड़े{" "}
+          </h4>
+          <br />
+          <div className="d-flex">
+            <Link className="btn register-btn w-50 mt-2 m-2" to={"/addroom"}>
+              Add Room
+            </Link>
+            <Link className="btn login-btn w-50 mt-2 m-2" to={"/myroom"}>
+              Your Rooms
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="add-rooms mt-2 d-flex flex-row justify-content-center text text-center">
-        <div className="add m-2">
-          <Link className="choice" to={"/addroom"}>
-            Add New Room
-          </Link>
-        </div>
-        <div className="add m-2">
-          <Link className="choice" to={"/addshop"}>
-            Add New Shop/Office
-          </Link>
-        </div>
-        <div className="add m-2">
-          <Link className="choice" to={"/addhostel"}>
-            Add New Hostle
-          </Link>
-        </div>
-      </div>
+        <div className="container banner-3 p-3 my-3">
+          <h4 className="owner-lines text-center"> Hostel Management </h4>
+          <h4 className="easy text-center">आसानी से पाए किरायेदार </h4>
 
-      <div className="add-rooms d-flex justify-content-center flex-row text text-center">
-        <div className="myroom m-2">
-          <Link className="choice" to={"/myroom"}>
-            Your Rooms
-          </Link>
+          <h4 className=" mx-1 text-center ">यहाँ केवल होस्टल्स जोड़े</h4>
+
+          <div className="d-flex">
+            <Link className="btn register-btn w-50 mt-2 m-2" to={"/addhostel"}>
+              Add Hostel
+            </Link>
+            <Link className="btn login-btn w-50 mt-2 m-2" to={"/myhostel"}>
+              Your Hostels
+            </Link>
+          </div>
         </div>
-        <div className="myroom m-2">
-          <Link className="choice" to={"/myshop"}>
-            Your shop/office
-          </Link>
-        </div>
-        <div className="myroom m-2">
-          <Link className="choice" to={"/myhostel"}>
-            Your hostels
-          </Link>
+        <div className="container banner-3 p-3 my-3">
+          <h4 className="owner-lines text-center"> Shop/Office Management </h4>
+          <h4 className="easy text-center">आसानी से पाए किरायेदार </h4>
+
+          <h4 className="d-inline mx-1 text-center ">
+            यहाँ केवल दुकान और ऑफिस जोड़े{" "}
+          </h4>
+          <br />
+          <div className="d-flex">
+            <Link className="btn register-btn w-50 mt-2 m-2" to={"/addshop"}>
+              Add Shop/Office
+            </Link>
+            <Link className="btn login-btn w-50 mt-2 m-2" to={"/myshop"}>
+              Your Shop/Office
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

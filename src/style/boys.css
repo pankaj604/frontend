@@ -1,21 +1,30 @@
-.back {
-  /* background: url("https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=600"); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 
 .boy {
   text-align: center;
   width: 100vw;
-  background-color:#272343;
+  background-color: #bab0fd;
+  color: black;
 }
 
 .value {
   color: yellow;
 }
 
-.hostel-name{
+.hostel-name {
   background-color: #e7eaf6;
   color: #385170;
+}
+
+.nav-main-cont {
+  background-color: rgb(131, 213, 238);
+}
+
+.go-back {
+  color: black;
+}
+
+.nav-main-cont:hover, .go-back:hover {
+  background-color: #879ced;
+  color:black;
 }

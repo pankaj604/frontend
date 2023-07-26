@@ -9,7 +9,7 @@
 }
 
 .owner-nav {
-  background-color: #2b2648;
+  background: linear-gradient(45deg,rgb(88, 88, 173),rgb(29, 29, 84));
   border-radius: 10px;
 }
 

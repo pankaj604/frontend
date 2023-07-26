@@ -1,22 +1,18 @@
 body {
   margin: 0px;
   padding: 0px;
-  background-color:#332d51;
+
 }
 
-.back {
-  background-color:#272343;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+.back{
+  background-color: antiquewhite;
 }
-
-.boy {
+/* .boy {
   margin-left: 30%;
-  background-color:#1c1833;
+
   margin-right: 40%;
   text-align: center;
-}
+} */
 
 .h6 {
 color: aliceblue;

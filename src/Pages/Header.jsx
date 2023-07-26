@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import "../style/Header.css";
 import { Context, server } from "..";
 import axios from "axios";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
+
 const Header = (req, res) => {
   const { isAuthenticated, loading, user } = useContext(Context);
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
@@ -44,79 +47,132 @@ const Header = (req, res) => {
     setCity(selectedValue);
   };
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.localStorage.setItem("valu", JSON.stringify(city));
   }, [city]);
 
   return (
-    <div className="container head d-flex flex-column">
-      <div className=" m-1 mb-4 mt-3 p-1 wel-1 text text-center ">
-        <h4 className="test ">WELCOME TO HSROOMS</h4>
+    <>
+      <div className="container-fluid d-flex justify-content-center  logo-landing">
+        <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
+          <div className=" d-inline logo-img  col-3 p-0  ">
+            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
+          </div>
+          <div className="col p-0 ">
+            {" "}
+            <h5 className=" welcome-hs">WelCome to HSROOMS</h5>
+          </div>
+        </div>
       </div>
-      <div className="welcome m-1 p-1  text text-center ">
-        <h4 className="wel">Are You Looking For Rooms</h4>
 
-        <h4 className="wel">Please Choose Your City</h4>
-      </div>
+      <div className="container head d-flex flex-column">
+        <div className="container banner my-3 p-3 ">
+          <h1 className="search-easy text-center">अपना शहर चुने..</h1>
+          <div className="dropdown text text-center m-1 p-2 ">
+            <select
+              id="section"
+              onChange={handleSelectChange}
+              defaultValue={JSON.parse(window.localStorage.getItem("valu"))}
+              className="city-choose"
+            >
+              <option value="indore">Indore</option>
+              <option value="bhopal">bhopal</option>
+              <option value="mumbai">mumbai</option>
+            </select>
+            <LocationOnOutlinedIcon />
+          </div>
+        </div>
 
-      <div className="option  text text-center m-1 p-2 ">
-        <select
-          id="section"
-          onChange={handleSelectChange}
-          defaultValue={JSON.parse(window.localStorage.getItem("valu"))}
-          className="option-c"
-        >
-          <option value="indore">Indore</option>
-          <option value="bhopal">bhopal</option>
-          <option value="mumbai">mumbai</option>
-        </select>
+        <h4 className=" nobroker  text-center p-3 ">No Brokerage</h4>
+
+        <div className="container banner-2 p-3 my-3">
+          <h2 className="text-center">रूम मिलेगा सबके लिए</h2>
+
+          <div className="d-flex justify-content-around">
+            <h4 className=" w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/boys"}
+              >
+                Boys
+              </Link>
+            </h4>
+            <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100  text-dark bg-light text-decoration-none"
+                to={"/girls"}
+              >
+                Girls
+              </Link>
+            </h4>
+          </div>
+          <div className="d-flex justify-content-around">
+            <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/pg"}
+              >
+                PG
+              </Link>
+            </h4>
+            <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/couple"}
+              >
+                Couples
+              </Link>
+            </h4>
+          </div>
+        </div>
+
+        {/* Hostels */}
+        <div className="container banner-2 p-3 my-3">
+          <h2 className="text-center">होस्टल भी मिलेगा सबके लिए</h2>
+
+          <div className="d-flex justify-content-around">
+            <h4 className=" w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/hostel/Boys"}
+              >
+                Boys Hostel
+              </Link>
+            </h4>
+            <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100  text-dark bg-light text-decoration-none"
+                to={"/hostel/Girls"}
+              >
+                Girls Hostel
+              </Link>
+            </h4>
+          </div>
+        </div>
+
+        <div className="container banner-2 p-3 my-3">
+          <h2 className="text-center">दुकान और ऑफिस भी तो हैं भिया </h2>
+
+          <div className="d-flex justify-content-around">
+            <h4 className=" w-100 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/shop"}
+              >
+                Shops/Offices
+              </Link>
+            </h4>
+          </div>
+        </div>
       </div>
-      <div className="slog m-1 p-1  text text-center ">
-        <h6>From Owner To Renter </h6>
-        <h6>No Brokerage </h6>
+      <div className="nav-main-cont-header d-flex flex-row justify-content-center mt-1  text text-center">
+        <div className="m-0 p-1">
+          <Link className="go-back-header text-decoration-none" to={"/"}>
+            Go Back To Home <KeyboardReturnOutlinedIcon />
+          </Link>
+        </div>
       </div>
-      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
-        <h4 className="d-inline m-2">
-          <Link className="choice underline " to={"/boys"}>
-            For Boys
-          </Link>
-        </h4>
-        <h4 className="d-inline m-2">
-          <Link className="choice underline" to={"/girls"}>
-            For Girls
-          </Link>
-        </h4>
-      </div>
-      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
-        <h4 className="d-inline m-2">
-          <Link className="choice underline" to={"/pg"}>
-            PG Girls
-          </Link>
-        </h4>
-        <h4 className="d-inline  m-2">
-          <Link className="choice underline" to={"/hostel"}>
-            Hostel Girls
-          </Link>
-        </h4>
-      </div>
-      <div className="links d-flex flex-row justify-content-around  justify-content-xl-center text-center m-1 p-1  ">
-        <h4 className="d-inline m-2">
-          <Link className="choice underline" to={"/couple"}>
-            Rooms For Couple
-          </Link>
-        </h4>
-        <h4 className="d-inline  m-2">
-          {" "}
-          <Link className="choice underline " to={"/shop"}>
-            Shops Or Offices
-          </Link>
-        </h4>
-      </div>
-      <div className=" align-self-end  m-2  add-room">
-        <Link className="head-add p-1 text-decoration-none" to={"/login"}>
-          Add your Rooms
-        </Link>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Addroom.css";
@@ -10,6 +10,7 @@ const Addhostel = () => {
   const [area, setArea] = useState("");
   const [nearby, setNearby] = useState("");
   const [rent, setRent] = useState("");
+  const [hostelfor, sethostelfor] = useState("");
   const [mobile, setMobile] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [address, setAddress] = useState("");
@@ -36,10 +37,13 @@ const Addhostel = () => {
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
     const citydata = selectBox.value;
-
+    const gender = document.getElementById("hostelfor");
+    const value = gender.value;
+    console.log(value);
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("city", citydata);
+    formData.append("hostelfor", value);
     formData.append("rent", rent);
     formData.append("address", address);
     formData.append("area", area);
@@ -65,10 +69,19 @@ const Addhostel = () => {
       toast.error(error.response.data.message);
     }
   };
+  const initialget = () => {
+    const valu = document.getElementById("hostelfor");
+
+    sethostelfor(valu.value);
+    console.log(hostelfor);
+  };
+  useEffect(() => {
+    initialget();
+  }, []);
   if (isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
-    <div className="container   d-flex flex-column  room">
+    <div className="container bg-dark   d-flex flex-column  room">
       <h4 className="wel-1 wel text text-center mt-1 ">Add Hostel</h4>{" "}
       <form onSubmit={handleSubmit}>
         <div className="container d-flex flex-column justify-content-center   text text-center">
@@ -80,6 +93,18 @@ const Addhostel = () => {
                 <option value="indore">Indore</option>
                 <option value="bhopal">Bhopal</option>
                 <option value="mumbai">Mumbai 3</option>
+              </select>
+            </div>
+            <div className="container-option m-2">
+              <h5 className="city-option choice">Choose Any</h5>
+
+              <select
+                id="hostelfor"
+                onChange={initialget}
+                defaultValue="Girls"
+              >
+                <option value="Girls">Girls</option>
+                <option value="Boys">Boys</option>
               </select>
             </div>
           </div>

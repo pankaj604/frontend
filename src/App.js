@@ -36,14 +36,39 @@ import Aprovel from "./Pages/Aprovel";
 import Aprovelshop from "./Pages/Aprovelshop";
 import Aprovelshopdata from "./Pages/Aprovelshopdata";
 import Aprovelhostel from "./Pages/Aprovelhostel";
+import Landing from "./Pages/Landing";
 
 function App() {
-  const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
+  const { setUser, setIsAuthenticated,isAuthenticated, setLoading } = useContext(Context);
+  const bio = () => {
+    axios
+      .get(`${server}/user/check`, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        setUser(res.data.user);
+        if (!res.data.user._id) {
+          setIsAuthenticated(false);
+        } else {
+          setIsAuthenticated(true);
+        }
+      })
+      .catch((error) => {
+        setUser({});
+        setIsAuthenticated(false);
+      });
+  };
+  useEffect(() => {
+    bio();
+  
+  }, [isAuthenticated]);
+
   window.ResizeObserver = undefined;
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/header" element={<Header />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/addroom" element={<Addroom />} />
         <Route path="/profile" element={<Profile />} />
@@ -53,7 +78,7 @@ function App() {
         <Route path="/boys" element={<Boys />} />
         <Route path="/girls" element={<Girls />} />
         <Route path="/pg" element={<PG />} />
-        <Route path="/hostel" element={<Hostel />} />
+    
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
         <Route path="/owner" element={<Owner />} />
@@ -68,6 +93,7 @@ function App() {
         <Route path="/admin/room-aprovel" element={<Aprovel />} />
         <Route path="/admin/shop-aprovel" element={<Aprovelshop />} />
         <Route path="/admin/hostel-aprovel" element={<Aprovelhostel />} />
+        <Route path="/hostel/:id" element={<Hostel />} />
       </Routes>
       <Toaster />
     </Router>

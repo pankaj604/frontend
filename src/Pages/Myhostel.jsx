@@ -5,6 +5,9 @@ import { toast } from "react-hot-toast";
 import Myshopdata from "./Myshopdata";
 import Myhosteldata from "./Myhosteldata";
 import "../style/Myroomdata.css";
+import { Link } from "react-router-dom";
+import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
+
 const Myhostel = () => {
   const { Setrefresh, refresh } = useContext(Context);
   const [hostel, setMyhostel] = useState([]);
@@ -33,17 +36,23 @@ const Myhostel = () => {
 
   return (
     <>
+      <div className="nav-main-cont d-flex flex-row justify-content-center mt-1  text text-center">
+        <div className="m-0 p-1">
+          <Link className="go-back text-decoration-none" to={"/owner"}>
+            Go Back To Home <KeyboardReturnOutlinedIcon />
+          </Link>
+        </div>
+      </div>
       <div className="back">
         <div className="detail p-1">
           <h6 className="choice text text-center">
             {" "}
-            Your Total Hostals Room -  {total}
+            Your Total Hostals Room - {total}
           </h6>
           <h6 className="choice text text-center">
             {" "}
             Room Available - {count} || Not Available - {coun}
           </h6>
-          
         </div>
         <div className="container-fluid">
           <div className="row">
@@ -66,6 +75,7 @@ const Myhostel = () => {
                     status={i.status ? "ON" : "OFF"}
                     key={i._id}
                     isApproved={i.isApproved}
+                    hostelfor={i.hostelfor}
                   />
                 </>
               );

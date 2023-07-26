@@ -1,5 +1,6 @@
 .head {
   height: 100vh;
+  background-color: antiquewhite;
 }
 
 
@@ -29,6 +30,7 @@
 .choice {
   color: #e7eaf6;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 .underline {
   text-decoration: underline;
@@ -45,4 +47,19 @@
 .links{
   background-color: #272343;
   border-radius: 7px;
+}
+.city-choose{
+  font-size:larger;
+  color: black;
+  z-index: -1;
+  outline: none;
+  border: none;
+}
+
+.go-back-header {
+color: #e7eaf6;
+}
+
+.nav-main-cont-header {
+  background: linear-gradient(-45deg, #001c30, #164467);
 }

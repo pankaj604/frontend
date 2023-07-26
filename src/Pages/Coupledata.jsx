@@ -3,7 +3,7 @@ import React from "react";
 const Coupledata = ({ city, rent, address, mobile, image , size ,facilities }) => {
   return (
     <>
-      <div className="one m-3  p-0 col-xl-2 bg-dark text-white">
+      <div className="one   p-0 col-xl-2 bg-dark text-white">
         <div className="image p-0">
           <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>

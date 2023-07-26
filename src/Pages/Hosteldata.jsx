@@ -1,5 +1,7 @@
 import React from "react";
 import "../style/boys.css";
+import { Link } from "react-router-dom";
+
 const Hosteldata = ({
   rent,
   address,
@@ -11,11 +13,11 @@ const Hosteldata = ({
   gatetime,
   facilites,
   image,
-
 }) => {
   return (
     <>
-      <div className=" one m-3  p-0 col-xl-2  text-white">
+     
+      <div className=" one  p-0 col-xl-2  text-white">
         <div className="image p-0">
           <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>
@@ -24,7 +26,7 @@ const Hosteldata = ({
             Seat rent is <p className="m-0 d-inline value">{rent}</p>
             <br />
             <p className="m-0 d-inline  hostel-name">
-              Hostel Name -  <p className="m-0 d-inline ">{area}</p>
+              Hostel Name - <p className="m-0 d-inline ">{area}</p>
             </p>
             <br />
             Nearby <p className="m-0 d-inline value">{nearby}</p>

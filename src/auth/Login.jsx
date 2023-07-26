@@ -6,7 +6,6 @@ import { Context, server } from "../index.js";
 import { useEffect } from "react";
 import "../style/login.css";
 const Login = () => {
-  
   const { isAuthenticated, setIsAuthenticated } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,50 +42,60 @@ const Login = () => {
 
   if (isAuthenticated) return <Navigate to={"/owner"} />;
   return (
-    <div className="wrapper">
-      <h4 className="wl-lgn wel-1">WelCome To HSrooms</h4>
-
-      <div className="text-center mt-1 name">Login</div>
-
-      <form className="p-3 mt-3" onSubmit={submitHandler}>
-        <div className="form-field d-flex align-items-center">
-          <span className="far fa-user"></span>
-          <input
-            type="email"
-            required
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
+    <div className="login-div">
+      <div className="container-fluid d-flex justify-content-center  logo-landing">
+        <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
+          <div className=" d-inline logo-img  col-3 p-0  ">
+            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
+          </div>
+          <div className="col p-0 ">
+            {" "}
+            <h5 className=" welcome-hs">WELCOME TO HSROOMS</h5>
+          </div>
         </div>
-        <div className="form-field d-flex align-items-center">
-          <span className="fas fa-key"></span>
-          <input
-            type="password"
-            required
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+      </div>
+      <div className="wrapper mt-4">
+        <div className="text-center mt-1 name">Login</div>
+
+        <form className="p-3 mt-3" onSubmit={submitHandler}>
+          <div className="form-field d-flex align-items-center">
+            <span className="far fa-user"></span>
+            <input
+              type="email"
+              required
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="form-field d-flex align-items-center">
+            <span className="fas fa-key"></span>
+            <input
+              type="password"
+              required
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button className="btn mt-3" type="submit">
+            Login
+          </button>
+        </form>
+
+        <div className="text-center fs-6">
+          <Link to="/register">
+            <h6 className=" p-1 text-primary"><span className="text-dark">Not Registered ?</span> Register Now</h6>
+          </Link>
+          <br />
+          <Link to="/forget">
+            <h5 className=" text-dark p-1 ">Forget Password</h5>
+          </Link>
         </div>
-
-        <button className="btn mt-3" type="submit">
-          Login
-        </button>
-      </form>
-
-      <div className="text-center fs-6">
-        <Link to="/register">
-          <h5 className="links p-1">Sign Up</h5>
-        </Link>
-        <br />
-        <Link  to="/forget">
-          <h5 className=" links p-1 ">Forget Password</h5>
-        </Link>
       </div>
     </div>
   );
 };
 
 export default Login;
-
