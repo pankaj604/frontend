@@ -12,10 +12,10 @@ function Landing() {
     <>
       <div className="container-fluid d-flex justify-content-center  logo-landing">
         <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
-          <div className=" d-inline logo-img  col-3 p-0  ">
+          {/* <div className=" d-inline logo-img  col-3 p-0  ">
             <img className="img-logo" src="android-chrome-512x512.png" alt="" />
-          </div>
-          <div className="col p-0 ">
+          </div> */}
+          <div className="col pt-2 ">
             {" "}
             <h4 className=" welcome-hs">WELCOME TO HSROOMS</h4>
           </div>

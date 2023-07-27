@@ -33,7 +33,7 @@ const Aproveldata = ({
         }
       );
 
-      toast.success(data.message);
+      toast.success(data.massage);
 
       setRefresh((prev) => !prev);
     } catch (error) {

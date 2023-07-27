@@ -164,12 +164,12 @@ const Header = (req, res) => {
             </h4>
           </div>
         </div>
-      </div>
-      <div className="nav-main-cont-header d-flex flex-row justify-content-center mt-1  text text-center">
-        <div className="m-0 p-1">
-          <Link className="go-back-header text-decoration-none" to={"/"}>
-            Go Back To Home <KeyboardReturnOutlinedIcon />
-          </Link>
+        <div className="nav-main-cont-header d-flex flex-row justify-content-center mt-1  text text-center">
+          <div className="m-0 p-1">
+            <Link className="go-back-header text-decoration-none" to={"/"}>
+              Go Back To Home <KeyboardReturnOutlinedIcon />
+            </Link>
+          </div>
         </div>
       </div>
     </>

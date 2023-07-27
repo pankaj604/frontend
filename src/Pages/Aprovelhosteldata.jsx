@@ -59,7 +59,7 @@ const Aprovelhosteldata = ({
         }
       );
 
-      toast.success(data.message);
+      toast.success(data.massage);
       setRefresh((prev) => !prev);
     } catch (error) {
       toast.error(error.response.data.message);
