@@ -1,11 +1,10 @@
 body {
   margin: 0px;
   padding: 0px;
-
 }
 
-.back{
-  background-color: antiquewhite;
+.back {
+  background-color: white;
 }
 /* .boy {
   margin-left: 30%;
@@ -15,15 +14,18 @@ body {
 } */
 
 .h6 {
-color: aliceblue;
+  color: black;
 }
 
 .value {
-  color:yellow;
+  color: rgb(43, 39, 100);
 }
-.one{
-  background-color:black;
+.one {
+  background-color: aliceblue;
 }
-.detail{
+.detail {
   background-color: #5c5470;
+}
+.rent-value{
+  color: rgb(242, 10, 219);
 }

@@ -17,7 +17,7 @@ const Girlsdata = ({
         </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            room rent is <p className="m-0 d-inline value">{rent}</p>
+            room rent is <p className="m-0 d-inline rent-value">{rent}</p>
           </h6>
           <br />
        

@@ -38,7 +38,7 @@ const Couple = () => {
           </Link>
         </div>
       </div>
-      <div className="back">
+      <div className=" back ">
         <h5 className="boy m-0">
           Available Rooms For Couple in{" "}
           {JSON.parse(window.localStorage.getItem("valu"))}

@@ -23,25 +23,25 @@ const Hosteldata = ({
         </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Seat rent is <p className="m-0 d-inline value">{rent}</p>
+            Seat rent is - <p className="m-0 d-inline rent-value">{rent}</p>
             <br />
             <p className="m-0 d-inline  hostel-name">
               Hostel Name - <p className="m-0 d-inline ">{area}</p>
             </p>
             <br />
-            Nearby <p className="m-0 d-inline value">{nearby}</p>
+            Nearby - <p className="m-0 d-inline value">{nearby}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Available seats{" "}
-            <p className="m-0 d-inline value">{availableseats} </p>
-            Total <p className="m-0 d-inline value">{totalseats}</p>
+            Available seats -{" "}
+            <p className="m-0 d-inline value">{availableseats} </p>,
+            Total - <p className="m-0 d-inline value">{totalseats}</p>
             <br />
-            Gatetime <p className="m-0 d-inline value">{gatetime}</p>
+            Gatetime - <p className="m-0 d-inline value">{gatetime}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Facilities <p className="m-0 d-inline value">{facilites}</p>
+            Facilities - <p className="m-0 d-inline value">{facilites}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
@@ -49,7 +49,7 @@ const Hosteldata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+            Owner Mo. - <p className="m-0 d-inline value">{mobile}</p>
           </h6>
         </div>
       </div>

@@ -81,13 +81,13 @@ const Addhostel = () => {
   if (isAuthenticated) return <Navigate to={"/login"} />;
 
   return (
-    <div className="container bg-dark   d-flex flex-column  room">
+    <div className="container d-flex flex-column">
       <h4 className="wel-1 wel text text-center mt-1 ">Add Hostel</h4>{" "}
       <form onSubmit={handleSubmit}>
-        <div className="container d-flex flex-column justify-content-center   text text-center">
+        <div className=" d-flex flex-column justify-content-center   text text-center">
           <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
             <div className="container-option m-2">
-              <h5 className="city-option choice">Choose city</h5>
+              <h5 className="city-option text text-success choice">Choose city</h5>
 
               <select id="option" defaultValue="indore">
                 <option value="indore">Indore</option>
@@ -95,8 +95,8 @@ const Addhostel = () => {
                 <option value="mumbai">Mumbai 3</option>
               </select>
             </div>
-            <div className="container-option m-2">
-              <h5 className="city-option choice">Choose Any</h5>
+            <div className="container-option text text-success m-2">
+              <h5 className="city-option text text-success choice">Choose Any</h5>
 
               <select
                 id="hostelfor"

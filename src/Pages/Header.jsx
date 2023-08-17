@@ -55,10 +55,14 @@ const Header = (req, res) => {
     <>
       <div className="container-fluid d-flex justify-content-center  logo-landing">
         <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
-          <div className=" d-inline logo-img  col-3 p-0  ">
-            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
-          </div>
-          <div className="col p-0 ">
+          {/* <div className=" d-inline logo-img  col-3 p-0  ">
+             <img
+              className="img-logo mt-4 "
+              src="./hs-logo (2).png"
+              alt=""
+            /> 
+          </div> */}
+          <div className="col p-0 m-2 ">
             {" "}
             <h5 className=" welcome-hs">WelCome to HSROOMS</h5>
           </div>

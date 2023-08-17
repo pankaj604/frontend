@@ -75,10 +75,10 @@ const Addroom = () => {
   };
   if (isAuthenticated) return <Navigate to={"/login"} />;
   return (
-    <div className="container-fluid d-flex flex-column room">
-      <h4 className="wel-1 wel text text-center mt-1 "> Add room</h4>{" "}
+    <div className="container-fluid d-flex flex-column ">
+      <h4 className=" wel wel-1 text text-center mt-1 "> Add room</h4>{" "}
       <form onSubmit={handleSubmit}>
-        <div className="container d-flex flex-column justify-content-center   text text-center">
+        <div className=" d-flex flex-column justify-content-center   text text-center">
           <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
             <div className="container-option m-2">
               <h5 className="">Choose city</h5>
