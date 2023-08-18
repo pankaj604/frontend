@@ -46,7 +46,7 @@ const Login = () => {
       <div className="container-fluid d-flex justify-content-center  logo-landing">
         <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
           <div className=" d-inline logo-img  col-3 p-0  ">
-            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
+            <img className="img-logo" src="./done.png" alt="" />
           </div>
           <div className="col p-0 ">
             {" "}

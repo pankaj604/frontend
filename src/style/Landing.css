@@ -18,17 +18,17 @@
 .Loading {
   height: 100vh;
   width: 100vw;
-  background-color: aliceblue;
+  background-color: rgb(232, 240, 246);
   cursor: default;
 }
 
 .logo-img {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
 }
 
 .banner {
-  background: linear-gradient(-45deg, #c6d6f5, #7196d6);
+  background: linear-gradient(-45deg, #7887d1, #81c0f4);
   /* height: 40%; */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -39,7 +39,7 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .banner-3 {
-  background: linear-gradient(-45deg, #747673, #b0d8f9);
+  background: linear-gradient(-45deg, #7887d1, #81c0f4);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 .footer {
@@ -72,8 +72,10 @@
     width: 100px; */
 }
 .img-logo {
-  width: 50%;
-  height: 50%;
+  width: 80%;
+  height: 80%;
+  margin-top: 3px;
+  
 }
 .owner-lines {
   letter-spacing: 1.5px;

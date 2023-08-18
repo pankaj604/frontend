@@ -31,7 +31,7 @@ const Girls = () => {
   useEffect(() => {
     allboys();
   }, []);
-  console.log(girls);
+
   return (
     <>
       <div className="nav-main-cont d-flex flex-row justify-content-center mt-1  text text-center">

@@ -51,13 +51,13 @@ const Owner = () => {
   return (
     <>
       <div className="container-fluid d-flex justify-content-center  logo-landing">
-        <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
-          {/* <div className=" d-inline logo-img  col-3 p-0  ">
-            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
-          </div> */}
-          <div className="col p-0 m-2">
+      <div className="  m-0 p-0  d-flex align-items-center ">
+          <div className=" d-inline logo-img text-center m-0 p-0  ">
+            <img className="img-logo" src="./done.png" alt="" />
+          </div>
+          <div className=" p-0 ">
             {" "}
-            <h5 className=" welcome-hs">WelCome {user?.name}</h5>
+            <h4 className="welcome-hs">WELCOME TO HSROOMS</h4>
           </div>
         </div>
       </div>
@@ -116,7 +116,7 @@ const Owner = () => {
           </h4>
           <br />
           <div className="d-flex">
-            <Link className="btn register-btn w-50 mt-2 m-2" to={"/addroom"}>
+            <Link className="btn text text-center register-btn pt-2 w-50 mt-2 m-2 " to={"/addroom"}>
               Add Room
             </Link>
             <Link className="btn login-btn w-50 mt-2 m-2" to={"/myroom"}>
@@ -131,7 +131,7 @@ const Owner = () => {
           <h4 className=" mx-1 text-center ">यहाँ केवल होस्टल्स जोड़े</h4>
 
           <div className="d-flex">
-            <Link className="btn register-btn w-50 mt-2 m-2" to={"/addhostel"}>
+            <Link className="btn register-btn w-50 pt-2 mt-2 m-2" to={"/addhostel"}>
               Add Hostel
             </Link>
             <Link className="btn login-btn w-50 mt-2 m-2" to={"/myhostel"}>

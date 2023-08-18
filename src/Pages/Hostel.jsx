@@ -9,7 +9,7 @@ import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlin
 
 const Hostel = () => {
   const { id } = useParams();
-  console.log(id)
+
   const [hostels, setHostles] = useState([]);
   const [error, seterror] = useState("");
   const hostel = async () => {

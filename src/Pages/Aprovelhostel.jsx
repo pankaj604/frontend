@@ -35,9 +35,9 @@ const Aprovelhostel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center"> total Hostles {total}</h5>
-        <h5 className="choice text text-center"> approval {count} </h5>
-        <h5 className="choice text text-center"> not approval {coun} </h5>
+        <h5 className="choice text-dark text-center"> Total Hostles {total}</h5>
+        <h5 className="choice text-dark text-center"> Approved {count} </h5>
+        <h5 className="choice text-dark text-center"> Not approved {coun} </h5>
         <div className="container-fluid">
           <div className="row">
             {hostel.map((i) => {

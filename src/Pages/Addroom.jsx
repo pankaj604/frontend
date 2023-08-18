@@ -61,7 +61,7 @@ const Addroom = () => {
     e.preventDefault();
     try {
       setbutton(true);
-      console.log(food)
+ 
       const { data } = await axios.post(`${server}/room/add`, formData, {
         withCredentials: true,
       });

@@ -10,14 +10,14 @@ function Landing() {
   }, []);
   return (
     <>
-      <div className="container-fluid d-flex justify-content-center  logo-landing">
-        <div className=" row m-0 p-0  d-flex align-items-center justify-content-between">
-          {/* <div className=" d-inline logo-img  col-3 p-0  ">
-            <img className="img-logo" src="android-chrome-512x512.png" alt="" />
-          </div> */}
-          <div className="col pt-2 ">
+      <div className="container-fluid d-flex justify-content-center p-0 logo-landing">
+        <div className="  m-0 p-0  d-flex align-items-center ">
+          <div className=" d-inline logo-img text-center m-0 p-0  ">
+            <img className="img-logo" src="./done.png" alt="" />
+          </div>
+          <div className=" p-0 ">
             {" "}
-            <h4 className=" welcome-hs">WELCOME TO HSROOMS</h4>
+            <h4 className="welcome-hs">WELCOME TO HSROOMS</h4>
           </div>
         </div>
       </div>
@@ -26,16 +26,16 @@ function Landing() {
         <div className="container banner my-3 p-3 ">
           <h1 className="search-easy">रूम ढूँढना हुआ सबसे आसान...</h1>
 
-          <h3>बिना किसी दलाली ब्रोकरी और परेशानी के </h3>
+          <h3>बिना किसी दलाली ( ब्रोकरी ) और परेशानी के </h3>
           <p>
             अब आपको कभी भी अपना कीमती समय गवा कर गली गली भटकने की जरुरत नहीं हे
-            और नहीं दलालो का पेट भरने की{" "}
+            और नहीं अपना कीमती पैसा दलाली में बर्बाद करने की{" "}
           </p>
         </div>
         <div className="container banner-2 p-3 my-3">
           <h2>यहां मिलेगा सब आसानी से </h2>
           <h3 className="d-inline mx-1">
-            Rooms , Hostels , PG ,Flats , Shops & Offices{" "}
+            Rooms - Hostels - PG - Flats - Shops & Offices{" "}
           </h3>
           <br />
           <div className="d-flex justify-content-end">

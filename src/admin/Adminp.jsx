@@ -24,7 +24,7 @@ const Admin = () => {
     <div>
       <h1 className="all-room-head">hello admin pankaj all rooms are</h1>
       {users.map((i) => {
-        console.log(i.status);
+       
         return (
           <>
             <Dashboard

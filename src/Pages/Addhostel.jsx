@@ -39,7 +39,7 @@ const Addhostel = () => {
     const citydata = selectBox.value;
     const gender = document.getElementById("hostelfor");
     const value = gender.value;
-    console.log(value);
+  
     const formData = new FormData();
     formData.append("image", selectedFile);
     formData.append("city", citydata);
@@ -73,7 +73,7 @@ const Addhostel = () => {
     const valu = document.getElementById("hostelfor");
 
     sethostelfor(valu.value);
-    console.log(hostelfor);
+    
   };
   useEffect(() => {
     initialget();
