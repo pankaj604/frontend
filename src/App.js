@@ -77,7 +77,7 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/boys" element={<Boys />} />
         <Route path="/girls" element={<Girls />} />
-        <Route path="/pg" element={<PG />} />
+    
     
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
@@ -93,6 +93,7 @@ function App() {
         <Route path="/admin/room-aprovel" element={<Aprovel />} />
         <Route path="/admin/shop-aprovel" element={<Aprovelshop />} />
         <Route path="/admin/hostel-aprovel" element={<Aprovelhostel />} />
+        <Route path="/pg/:id" element={<PG />} />
         <Route path="/hostel/:id" element={<Hostel />} />
       </Routes>
       <Toaster />

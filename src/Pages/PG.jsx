@@ -5,15 +5,22 @@ import axios from "axios";
 import Girlsdata from "./Girlsdata";
 import Pgdata from "./Pgdata";
 import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
-import { Link } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 
 const PG = () => {
+  const { id } = useParams();
+  
+
+ 
   const [pg, setPG] = useState([]);
   const pgroom = async () => {
     await axios
-      .get(
-        `${server}/room/pg/${JSON.parse(window.localStorage.getItem("valu"))}`,
+      .post(
+        `${server}/room/pg/`,
+        {
+          id,
+          city: JSON.parse(window.localStorage.getItem("valu")),
+        },
         {
           withCredentials: true,
         }
@@ -22,7 +29,7 @@ const PG = () => {
         setPG(res.data.rooms);
       })
       .catch((e) => {
-        toast.error(e.response.data.message);
+        toast.error(e.response.data.massage);
       });
   };
   useEffect(() => {
@@ -41,7 +48,7 @@ const PG = () => {
 
       <div className="back">
         <h5 className="boy m-0">
-          Available PG For Girls In{" "}
+          Available {id} In
           {JSON.parse(window.localStorage.getItem("valu"))}
         </h5>
         <div className="container-fluid">
@@ -57,6 +64,7 @@ const PG = () => {
                     image={i.image}
                     size={i.size}
                     facilities={i.facilities}
+                    food={i.food}
                   />
                 </>
               );

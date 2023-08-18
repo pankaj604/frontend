@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
-import "../style/pgdata.css"
-const Pgdata = ({ city, rent, address, mobile, image,size,facilities }) => {
+import "../style/pgdata.css";
+const Pgdata = ({
+  city,
+  rent,
+  address,
+  mobile,
+  image,
+  size,
+  facilities,
+  food,
+}) => {
   return (
     <>
       <div className="one p-0 col-xl-2  text-white">
@@ -12,7 +21,7 @@ const Pgdata = ({ city, rent, address, mobile, image,size,facilities }) => {
             room rent is <p className="m-0 d-inline rent-value">{rent}</p>
           </h6>
           <br />
-       
+
           <h6 className="d-inline m-0 h6">
             Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
           </h6>
@@ -26,7 +35,11 @@ const Pgdata = ({ city, rent, address, mobile, image,size,facilities }) => {
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Address -  <p className="m-0 d-inline value">{address}</p>
+            Food = <p className="m-0 d-inline value">{food}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Address - <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
         </div>

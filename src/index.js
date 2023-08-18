@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 import { createContext } from "react";
-// export const server = "http://localhost:4000/v1";
-export const server = "https://hsrooms.onrender.com/v1";
+export const server = "http://localhost:4000/v1";
+// export const server = "https://hsrooms.onrender.com/v1";
 export const Context = createContext({ isAuthenticated: false });
 
 const AppWrapper = () => {

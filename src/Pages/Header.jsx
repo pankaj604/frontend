@@ -111,20 +111,32 @@ const Header = (req, res) => {
             </h4>
           </div>
           <div className="d-flex justify-content-around">
-            <h4 className="w-50 m-2">
-              <Link
-                className="btn w-100 text-dark bg-light text-decoration-none"
-                to={"/pg"}
-              >
-                PG
-              </Link>
-            </h4>
+       
             <h4 className="w-50 m-2">
               <Link
                 className="btn w-100 text-dark bg-light text-decoration-none"
                 to={"/couple"}
               >
-                Couples
+                Couples/Family
+              </Link>
+            </h4>
+          </div>
+          <div className="d-flex justify-content-around">
+       
+          <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/pg/pggirls"}
+              >
+                PG Girls
+              </Link>
+            </h4>
+            <h4 className="w-50 m-2">
+              <Link
+                className="btn w-100 text-dark bg-light text-decoration-none"
+                to={"/pg/pgboys"}
+              >
+                PG Boys
               </Link>
             </h4>
           </div>

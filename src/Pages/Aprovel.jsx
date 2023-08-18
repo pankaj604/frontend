@@ -36,9 +36,9 @@ const Aprovel = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center"> total Rooms {total}</h5>
-        <h5 className="choice text text-center"> approval {count} </h5>
-        <h5 className="choice text text-center"> not approval {coun} </h5>
+        <h5 className="choice text-dark text text-center"> total Rooms {total}</h5>
+        <h5 className="choice text-dark text text-center"> approval {count} </h5>
+        <h5 className="choice text-dark text text-center"> not approval {coun} </h5>
 
         <div className="container-fluid">
           <div className="row">
@@ -59,6 +59,7 @@ const Aprovel = () => {
                       size={i.size}
                       facilities={i.facilities}
                       isApproved={i.isApproved ? "ON" : "OFF"}
+                      food={i.food}
                     />
                   </>
                 );

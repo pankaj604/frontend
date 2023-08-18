@@ -9,9 +9,10 @@ import imageCompression from "browser-image-compression";
 import { Navigate } from "react-router-dom";
 
 const Addroom = () => {
-  // const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("");
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
+  const [food, setfood] = useState("");
   const [facilities, setfacilities] = useState("");
   const [size, setsize] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
@@ -56,9 +57,11 @@ const Addroom = () => {
     formData.append("address", address);
     formData.append("facilities", facilities);
     formData.append("size", size);
+    formData.append("food", food);
     e.preventDefault();
     try {
       setbutton(true);
+      console.log(food)
       const { data } = await axios.post(`${server}/room/add`, formData, {
         withCredentials: true,
       });
@@ -92,14 +95,15 @@ const Addroom = () => {
             <div className="container-option m-2 ">
               <h5 className="">Choose Gender</h5>
               <select
-                // onChange={(e) => setSelectedOption(e.target.value)}
+                onChange={(e) => setSelectedOption(e.target.value)}
                 id="for"
                 defaultValue="everyone"
               >
                 <option value="boys">Boys</option>
                 <option value="girls">Girls</option>
-                <option value="pg">PG girls</option>
+                <option value="pggirls">PG girls</option>
                 <option value="everyone">Everyone</option>
+                <option value="pgboys">PG Boys</option>
               </select>
             </div>
           </div>
@@ -110,6 +114,7 @@ const Addroom = () => {
                 type="text"
                 value={rent}
                 onChange={(e) => setRent(e.target.value)}
+                required
               />
             </div>
 
@@ -119,6 +124,7 @@ const Addroom = () => {
                 type="text"
                 value={size}
                 onChange={(e) => setsize(e.target.value)}
+                required
               />
             </div>
             <div className="user-box align-self-mid">
@@ -127,6 +133,7 @@ const Addroom = () => {
                 type="text"
                 value={facilities}
                 onChange={(e) => setfacilities(e.target.value)}
+                required
               />
             </div>
             <div className="user-box align-self-mid">
@@ -136,6 +143,7 @@ const Addroom = () => {
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
+                required
               />
             </div>
             <div className="user-box align-self-mid">
@@ -144,20 +152,35 @@ const Addroom = () => {
                 type="text"
                 value={mobile}
                 onChange={(e) => setMobile(e.target.value)}
+                required
               />
             </div>
-            {/* {(selectedOption === "pg" ? (
+            {selectedOption === "pggirls" ? (
               <div className="user-box align-self-mid">
                 <h5>Food</h5>
                 <input
                   type="text"
-                  value={mobile}
-                  onChange={(e) => setMobile(e.target.value)}
+                  value={food}
+                  onChange={(e) => setfood(e.target.value)}
+                  required
                 />
               </div>
             ) : (
               <></>
-            ))} */}
+            )}
+            {selectedOption === "pgboys" ? (
+              <div className="user-box align-self-mid">
+                <h5>Food</h5>
+                <input
+                  type="text"
+                  value={food}
+                  onChange={(e) => setfood(e.target.value)}
+                  required
+                />
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
           <div className="input-box mt-2 d-flex flex-column justify-content-center   text text-center">
             <div>

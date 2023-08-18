@@ -80,6 +80,7 @@ const Myroom = () => {
                     size={i.size}
                     facilities={i.facilities}
                     isApproved={i.isApproved}
+                    food={i.food}
                   />
                 </>
               );

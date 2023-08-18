@@ -44,6 +44,7 @@ const Boys = () => {
           </Link>
         </div>
       </div>
+      
       <div className="back">
         <h5 className=" boy  my-2 py-2  ">
           Available Rooms For Boys In{" "}

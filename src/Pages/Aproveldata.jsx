@@ -14,6 +14,7 @@ const Aproveldata = ({
   size,
   facilities,
   isApproved,
+  food
 }) => {
   const { setRefresh, refresh } = useContext(Context);
   const [button, sebutton] = useState(false);
@@ -37,7 +38,7 @@ const Aproveldata = ({
 
       setRefresh((prev) => !prev);
     } catch (error) {
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.massage);
     }
   };
   const deleteHandler = async (id) => {
@@ -49,7 +50,7 @@ const Aproveldata = ({
           withCredentials: true,
         });
 
-        toast.success(data.message);
+        toast.success(data.massage);
         sebutton(true);
         setRefresh((prev) => !prev);
       }
@@ -94,6 +95,13 @@ const Aproveldata = ({
             Address <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
+          {food&& (<>
+            <h6 className="d-inline m-0 h6">
+            food =  <p className="m-0 d-inline value">{food}</p>
+          </h6>
+          <br />
+          
+          </>)}
         </div>
         <div className="operation  d-flex flex-row  ">
           <div className="input d-flex justify-content-center align-items-center  flex-row m-2">

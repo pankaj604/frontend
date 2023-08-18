@@ -15,6 +15,7 @@ const Myroomdata = ({
   size,
   facilities,
   isApproved,
+  food
 }) => {
   const { setRefresh, refresh } = useContext(Context);
   const [button, sebutton] = useState(false);
@@ -34,7 +35,7 @@ const Myroomdata = ({
         }
       );
 
-      toast.success(data.message);
+      toast.success(data.massage);
 
       setRefresh((prev) => !prev);
     } catch (error) {
@@ -50,7 +51,7 @@ const Myroomdata = ({
           withCredentials: true,
         });
 
-        toast.success(data.message);
+        toast.success(data.massage);
         sebutton(true);
         setRefresh((prev) => !prev);
       }
@@ -95,6 +96,14 @@ const Myroomdata = ({
             Address <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
+        {
+          food && (<>
+              <h6 className="d-inline m-0 h6">
+            food <p className="m-0 d-inline value">{food}</p>
+          </h6>
+          <br />
+          </>)
+        }
         </div>
         <div className="operation  d-flex flex-row  ">
           {isApproved ? (
