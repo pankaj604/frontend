@@ -14,16 +14,65 @@ const Myshopdata = ({
   size,
   status,
   id,
-  isApproved
+  isApproved,
+  date,
+  days
 }) => {
   const [button, setbutton] = useState(false);
   const { setRefresh, refresh } = useContext(Context);
+  const [daysLeft, setDaysLeft] = useState(null);
+  const [selectedDate, setSelectedDate] = useState("");
   let light = false;
   if (`${status}` === "ON") {
     light = true;
   } else {
     light = false;
   }
+  //
+  const handleDateChange = (event) => {
+    const inputDate = new Date(event.target.value);
+   
+    const currentDate = new Date();
+    const maxDate = new Date();
+    maxDate.setDate(currentDate.getDate() + 15); // Limit to 15 days from now
+    //
+
+    const timeDifference = inputDate.getTime() - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    //
+    if (inputDate >= currentDate && inputDate <= maxDate) {
+      setSelectedDate(event.target.value);
+      setDaysLeft(daysRemaining);
+      console.log(daysRemaining);
+    } else {
+      window.alert("'Date must be within the next 15 days'");
+    }
+  };
+  //
+  const dateupdate = async (id, selectedDate) => {
+    try {
+      const { data } = await axios.post(
+        `${server}/shop/updatedate`,
+        {
+          id,
+          selectedDate,
+          daysLeft,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      toast.success(data.massage);
+
+      setRefresh((prev) => !prev);
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
+    }
+  };
+  //
+
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
@@ -34,7 +83,7 @@ const Myshopdata = ({
         }
       );
 
-      toast.success(data.message);
+      toast.success(data.massage);
       setRefresh((prev) => !prev);
     } catch (error) {
       toast.error(error.response.data.message);
@@ -90,6 +139,28 @@ const Myshopdata = ({
           <br />
           <h6 className="d-inline m-0 h6">
             Facilities <p className="m-0 d-inline value">{nearby}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Available date ={" "}
+            <p className="m-0 d-inline value">
+              {date} daysRemaining = {days}
+            </p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+            />
+            <button
+              onClick={() => dateupdate(id, selectedDate)}
+              className="btn border-dark "
+            >
+              {" "}
+              update date
+            </button>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

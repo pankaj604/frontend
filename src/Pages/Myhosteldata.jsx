@@ -18,9 +18,13 @@ const Myhosteldata = ({
   id,
   status,
   isApproved,
-  hostelfor
+  hostelfor,
+  date,
+  days,
 }) => {
   const [button, setbutton] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+  const [daysLeft, setDaysLeft] = useState(null);
   const { refresh, setRefresh } = useContext(Context);
   const [seat, setSeat] = useState("");
   let light = false;
@@ -29,6 +33,57 @@ const Myhosteldata = ({
   } else {
     light = false;
   }
+
+  //
+  const handleDateChange = (event) => {
+    const inputDate = new Date(event.target.value);
+   
+    const currentDate = new Date();
+    const maxDate = new Date();
+    maxDate.setDate(currentDate.getDate() + 15); // Limit to 15 days from now
+    //
+
+    const timeDifference = inputDate.getTime() - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    //
+    if (inputDate >= currentDate && inputDate <= maxDate) {
+      setSelectedDate(event.target.value);
+      setDaysLeft(daysRemaining);
+      console.log(daysRemaining);
+    } else {
+      window.alert("'Date must be within the next 15 days'");
+    }
+  };
+
+  //
+
+  const dateupdate = async (id, selectedDate) => {
+    try {
+      const { data } = await axios.post(
+        `${server}/hostel/updatedate`,
+        {
+          id,
+          selectedDate,
+          daysLeft,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      toast.success(data.massage);
+
+      setRefresh((prev) => !prev);
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
+    }
+  };
+
+  //
+
+
+
   const updateseats = async () => {
     try {
       const result = window.confirm("sure to update");
@@ -102,10 +157,10 @@ const Myhosteldata = ({
           <br />
 
           <h6 className="d-inline m-0 h6">
-            Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+            Owner Mo. <p className="m-0 d-inline value">{mobile} </p>
           </h6>
           <h6 className="d-inline m-0 h6">
-            Hostelfor <p className="m-0 d-inline value">{hostelfor}</p>
+            Hostelfor = <p className="m-0 d-inline value">{hostelfor}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
@@ -135,35 +190,58 @@ const Myhosteldata = ({
             Address <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
+          <h6 className="d-inline m-0 h6">
+            Available date ={" "}
+            <p className="m-0 d-inline value">
+              {date} daysRemaining = {days}
+            </p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+            />
+            <button
+              onClick={() => dateupdate(id, selectedDate)}
+              className="btn border-dark "
+            >
+              {" "}
+              update date
+            </button>
+          </h6>
+          <br />
         </div>
         <div className="operation d-flex flex-row  ">
-
           {isApproved ? (
-          <div className=" d-flex  flex-row m-2">
-            <input
-              className="chackbox mt-2"
-              onChange={() => updateHandler(id)}
-              type="checkbox"
-              checked={light}
-            />
-          </div>):
-          (  <div className="btn btn-warning ">
-          <h6>Waiting for Approval</h6>
-        </div>)}
+            <div className=" d-flex  flex-row m-2">
+              <input
+                className="chackbox mt-2"
+                onChange={() => updateHandler(id)}
+                type="checkbox"
+                checked={light}
+              />
+            </div>
+          ) : (
+            <div className="btn btn-warning ">
+              <h6>Waiting for Approval</h6>
+            </div>
+          )}
 
-          {isApproved &&
-          <div className="seat d-flex flex-row">
-            <input
-              className="chackbox text text-center m-2 in-seat"
-              placeholder="Seats"
-              type="number"
-              onChange={(e) => setSeat(e.target.value)}
-            />
-            <button className="seat-btn p-2 mt-2 mb-2" onClick={updateseats}>
-              Set
-            </button>
-          </div>
-          }
+          {isApproved && (
+            <div className="seat d-flex flex-row">
+              <input
+                className="chackbox text text-center m-2 in-seat"
+                placeholder="Seats"
+                type="number"
+                onChange={(e) => setSeat(e.target.value)}
+              />
+              <button className="seat-btn p-2 mt-2 mb-2" onClick={updateseats}>
+                Set
+              </button>
+            </div>
+          )}
 
           <div className="button align-self-end m-2">
             <button

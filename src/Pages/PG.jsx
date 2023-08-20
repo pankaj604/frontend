@@ -9,9 +9,8 @@ import { Link, useParams } from "react-router-dom";
 
 const PG = () => {
   const { id } = useParams();
-  
-
- 
+  const [error, seterror] = useState("");
+  const [loading , setloading] = useState(true);
   const [pg, setPG] = useState([]);
   const pgroom = async () => {
     await axios
@@ -27,9 +26,11 @@ const PG = () => {
       )
       .then((res) => {
         setPG(res.data.rooms);
+        setloading(false)
       })
       .catch((e) => {
         toast.error(e.response.data.massage);
+        seterror(e.response.data.message);
       });
   };
   useEffect(() => {
@@ -53,7 +54,9 @@ const PG = () => {
         </h5>
         <div className="container-fluid">
           <div className=" row ">
-            {pg.map((i) => {
+          {error && <h1>{error}</h1>}
+            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            {pg && pg.map((i) => {
               return (
                 <>
                   <Pgdata
@@ -65,6 +68,7 @@ const PG = () => {
                     size={i.size}
                     facilities={i.facilities}
                     food={i.food}
+                    date={i.date}
                   />
                 </>
               );

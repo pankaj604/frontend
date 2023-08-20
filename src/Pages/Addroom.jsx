@@ -7,7 +7,7 @@ import "../style/Addroom.css";
 import { Context } from "..";
 import imageCompression from "browser-image-compression";
 import { Navigate } from "react-router-dom";
-
+import DatePicker from 'react-datepicker';
 const Addroom = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [rent, setRent] = useState("");
@@ -18,6 +18,10 @@ const Addroom = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [button, setbutton] = useState(false);
   const [isAuthenticated, setisAuthenticated] = useState(false);
+
+  //
+
+
 
   //
 

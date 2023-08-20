@@ -64,7 +64,7 @@ const Myroom = () => {
         </div>
         <div className="container-fluid">
           <div className="row">
-            {myroom.map((i) => {
+            { myroom && myroom.map((i) => {
               return (
                 <>
                   <Myroomdata
@@ -81,6 +81,8 @@ const Myroom = () => {
                     facilities={i.facilities}
                     isApproved={i.isApproved}
                     food={i.food}
+                    date={i.date}
+                    days={i.days}
                   />
                 </>
               );

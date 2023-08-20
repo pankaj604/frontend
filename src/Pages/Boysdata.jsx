@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const Boysdata = ({ city, rent, address, mobile, image, size, facilities }) => {
+const Boysdata = ({
+  city,
+  rent,
+  address,
+  mobile,
+  image,
+  size,
+  facilities,
+  date,
+}) => {
+  //
+  const [daysLeft, setDaysLeft] = useState(null);
+  const update = () => {
+    const inputDate = new Date(date);
+
+    const currentDate = new Date();
+
+    const timeDifference = inputDate - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    if (daysRemaining >= 1) {
+      setDaysLeft(daysRemaining);
+    } else {
+      setDaysLeft("Available Now");
+    }
+    console.log(daysRemaining);
+  };
+
+  useEffect(() => {
+    update();
+  }, []);
+
   return (
     <>
       <div className=" one my-2 p-0 col-xl-2  text-white">
@@ -12,13 +42,13 @@ const Boysdata = ({ city, rent, address, mobile, image, size, facilities }) => {
             Room rent is - <p className="m-0 d-inline rent-value">{rent}</p>
           </h6>
           <br />
-       
+
           <h6 className="d-inline m-0 h6">
             Owner Mo. - <p className="m-0 d-inline value">{mobile}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Room Size -  <p className="m-0 d-inline value">{size}</p>
+            Room Size - <p className="m-0 d-inline value">{size}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
@@ -26,7 +56,14 @@ const Boysdata = ({ city, rent, address, mobile, image, size, facilities }) => {
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Address -  <p className="m-0 d-inline value">{address}</p>
+            {date && <>Available Date </>}
+            <p className="m-0 d-inline value">
+              {date} <b> left-time = {daysLeft} days</b>
+            </p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Address - <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
         </div>

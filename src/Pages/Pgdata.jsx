@@ -9,7 +9,27 @@ const Pgdata = ({
   size,
   facilities,
   food,
+  date
 }) => {
+  const [daysLeft, setDaysLeft] = useState(null);
+  const update = () => {
+    const inputDate = new Date(date);
+
+    const currentDate = new Date();
+
+    const timeDifference = inputDate - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    if (daysRemaining >= 1) {
+      setDaysLeft(daysRemaining);
+    } else {
+      setDaysLeft("Available Now");
+    }
+    console.log(daysRemaining);
+  };
+
+  useEffect(() => {
+    update();
+  }, []);
   return (
     <>
       <div className="one p-0 col-xl-2  text-white">
@@ -36,6 +56,17 @@ const Pgdata = ({
           <br />
           <h6 className="d-inline m-0 h6">
             Food = <p className="m-0 d-inline value">{food}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            Available = <p className="m-0 d-inline value">{date}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+            {date && <>Available Date </>}
+            <p className="m-0 d-inline value">
+              {date} <b> left-time = {daysLeft} days</b>
+            </p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

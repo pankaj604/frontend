@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [shops, setshops] = useState([]);
+  const [loading , setloading] = useState(true);
+  const [error, seterror] = useState("");
   const shop = async () => {
     await axios
       .get(
@@ -18,9 +20,11 @@ const Shop = () => {
       )
       .then((res) => {
         setshops(res.data.shops);
+        setloading(false)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
+        seterror(e.response.data.message);
       });
   };
   useEffect(() => {
@@ -44,7 +48,9 @@ const Shop = () => {
         </h5>
         <div className="container-fluid">
           <div className="row">
-            {shops.map((i) => {
+          {error && <h1>{error}</h1>}
+          {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            { shops && shops.map((i) => {
               return (
                 <>
                   <Shopdata
@@ -56,6 +62,7 @@ const Shop = () => {
                     nearby={i.nearby}
                     size={i.size}
                     image={i.image}
+                    date={i.date}
                   />
                 </>
               );

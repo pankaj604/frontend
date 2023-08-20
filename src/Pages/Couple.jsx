@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Couple = () => {
   const [couple, setcouple] = useState([]);
+  const [loading , setloading] = useState(true);
   const both = async () => {
     await axios
       .get(
@@ -20,6 +21,7 @@ const Couple = () => {
       )
       .then((res) => {
         setcouple(res.data.rooms);
+        setloading(false)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -43,10 +45,11 @@ const Couple = () => {
           Available Rooms For Couple in{" "}
           {JSON.parse(window.localStorage.getItem("valu"))}
         </h5>
+        {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
         <div className="container-fluid">
           <div className="row">
             {" "}
-            {couple.map((i) => {
+            {couple && couple.map((i) => {
               return (
                 <>
                   <Coupledata
@@ -57,6 +60,7 @@ const Couple = () => {
                     image={i.image}
                     size={i.size}
                     facilities={i.facilities}
+                    date={i.date}
                   />
                 </>
               );

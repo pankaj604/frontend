@@ -76,6 +76,8 @@ const Myhostel = () => {
                     key={i._id}
                     isApproved={i.isApproved}
                     hostelfor={i.hostelfor}
+                    date={i.date}
+                    days={i.days}
                   />
                 </>
               );

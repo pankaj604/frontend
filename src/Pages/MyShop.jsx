@@ -38,7 +38,7 @@ const MyShop = () => {
         </div>
       </div>
       <div className="back">
-        <h5 className="choice text text-center"> Your Shop/Office</h5>
+        <h5 className="choice text-dark text text-center"> Your Shop/Office</h5>
         <div className="container-fluid">
           <div className="row">
             {myroom.map((i) => {
@@ -56,6 +56,8 @@ const MyShop = () => {
                     id={i._id}
                     status={i.status ? "ON" : "OFF"}
                     isApproved={i.isApproved}
+                    date={i.date}
+                    days={i.days}
                   />
                 </>
               );

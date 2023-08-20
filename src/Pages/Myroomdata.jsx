@@ -1,7 +1,9 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import "../style/Myroomdata.css";
 const Myroomdata = ({
   city,
@@ -15,9 +17,13 @@ const Myroomdata = ({
   size,
   facilities,
   isApproved,
-  food
+  food,
+  date,
+  days,
 }) => {
+  const [selectedDate, setSelectedDate] = useState("");
   const { setRefresh, refresh } = useContext(Context);
+  const [daysLeft, setDaysLeft] = useState(null);
   const [button, sebutton] = useState(false);
   let light = false;
   if (`${status}` === "ON") {
@@ -25,6 +31,69 @@ const Myroomdata = ({
   } else {
     light = false;
   }
+
+  //
+  const handleDateChange = (event) => {
+    const inputDate = new Date(event.target.value);
+   
+    const currentDate = new Date();
+    const maxDate = new Date();
+    maxDate.setDate(currentDate.getDate() + 15); // Limit to 15 days from now
+    //
+
+    const timeDifference = inputDate.getTime() - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    //
+    if (inputDate >= currentDate && inputDate <= maxDate) {
+      setSelectedDate(event.target.value);
+      setDaysLeft(daysRemaining);
+      console.log(daysRemaining);
+    } else {
+      window.alert("'Date must be within the next 15 days'");
+    }
+  };
+  // daily update
+  // const calculateDaysLeft = (inputDate) => {
+  //   const currentDate = new Date();
+  //   const targetDate = new Date(inputDate);
+
+  //   const timeDifference = targetDate.getTime() - currentDate.getTime();
+  //   const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+  //   setDaysLeft(daysRemaining);
+  // };
+
+  // useEffect(() => {
+
+  //   console.log("button dabi ")
+  //   // }, 1000 * 60 * 60 * 24); // Update daily
+  // }, []);
+
+  //
+
+  const dateupdate = async (id, selectedDate) => {
+    try {
+      const { data } = await axios.post(
+        `${server}/room/updatedate`,
+        {
+          id,
+          selectedDate,
+          daysLeft,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+
+      toast.success(data.massage);
+
+      setRefresh((prev) => !prev);
+    } catch (error) {
+      toast.error(error.response.data.message);
+      console.log(error.response.data.message);
+    }
+  };
+
   const updateHandler = async (id) => {
     try {
       const { data } = await axios.put(
@@ -42,6 +111,11 @@ const Myroomdata = ({
       toast.error(error.response.data.message);
     }
   };
+
+  //
+
+  //
+
   const deleteHandler = async (id) => {
     try {
       const resu = window.confirm("are you sure to delet");
@@ -96,14 +170,36 @@ const Myroomdata = ({
             Address <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
-        {
-          food && (<>
-              <h6 className="d-inline m-0 h6">
-            food <p className="m-0 d-inline value">{food}</p>
+          <h6 className="d-inline m-0 h6">
+            Available date ={" "}
+            <p className="m-0 d-inline value">
+              {date} daysRemaining = {days}
+            </p>
           </h6>
           <br />
-          </>)
-        }
+          <h6 className="d-inline m-0 h6">
+            <input
+              type="date"
+              value={selectedDate}
+              onChange={handleDateChange}
+            />
+            <button
+              onClick={() => dateupdate(id, selectedDate)}
+              className="btn border-dark "
+            >
+              {" "}
+              update date
+            </button>
+          </h6>
+          <br />
+          {food && (
+            <>
+              <h6 className="d-inline m-0 h6">
+                food <p className="m-0 d-inline value">{food}</p>
+              </h6>
+              <br />
+            </>
+          )}
         </div>
         <div className="operation  d-flex flex-row  ">
           {isApproved ? (

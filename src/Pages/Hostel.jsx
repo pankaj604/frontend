@@ -9,7 +9,7 @@ import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlin
 
 const Hostel = () => {
   const { id } = useParams();
-
+  const [loading , setloading] = useState(true);
   const [hostels, setHostles] = useState([]);
   const [error, seterror] = useState("");
   const hostel = async () => {
@@ -27,6 +27,7 @@ const Hostel = () => {
       )
       .then((res) => {
         setHostles(res.data.hostels);
+        setloading(false)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -54,7 +55,8 @@ const Hostel = () => {
         <div className="container-fluid">
           <div className=" row ">
             {error && <h1>{error}</h1>}
-            {hostels.map((i) => {
+            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            { hostels && hostels.map((i) => {
               return (
                 <>
                   <Hosteldata
@@ -71,6 +73,7 @@ const Hostel = () => {
                     image={i.image}
                     status={i.status ? "ON" : "OFF"}
                     key={i._id}
+                    date={i.date}
                   />
                 </>
               );

@@ -10,6 +10,7 @@ import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlin
 const Girls = () => {
   const [girls, Rgirls] = useState([]);
   const [error, seterror] = useState("");
+  const [loading , setloading] = useState(true);
   const allboys = async () => {
     await axios
       .get(
@@ -22,6 +23,7 @@ const Girls = () => {
       )
       .then((res) => {
         Rgirls(res.data.rooms);
+        setloading(false)
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -50,7 +52,8 @@ const Girls = () => {
         <div className="container-fluid">
           <div className=" row ">
             {error && <h1>{error}</h1>}
-            {girls.map((i) => {
+            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            { girls && girls.map((i) => {
               return (
                 <>
                   <Girlsdata
@@ -61,6 +64,7 @@ const Girls = () => {
                     image={i.image}
                     size={i.size}
                     facilities={i.facilities}
+                    date={i.date}
                   />
                 </>
               );

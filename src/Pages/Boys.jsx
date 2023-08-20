@@ -10,6 +10,7 @@ import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlin
 
 const Boys = () => {
   const { city, setCity } = useContext(Context);
+  const [loading , setloading] = useState(true);
   const [boys, Rboys] = useState([]);
   const [error, seterror] = useState("");
   const allboys = async () => {
@@ -24,6 +25,8 @@ const Boys = () => {
       )
       .then((res) => {
         Rboys(res.data.rooms);
+        setloading(false)
+        
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -44,7 +47,7 @@ const Boys = () => {
           </Link>
         </div>
       </div>
-      
+
       <div className="back">
         <h5 className=" boy  my-2 py-2  ">
           Available Rooms For Boys In{" "}
@@ -53,7 +56,8 @@ const Boys = () => {
         <div className="container-fluid">
           <div className=" row ">
             {error && <h1>{error}</h1>}
-            {boys.map((i) => {
+            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            { boys && boys.map((i) => {
               return (
                 <>
                   <Boysdata
@@ -64,6 +68,8 @@ const Boys = () => {
                     image={i.image}
                     size={i.size}
                     facilities={i.facilities}
+                    date={i.date}
+                    days={i.days}
                   />
                 </>
               );
