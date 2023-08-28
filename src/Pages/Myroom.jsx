@@ -77,6 +77,7 @@ const Myroom = () => {
                     id={i._id}
                     key={i._id}
                     image={i.image}
+                    image2={i.image2}
                     size={i.size}
                     facilities={i.facilities}
                     isApproved={i.isApproved}

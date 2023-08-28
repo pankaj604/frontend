@@ -7,7 +7,7 @@ import "../style/Addroom.css";
 import { Context } from "..";
 import imageCompression from "browser-image-compression";
 import { Navigate } from "react-router-dom";
-import DatePicker from 'react-datepicker';
+import DatePicker from "react-datepicker";
 const Addroom = () => {
   const [selectedOption, setSelectedOption] = useState("");
   const [rent, setRent] = useState("");
@@ -16,14 +16,9 @@ const Addroom = () => {
   const [facilities, setfacilities] = useState("");
   const [size, setsize] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile2, setSelectedFile2] = useState(null);
   const [button, setbutton] = useState(false);
   const [isAuthenticated, setisAuthenticated] = useState(false);
-
-  //
-
-
-
-  //
 
   const handleFileChange = async (e) => {
     const imageFile = e.target.files[0];
@@ -35,6 +30,21 @@ const Addroom = () => {
       setbutton(true);
       const compressedFile = await imageCompression(imageFile, options);
       setSelectedFile(compressedFile);
+      setbutton(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleFileChange2 = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+    };
+    try {
+      setbutton(true);
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile2(compressedFile);
       setbutton(false);
     } catch (error) {
       console.log(error);
@@ -54,6 +64,7 @@ const Addroom = () => {
 
     // Append the selected file and article content to the FormData object
     formData.append("image", selectedFile);
+    formData.append("image2", selectedFile2);
     formData.append("city", citydata);
     formData.append("rent", rent);
     formData.append("forr", value);
@@ -65,7 +76,7 @@ const Addroom = () => {
     e.preventDefault();
     try {
       setbutton(true);
- 
+
       const { data } = await axios.post(`${server}/room/add`, formData, {
         withCredentials: true,
       });
@@ -77,6 +88,7 @@ const Addroom = () => {
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
+      console.log(error.response.data.message);
       // setIsAuthenticated(false);
     }
   };
@@ -93,7 +105,7 @@ const Addroom = () => {
               <select className="" id="option" defaultValue="indore">
                 <option value="indore">Indore</option>
                 <option value="bhopal">Bhopal</option>
-                <option value="mumbai">Mumbai 3</option>
+                <option value="mumbai">Mumbai </option>
               </select>
             </div>
             <div className="container-option m-2 ">
@@ -188,7 +200,10 @@ const Addroom = () => {
           </div>
           <div className="input-box mt-2 d-flex flex-column justify-content-center   text text-center">
             <div>
-              <input type="file" onChange={handleFileChange} />
+              <input type="file" id="customFile" onChange={handleFileChange} />
+            </div>
+            <div>
+              <input type="file" onChange={handleFileChange2} />
             </div>
             {button ? <h5>Loading</h5> : <></>}
             <button className="mt-3" disabled={button} type="submit">

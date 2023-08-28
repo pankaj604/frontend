@@ -12,9 +12,13 @@ const Addshop = () => {
   const [rent, setRent] = useState("");
   const [mobile, setMobile] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile2, setSelectedFile2] = useState(null);
   const [address, setAddress] = useState("");
   const [button, setbutton] = useState(false);
   const [isAuthenticated, setisAuthenticated] = useState(false);
+
+  //
+
   const handleFileChange = async (e) => {
     const imageFile = e.target.files[0];
 
@@ -30,12 +34,31 @@ const Addshop = () => {
       console.log(error);
     }
   };
+  const handleFileChange2 = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+    };
+    try {
+      setbutton(true);
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile2(compressedFile);
+      setbutton(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  //
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
     const citydata = selectBox.value;
 
     const formData = new FormData();
     formData.append("image", selectedFile);
+    formData.append("image2", selectedFile2);
     formData.append("city", citydata);
     formData.append("size", size);
     formData.append("area", area);
@@ -67,12 +90,12 @@ const Addshop = () => {
         <div className="container d-flex flex-column justify-content-center   text text-center">
           <div className="options d-flex justify-content-center  m-2 d-flex flex-row">
             <div className="container-option m-2">
-              <h5 className="city-option choice">Choose city</h5>
+              <h5 className="city-option choice text-dark">Choose city</h5>
 
               <select className="" id="option" defaultValue="indore">
                 <option value="indore">Indore</option>
                 <option value="bhopal">Bhopal</option>
-                <option value="mumbai">Mumbai 3</option>
+                <option value="mumbai">Mumbai </option>
               </select>
             </div>
           </div>
@@ -139,6 +162,9 @@ const Addshop = () => {
           <div className=" input-box mt-2 d-flex flex-column justify-content-center   text text-center">
             <div>
               <input type="file" onChange={handleFileChange} />
+            </div>
+            <div>
+              <input type="file" onChange={handleFileChange2} />
             </div>
             {button ? <h5>Loading</h5> : <></>}
             <button className="mt-3" disabled={button} type="submit">

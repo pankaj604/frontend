@@ -27,5 +27,8 @@ body {
   background-color: #5c5470;
 }
 .rent-value{
-  color: rgb(242, 10, 219);
+  /* background-color: #94c4fe; */
+  border-radius: 7px;
+  padding: 2px;
+  color: rgb(0, 0, 0);
 }

@@ -29,7 +29,7 @@ const Aprovelshop = () => {
   return (
     <>
       <div className="back">
-        <h5 className="choice text text-center">Shop Approvel</h5>
+        <h5 className="choice text text-dark text-center">Shop Approvel</h5>
         <div className="container-fluid">
           <div className="row">
             {myroom &&
@@ -45,9 +45,11 @@ const Aprovelshop = () => {
                       nearby={i.nearby}
                       size={i.size}
                       image={i.image}
+                      image2={i.image2}
                       id={i._id}
                       status={i.status ? "ON" : "OFF"}
                       isApproved={i.isApproved}
+                      date={i.date}
                     />
                   </>
                 );

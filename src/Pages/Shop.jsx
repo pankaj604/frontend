@@ -62,6 +62,7 @@ const Shop = () => {
                     nearby={i.nearby}
                     size={i.size}
                     image={i.image}
+                    image2={i.image2}
                     date={i.date}
                   />
                 </>

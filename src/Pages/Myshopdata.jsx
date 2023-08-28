@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 
@@ -16,7 +16,8 @@ const Myshopdata = ({
   id,
   isApproved,
   date,
-  days
+  image2
+ 
 }) => {
   const [button, setbutton] = useState(false);
   const { setRefresh, refresh } = useContext(Context);
@@ -29,6 +30,34 @@ const Myshopdata = ({
     light = false;
   }
   //
+  function generateUniqueId() {
+    return `carousel-${Math.random().toString(36).substring(7)}`;
+  }
+   //
+   const update = () => {
+    const inputDate = new Date(date);
+
+    const currentDate = new Date();
+
+    const timeDifference = inputDate - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    if (daysRemaining >= 1) {
+      setDaysLeft(daysRemaining);
+    } else {
+      setDaysLeft("Available Now");
+    }
+    console.log(daysRemaining);
+  };
+  const newid = generateUniqueId();
+
+  useEffect(() => {
+    update();
+    const carousel1 = document.getElementById(newid);
+
+    new window.bootstrap.Carousel(carousel1);
+  }, []);
+  //
+  //
   const handleDateChange = (event) => {
     const inputDate = new Date(event.target.value);
    
@@ -40,10 +69,18 @@ const Myshopdata = ({
     const timeDifference = inputDate.getTime() - currentDate.getTime();
     const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
     //
+    //
+    if (daysRemaining >= 1) {
+      setDaysLeft(daysRemaining);
+    } else {
+      setDaysLeft("Available Now");
+    }
+    //
+    //
+
     if (inputDate >= currentDate && inputDate <= maxDate) {
       setSelectedDate(event.target.value);
-      setDaysLeft(daysRemaining);
-      console.log(daysRemaining);
+     
     } else {
       window.alert("'Date must be within the next 15 days'");
     }
@@ -112,9 +149,67 @@ const Myshopdata = ({
   return (
     <>
       <div div className="one m-3  p-0 col-xl-2  text-white">
-        <div className="image p-0">
-          <img className="img-fluid w-100 h-100 " src={image} alt="room" />
+      <div
+          id={newid}
+          className="carousel slide"
+          data-bs-ride="carousel"
+          data-interval="1000"
+        >
+          <div className="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target={newid}
+              data-bs-slide-to={0}
+              className="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            />
+            <button
+              type="button"
+              data-bs-target={newid}
+              data-bs-slide-to={1}
+              aria-label="Slide 2"
+            />
+            <button />
+          </div>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <img
+                src={image}
+                className="d-block w-100"
+                alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original"
+              />
+            </div>
+            <div className="carousel-item">
+              <img
+                src={image2}
+                className="d-block w-100"
+                alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original natural shivling"
+              />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target={newid}
+            data-bs-slide="prev"
+          >
+            <span className="carousel-control-prev-icon" aria-hidden="true" />
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target={newid}
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon" aria-hidden="true" />
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
+        {/* <div className="image p-0">
+          <img className="img-fluid w-100 h-100 " src={image} alt="room" />
+        </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
             Shop/Office rent is <p className="m-0 d-inline value">{rent}</p>
@@ -142,12 +237,14 @@ const Myshopdata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Available date ={" "}
+            {date && <>Available on </>}
             <p className="m-0 d-inline value">
-              {date} daysRemaining = {days}
+              <b> {date}</b> ||{" "}
+              <b className="left-days"> left -days= {daysLeft} </b>
             </p>
           </h6>
           <br />
+          <h1></h1>
           <h6 className="d-inline m-0 h6">
             <input
               type="date"
@@ -156,7 +253,7 @@ const Myshopdata = ({
             />
             <button
               onClick={() => dateupdate(id, selectedDate)}
-              className="btn border-dark "
+              className="btn btn-primary border-dark "
             >
               {" "}
               update date

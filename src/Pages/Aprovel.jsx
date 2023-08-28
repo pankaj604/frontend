@@ -60,6 +60,8 @@ const Aprovel = () => {
                       facilities={i.facilities}
                       isApproved={i.isApproved ? "ON" : "OFF"}
                       food={i.food}
+                      date={i.date}
+                      image2={i.image2}
                     />
                   </>
                 );

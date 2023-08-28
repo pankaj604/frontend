@@ -13,7 +13,7 @@ function Landing() {
       <div className="container-fluid d-flex justify-content-center p-0 logo-landing">
         <div className="  m-0 p-0  d-flex align-items-center ">
           <div className=" d-inline logo-img text-center m-0 p-0  ">
-            <img className="img-logo" src="./done.png" alt="" />
+            <img className="img-logo" src="done.png" alt="logo" />
           </div>
           <div className=" p-0 ">
             {" "}
@@ -78,11 +78,10 @@ function Landing() {
           </div>
         </div>
         <div className="container text-center">
-          <h1>Our Motive</h1>
-          <h3>
-            "We are the one who will destroy the brokery system and all the
-            renters get liberty from paying high brokerage"
-          </h3>
+          <h1 className="fw-bold">About Us</h1>
+          <h4>
+              Our Team Directly contact with landlord and register rooms and not any broker can register someones else room on this website  || if someone demond for <b>brokerage</b> then contact us -  
+          </h4>
         </div>
         <div className="container-fluid p-0 ">
           <footer className="text-center footer text-lg-start pt-1  text-muted">

@@ -13,6 +13,7 @@ const Addhostel = () => {
   const [hostelfor, sethostelfor] = useState("");
   const [mobile, setMobile] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFile2, setSelectedFile2] = useState(null);
   const [address, setAddress] = useState("");
   const [availableseats, setAvailableseats] = useState("");
   const [totalseats, setTotalseats] = useState("");
@@ -34,6 +35,21 @@ const Addhostel = () => {
       console.log(error);
     }
   };
+  const handleFileChange2 = async (e) => {
+    const imageFile = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+    };
+    try {
+      setbutton(true);
+      const compressedFile = await imageCompression(imageFile, options);
+      setSelectedFile2(compressedFile);
+      setbutton(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
     const citydata = selectBox.value;
@@ -42,6 +58,7 @@ const Addhostel = () => {
   
     const formData = new FormData();
     formData.append("image", selectedFile);
+    formData.append("image2", selectedFile2);
     formData.append("city", citydata);
     formData.append("hostelfor", value);
     formData.append("rent", rent);
@@ -92,7 +109,7 @@ const Addhostel = () => {
               <select id="option" defaultValue="indore">
                 <option value="indore">Indore</option>
                 <option value="bhopal">Bhopal</option>
-                <option value="mumbai">Mumbai 3</option>
+                <option value="mumbai">Mumbai </option>
               </select>
             </div>
             <div className="container-option text text-success m-2">
@@ -196,17 +213,14 @@ const Addhostel = () => {
                 onChange={(e) => setMobile(e.target.value)}
               />
             </div>
-            <div>
-              {selectedFile && selectedFile.size > 2 * 1024 * 1024 && (
-                <>
-                  <h4>photo size should be less than 2 mb</h4>
-                </>
-              )}
-            </div>
+
           </div>
           <div className="input-box mt-2 d-flex flex-column justify-content-center   text text-center">
             <div>
               <input type="file" onChange={handleFileChange} />
+            </div>
+            <div>
+              <input type="file" onChange={handleFileChange2} />
             </div>
             {button ? <h5>Loading</h5> : <></>}
             <button disabled={button} type="submit">

@@ -58,6 +58,7 @@ const MyShop = () => {
                     isApproved={i.isApproved}
                     date={i.date}
                     days={i.days}
+                    image2={i.image2}
                   />
                 </>
               );

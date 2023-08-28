@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 
@@ -14,9 +14,37 @@ const Aprovelshopdata = ({
   size,
   id,
   isApproved,
+  date,
+  image2
 }) => {
   const [button, setbutton] = useState(false);
   const {refresh,setRefresh } = useContext(Context);
+  //
+  const [daysLeft, setDaysLeft] = useState(null);
+  if (date <=Date.now()) {
+    date = null;
+  }
+  const update = () => {
+    const inputDate = new Date(date);
+
+    const currentDate = new Date();
+
+    const timeDifference = inputDate - currentDate.getTime();
+    const daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    if (daysRemaining >= 1) {
+      setDaysLeft(daysRemaining);
+    } else {
+      setDaysLeft("Available Now");
+    }
+    console.log(daysRemaining);
+  };
+
+  useEffect(() => {
+    update();
+  }, []);
+
+  //
+
 
   const updateHandler = async (id) => {
     try {
@@ -60,6 +88,9 @@ const Aprovelshopdata = ({
         <div className="image p-0">
           <img className="img-fluid w-100 h-100 " src={image} alt="room" />
         </div>
+        <div className="image p-0">
+          <img className="img-fluid w-100 h-100 " src={image2} alt="room" />
+        </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
             room rent is <p className="m-0 d-inline value">{rent}</p>
@@ -84,6 +115,14 @@ const Aprovelshopdata = ({
           <br />
           <h6 className="d-inline m-0 h6">
             Facilities <p className="m-0 d-inline value">{nearby}</p>
+          </h6>
+          <br />
+          <h6 className="d-inline m-0 h6">
+          {date && <>Available on </>}
+            <p className="m-0 d-inline value">
+              <b> {date}</b> ||{" "}
+              <b className="left-days"> left -days= {daysLeft} </b>
+            </p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

@@ -62,9 +62,11 @@ const Girls = () => {
                     address={i.address}
                     mobile={i.mobile}
                     image={i.image}
+                    image2={i.image2}
                     size={i.size}
                     facilities={i.facilities}
                     date={i.date}
+
                   />
                 </>
               );

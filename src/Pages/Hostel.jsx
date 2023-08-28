@@ -71,6 +71,7 @@ const Hostel = () => {
                     gatetime={i.gatetime}
                     facilites={i.facilites}
                     image={i.image}
+                    image2={i.image2}
                     status={i.status ? "ON" : "OFF"}
                     key={i._id}
                     date={i.date}

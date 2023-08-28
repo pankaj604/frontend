@@ -55,10 +55,12 @@ const Aprovelhostel = () => {
                     gatetime={i.gatetime}
                     facilites={i.facilites}
                     image={i.image}
+                    image2={i.image2}
                     id={i._id}
                     status={i.status ? "ON" : "OFF"}
                     isApproved={i.isApproved}
                     key={i._id}
+                    date={i.date}
                   />
                 </>
               );
