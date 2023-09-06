@@ -10,7 +10,7 @@ import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlin
 
 const Boys = () => {
   const { city, setCity } = useContext(Context);
-  const [loading , setloading] = useState(true);
+  const [loading, setloading] = useState(true);
   const [boys, Rboys] = useState([]);
   const [error, seterror] = useState("");
   const allboys = async () => {
@@ -25,8 +25,7 @@ const Boys = () => {
       )
       .then((res) => {
         Rboys(res.data.rooms);
-        setloading(false)
-        
+        setloading(false);
       })
       .catch((e) => {
         toast.error(e.response.data.message);
@@ -56,25 +55,33 @@ const Boys = () => {
         <div className="container-fluid">
           <div className=" row ">
             {error && <h1>{error}</h1>}
-            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
-            { boys && boys.map((i) => {
-              return (
-                <>
-                  <Boysdata
-                    city={i.city}
-                    rent={i.rent}
-                    address={i.address}
-                    mobile={i.mobile}
-                    image={i.image}
-                    image2={i.image2}
-                    size={i.size}
-                    facilities={i.facilities}
-                    date={i.date}
-                    days={i.days}
-                  />
-                </>
-              );
-            })}
+            {loading && (
+              <>
+                <div className="text-center d-flex justify-content-center mt-5 align-items-center container-fluid">
+                  <div className="spinner"></div>
+                </div>
+              </>
+            )}
+
+            {boys &&
+              boys.map((i) => {
+                return (
+                  <>
+                    <Boysdata
+                      city={i.city}
+                      rent={i.rent}
+                      address={i.address}
+                      mobile={i.mobile}
+                      image={i.image}
+                      image2={i.image2}
+                      size={i.size}
+                      facilities={i.facilities}
+                      date={i.date}
+                      days={i.days}
+                    />
+                  </>
+                );
+              })}
           </div>
         </div>
       </div>

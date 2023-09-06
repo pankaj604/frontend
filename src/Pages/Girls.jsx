@@ -52,7 +52,13 @@ const Girls = () => {
         <div className="container-fluid">
           <div className=" row ">
             {error && <h1>{error}</h1>}
-            {loading && <h1 className="text-center bg-dark text-light">Please Wait .. </h1>}
+            {loading && (
+              <>
+                <div className="text-center d-flex justify-content-center mt-5 align-items-center container-fluid">
+                  <div className="spinner"></div>
+                </div>
+              </>
+            )}
             { girls && girls.map((i) => {
               return (
                 <>

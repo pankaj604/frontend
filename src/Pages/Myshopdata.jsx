@@ -289,7 +289,7 @@ const Myshopdata = ({
             <button
               disabled={button}
               onClick={() => deleteHandler(id)}
-              className="btn text-light"
+              className="btn text-dark"
             >
               Delete
             </button>

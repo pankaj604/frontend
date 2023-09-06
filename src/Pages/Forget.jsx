@@ -27,7 +27,7 @@ const Forget = () => {
 
   return (
     <div className="wrapper">
-      <h4 className="wl-lgn">WelCome To HSrooms</h4>
+      <h4 className="wl-lgn">WelCome To MERAROOM</h4>
 
       <div className="text-center mt-1 name">Reset Password</div>
       <form className="p-3 mt-3" onSubmit={handleFormSubmit}>

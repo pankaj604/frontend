@@ -17,7 +17,7 @@ function Landing() {
           </div>
           <div className=" p-0 ">
             {" "}
-            <h4 className="welcome-hs">WELCOME TO HSROOMS</h4>
+            <h4 className="welcome-hs">WELCOME TO MERAROOM</h4>
           </div>
         </div>
       </div>
@@ -80,9 +80,19 @@ function Landing() {
         <div className="container text-center">
           <h1 className="fw-bold">About Us</h1>
           <h4>
-              Our Team Directly contact with landlord and register rooms and not any broker can register someones else room on this website  || if someone demond for <b>brokerage</b> then contact us -  
+            Our Team Directly contact with landlord and register rooms and not
+            any broker can register someones else room on this website || if
+            someone demond for <b>brokerage</b> then contact us on -{" "}
+            <a href="https://instagram.com/meraroom.india?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"
+                alt="youtube"
+                className="img-icon-2"
+              />
+            </a>
           </h4>
         </div>
+     
         <div className="container-fluid p-0 ">
           <footer className="text-center footer text-lg-start pt-1  text-muted">
             <div
@@ -90,7 +100,7 @@ function Landing() {
               style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
             >
               © 2023 Copyright:
-              <a className="text-reset fw-bold">HSROOMS.com</a>
+              <a className="text-reset fw-bold">Meraroom.com</a>
             </div>
           </footer>
         </div>

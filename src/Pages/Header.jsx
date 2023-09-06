@@ -60,7 +60,7 @@ const Header = (req, res) => {
           </div>
           <div className=" p-0 ">
             {" "}
-            <h4 className="welcome-hs">WELCOME TO HSROOMS</h4>
+            <h4 className="welcome-hs">WELCOME TO MERAROOM</h4>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ const Register = () => {
           </div>
           <div className="col p-0 ">
             {" "}
-            <h5 className=" welcome-hs">WELCOME TO HSROOMS</h5>
+            <h5 className=" welcome-hs">WELCOME TO MERAROOM</h5>
           </div>
         </div>
       </div>
