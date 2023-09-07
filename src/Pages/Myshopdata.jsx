@@ -148,7 +148,7 @@ const Myshopdata = ({
   };
   return (
     <>
-      <div div className="one m-3  p-0 col-xl-2  text-white">
+      <div div className="one   p-0 col-xl-2  text-white">
       <div
           id={newid}
           className="carousel slide"
@@ -277,7 +277,7 @@ const Myshopdata = ({
                 type="checkbox"
                 checked={light}
               />
-              <h5 className="m-1 choise">Available</h5>
+              <h6 className="m-1 choise">Available</h6>
             </div>
           ) : (
             <div className="btn btn-warning ">
@@ -289,7 +289,7 @@ const Myshopdata = ({
             <button
               disabled={button}
               onClick={() => deleteHandler(id)}
-              className="btn text-dark"
+              className="btn text-dark bg-danger"
             >
               Delete
             </button>

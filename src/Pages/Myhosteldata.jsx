@@ -182,7 +182,7 @@ const Myhosteldata = ({
   };
   return (
     <>
-      <div div className="one m-3  p-0 col-xl-2 text-white">
+      <div div className="one   p-0 col-xl-2 text-white">
       <div
           id={newid}
           className="carousel slide"
@@ -291,7 +291,7 @@ const Myhosteldata = ({
           <h6 className="d-inline m-0 h6">
             {date && <>Available on </>}
             <p className="m-0 d-inline value">
-              <b> {date}</b> ||{" "}
+              <b> {date}</b> -- {" "}
               <b className="left-days"> left -days= {daysLeft} </b>
             </p>
           </h6>
@@ -347,7 +347,7 @@ const Myhosteldata = ({
             <button
               disabled={button}
               onClick={() => deleteHandler(id)}
-              className="btn"
+              className="btn bg-danger"
             >
               Delete
             </button>

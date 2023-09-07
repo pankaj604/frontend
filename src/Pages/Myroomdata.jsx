@@ -316,7 +316,7 @@ const Myroomdata = ({
                 type="checkbox"
                 checked={light}
               />
-              <h5 className="m-1 choise">Available</h5>
+              <h6 className="m-1 choise">Available</h6>
             </div>
           ) : (
             <div className="btn btn-warning ">
