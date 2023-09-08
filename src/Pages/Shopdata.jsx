@@ -27,7 +27,7 @@ const Shopdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-    console.log(daysRemaining);
+  
   };
   function generateUniqueId() {
     return `carousel-${Math.random().toString(36).substring(7)}`;

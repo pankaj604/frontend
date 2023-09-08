@@ -7,7 +7,7 @@ import "./Manafger.css";
 function Manager() {
   const { id } = useParams();
   const [users, setUsers] = useState([]);
-  console.log(id);
+
   useEffect(() => {
     axios
       .post(

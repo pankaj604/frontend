@@ -46,7 +46,7 @@ const Myshopdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-    console.log(daysRemaining);
+
   };
   const newid = generateUniqueId();
 

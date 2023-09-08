@@ -36,7 +36,7 @@ const Aprovelshopdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-    console.log(daysRemaining);
+
   };
 
   useEffect(() => {

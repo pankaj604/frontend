@@ -26,7 +26,7 @@ const Boysdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-    console.log(daysRemaining);
+  
   };
 
   function generateUniqueId() {

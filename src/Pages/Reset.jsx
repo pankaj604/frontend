@@ -41,7 +41,7 @@ const Reset = () => {
   if (value) return <Navigate to={"/login"} />;
   return (
     <div className="wrapper">
-      <h4 className="wl-lgn">WelCome To MERAROOM</h4>
+      <h4 className="wl-lgn">WelCome To WELLROOM</h4>
 
       <div className="text-center mt-1 name">Change Password</div>
       <form className="p-3 mt-3" onSubmit={handleFormSubmit}>

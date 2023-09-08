@@ -52,7 +52,7 @@ const Myhosteldata = ({
       } else {
         setDaysLeft("Available Now");
       }
-      console.log(daysRemaining);
+      
     };
     
     const newid = generateUniqueId();

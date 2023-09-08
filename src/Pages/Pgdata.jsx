@@ -30,7 +30,7 @@ const Pgdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-    console.log(daysRemaining);
+  
   };
 
   useEffect(() => {
