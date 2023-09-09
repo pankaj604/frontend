@@ -35,12 +35,12 @@ const Aprovel = () => {
 
   return (
     <>
-      <div className="back">
+      <div className="back ">
         <h5 className="choice text-dark text text-center"> total Rooms {total}</h5>
         <h5 className="choice text-dark text text-center"> approval {count} </h5>
         <h5 className="choice text-dark text text-center"> not approval {coun} </h5>
 
-        <div className="container-fluid">
+        <div className="container  m-0 p-0 ">
           <div className="row">
             {myroom &&
               myroom.map((i) => {

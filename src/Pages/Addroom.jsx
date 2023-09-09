@@ -87,8 +87,8 @@ const Addroom = () => {
       setisAuthenticated(true);
     } catch (error) {
       setbutton(false);
-      toast.error(error.response.data.message);
-      console.log(error.response.data.message);
+      toast.error(error.response.data.massage);
+      console.log(error.response.data.massage);
       // setIsAuthenticated(false);
     }
   };

@@ -50,7 +50,6 @@ const Addshop = () => {
     }
   };
 
-
   //
   const handleSubmit = async (e) => {
     const selectBox = document.getElementById("option");
@@ -76,7 +75,7 @@ const Addshop = () => {
 
       toast.success(data.massage);
       setbutton(false);
-      setisAuthenticated(true)
+      setisAuthenticated(true);
     } catch (error) {
       setbutton(false);
       toast.error(error.response.data.message);
@@ -84,7 +83,7 @@ const Addshop = () => {
   };
   if (isAuthenticated) return <Navigate to={"/login"} />;
   return (
-    <div className="container-fluid d-flex flex-column room">
+    <div className="container-fluid d-flex flex-column m-0 p-0">
       <h4 className="wel-1 wel text text-center mt-1 "> Add Shop</h4>{" "}
       <form onSubmit={handleSubmit}>
         <div className="container d-flex flex-column justify-content-center   text text-center">
