@@ -81,7 +81,7 @@ function Landing() {
           <h1 className="fw-bold">About Us</h1>
           <h4>
             Our Team Directly contact with landlord and register rooms and not
-            any broker can register someones else room on this website || if
+            any broker can register someones else room on this website ~ if
             someone demond for <b>brokerage</b> then contact us on -{" "}
             <a href="https://instagram.com/meraroom.india?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
               <img
