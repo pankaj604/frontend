@@ -104,7 +104,7 @@ const Coupledata = ({
         </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Room rent is{" "}
+            Room rent ={" "}
             <p className="m-0 d-inline rent-value">
               <b>{rent}</b>
             </p>
@@ -112,27 +112,27 @@ const Coupledata = ({
           <br />
 
           <h6 className="d-inline m-0 h6">
-            Owner Mo. <p className="m-0 d-inline value">{mobile}</p>
+            Owner Mo. = <p className="m-0 d-inline value">{mobile}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Room Size <p className="m-0 d-inline value">{size}</p>
+            Room Size =  <p className="m-0 d-inline value">{size}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Facilities <p className="m-0 d-inline value">{facilities}</p>
+            Facilities = <p className="m-0 d-inline value">{facilities}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
           {date && <>Available on </>}
             <p className="m-0 d-inline value">
-              <b> {date}</b> ||{" "}
-              <b className="left-days"> left -days= {daysLeft} </b>
+              <b> {date}</b> {" "}
+              <b className="left-days"> left -days = {daysLeft} </b>
             </p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            Address - <p className="m-0 d-inline value">{address}</p>
+            Address = <p className="m-0 d-inline value">{address}</p>
           </h6>
           <br />
         </div>
