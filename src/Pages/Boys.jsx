@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
 
 const Boys = () => {
-  const { city, setCity } = useContext(Context);
+  
   const [loading, setloading] = useState(true);
   const [boys, Rboys] = useState([]);
   const [error, seterror] = useState("");
