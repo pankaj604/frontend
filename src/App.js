@@ -38,6 +38,10 @@ import Aprovelshopdata from "./Pages/Aprovelshopdata";
 import Aprovelhostel from "./Pages/Aprovelhostel";
 import Landing from "./Pages/Landing";
 import Manager from "./admin/Manager";
+import { Policy } from "@mui/icons-material";
+import Policyprivacy from "./Pages/Policyprivacy";
+import About from "./Pages/About";
+import Contact from "./Pages/Contact";
 
 function App() {
   const { setUser, setIsAuthenticated,isAuthenticated, setLoading } = useContext(Context);
@@ -78,8 +82,6 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         <Route path="/boys" element={<Boys />} />
         <Route path="/girls" element={<Girls />} />
-    
-    
         <Route path="/myroom" element={<Myroom />} />
         <Route path="/header" element={<Header />} />
         <Route path="/owner" element={<Owner />} />
@@ -94,6 +96,9 @@ function App() {
         <Route path="/admin/room-aprovel" element={<Aprovel />} />
         <Route path="/admin/shop-aprovel" element={<Aprovelshop />} />
         <Route path="/admin/hostel-aprovel" element={<Aprovelhostel />} />
+        <Route path="/policy" element={<Policyprivacy/>}/>
+        <Route path="/about" element={<About/>}/>
+        <Route path="/contact" element={<Contact/>}/>
         <Route path="/admin/managment/:id" element={<Manager />} />
         <Route path="/pg/:id" element={<PG />} />
         <Route path="/hostel/:id" element={<Hostel />} />

@@ -26,7 +26,6 @@ const Boysdata = ({
     } else {
       setDaysLeft("Available Now");
     }
-  
   };
 
   function generateUniqueId() {
@@ -43,9 +42,9 @@ const Boysdata = ({
   return (
     <>
       <div className=" one my-2 p-0 col-xl-2  text-white">
-      <div
+        <div
           id={newid}
-          className="carousel slide"
+          className="carousel slide "
           data-bs-ride="carousel"
           data-interval="10000"
         >
@@ -70,14 +69,14 @@ const Boysdata = ({
             <div className="carousel-item active">
               <img
                 src={image}
-                className="d-block w-100"
+                className="d-block w-100 chack"
                 alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original"
               />
             </div>
             <div className="carousel-item">
               <img
                 src={image2}
-                className="d-block w-100"
+                className="d-block w-100 chack"
                 alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original natural shivling"
               />
             </div>
@@ -126,7 +125,7 @@ const Boysdata = ({
           <h6 className="d-inline m-0 h6">
             {date && <>Available on </>}
             <p className="m-0 d-inline value">
-              <b> {date}</b> {" "}
+              <b> {date}</b>{" "}
               <b className="left-days"> left -days = {daysLeft} </b>
             </p>
           </h6>

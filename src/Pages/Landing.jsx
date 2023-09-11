@@ -83,7 +83,7 @@ function Landing() {
             Our Team Directly contact with landlord and register rooms and not
             any broker can register someones else room on this website ~ if
             someone demond for <b>brokerage</b> then contact us on -{" "}
-            <a href="https://instagram.com/meraroom.india?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D">
+            <a href="https://instagram.com/wellroom.in?igshid=NzZhOTFlYzFmZQ==">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"
                 alt="youtube"
@@ -93,14 +93,22 @@ function Landing() {
           </h4>
         </div>
      
-        <div className="container-fluid p-0 ">
+        <div className="container-fluid  p-0 ">
           <footer className="text-center footer text-lg-start pt-1  text-muted">
             <div
               className="text-center p-4"
               style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
             >
-              © 2023 Copyright:
-              <a className="text-reset fw-bold">Meraroom.com</a>
+              @ all copyright reserved 
+              <a className="text-reset fw-bold"> wellroom.in</a>
+              <div className="d-flex justify-content-around">
+
+              <Link to={"/policy"} className="text-reset fw-bold"> privacy policy  </Link>
+              
+              <Link to={"/about"} className="text-reset fw-bold"> About Us</Link>
+              {/* <Link to={"/contact"} className="text-reset fw-bold"> contact us </Link> */}
+              </div>
+              
             </div>
           </footer>
         </div>

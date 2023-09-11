@@ -33,3 +33,21 @@ body {
   color: rgb(0, 0, 0);
 }
 
+.div-privacy{
+  
+  background-color: #1e0b4c;
+  color: rgb(223, 235, 225);
+  height: 100vh;
+  padding-top: 30px;
+}
+
+.temp{
+color: #5c5470 ;
+
+
+}
+
+.privacy{
+  background-color: #4a3777;
+  border-radius: 10px;
+}

@@ -70,14 +70,14 @@ const Girlsdata = ({
             <div className="carousel-item active">
               <img
                 src={image}
-                className="d-block w-100"
+                className="d-block w-100 chack"
                 alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original"
               />
             </div>
             <div className="carousel-item">
               <img
                 src={image2}
-                className="d-block w-100"
+                className="d-block w-100 chack"
                 alt="Order Narmadeshvar shivling , Narmadeshvar shivling , Original natural shivling"
               />
             </div>
