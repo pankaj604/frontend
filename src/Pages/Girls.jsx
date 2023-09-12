@@ -4,6 +4,7 @@ import axios from "axios";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import "../style/Girls.css";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
 
@@ -42,7 +43,21 @@ const Girls = () => {
             Go Back To Home <KeyboardReturnOutlinedIcon />
           </Link>
         </div>
-      </div>
+      </div>  
+      <Helmet>
+        
+        <title>Girls</title>
+        <meta
+          name="description"
+          content=" for girls we are providing rooms flats hostels shops free without brokerage "
+        />
+        <meta
+          name="keywords"
+          content=" rooms in indore , free ,room , hostel , pg , shops , shops in indore , room for boys , room for girls , hostel for boys , hostel for girls , pg for boys , pg for girls , shops free  , no brokerage , without brokerage , wellroom wellroom.in , wellroom , achha room , best room , free room , room for student   "
+        />
+        <meta name="theme-color" content="#E6E6FA" />
+        <link rel="canonical" href="https://www.wellroom.in/girls" />
+      </Helmet>
 
       <div className="back">
         <h5 className="boy my-2">

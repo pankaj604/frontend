@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Context, server } from "..";
 import { toast } from "react-hot-toast";
 import Coupledata from "./Coupledata";
+import { Helmet } from "react-helmet";
 import KeyboardReturnOutlinedIcon from "@mui/icons-material/KeyboardReturnOutlined";
 import { Link } from "react-router-dom";
 
@@ -32,7 +33,21 @@ const Couple = () => {
   }, []);
 
   return (
-    <>
+    <>  
+      <Helmet>
+        
+        <title>Couple</title>
+        <meta
+          name="description"
+          content="for couple in indore we provide rooms flats hostels shops free without brokerage "
+        />
+        <meta
+          name="keywords"
+          content=" rooms in indore , free ,room , hostel , pg , shops , shops in indore , room for boys , room for girls , hostel for boys , hostel for girls , pg for boys , pg for girls , shops free  , no brokerage , without brokerage , wellroom wellroom.in , wellroom , achha room , best room , free room , room for student   "
+        />
+        <meta name="theme-color" content="#E6E6FA" />
+        <link rel="canonical" href="https://www.wellroom.in/couple" />
+      </Helmet>
       <div className="nav-main-cont d-flex flex-row justify-content-center mt-1  text text-center">
         <div className="m-0 p-1">
           <Link className="go-back text-decoration-none" to={"/header"}>
