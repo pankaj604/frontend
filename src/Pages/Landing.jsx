@@ -13,7 +13,7 @@ function Landing() {
       <div className="container-fluid d-flex justify-content-center p-0 logo-landing">
         <div className="  m-0 p-0  d-flex align-items-center ">
           <div className=" d-inline logo-img text-center m-0 p-0  ">
-            <img className="img-logo" src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1694163360/done_fqaten.png" alt="logo" />
+            <img className="img-logo" src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1694497611/done_dindh1.png" alt="logo" />
           </div>
           <div className=" p-0 ">
             {" "}
@@ -77,12 +77,12 @@ function Landing() {
             )}
           </div>
         </div>
-        <div className="container text-center">
-          <h1 className="fw-bold">About Us</h1>
-          <h4>
+        <div className="container ">
+          <h2 className="fw-bold text-center">Our Target</h2>
+          <adress>
             Our Team Directly contact with landlord and register rooms and not
             any broker can register someones else room on this website ~ if
-            someone demond for <b>brokerage</b> then contact us on -{" "}
+            someone demond for <b>brokerage</b> then contact us on instagram = {" "}
             <a href="https://instagram.com/wellroom.in?igshid=NzZhOTFlYzFmZQ==">
               <img
                 src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png"
@@ -90,7 +90,7 @@ function Landing() {
                 className="img-icon-2"
               />
             </a>
-          </h4>
+          </adress>
         </div>
      
         <div className="container-fluid  p-0 ">

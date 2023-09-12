@@ -56,7 +56,7 @@ const Header = (req, res) => {
       <div className="container-fluid d-flex justify-content-center  logo-landing">
         <div className="  m-0 p-0  d-flex align-items-center ">
           <div className=" d-inline logo-img text-center m-0 p-0  ">
-            <img className="img-logo" src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1694163360/done_fqaten.png" alt="" />
+            <img className="img-logo" src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1694497611/done_dindh1.png" alt="" />
           </div>
           <div className=" p-0 ">
             {" "}
