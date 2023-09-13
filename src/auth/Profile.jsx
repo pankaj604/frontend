@@ -7,26 +7,7 @@ const Profile = () => {
   const { isAuthenticated, loading, user } = useContext(Context);
   const { setUser, setIsAuthenticated, setLoading } = useContext(Context);
 
-  const bio = () => {
-    axios
-      .get(`${server}/user/me`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setUser(res.data.user);
- 
-        setIsAuthenticated(true);
-      })
-      .catch((error) => {
-        setUser({});
-        setIsAuthenticated(false);
-      });
-  };
 
-  useEffect(() => {
-    //Runs only on the first render
-    bio()
-  }, []);
   return (
     <div className='profile-nav text text-center'>
       <h1 className=''>Your Profile</h1>

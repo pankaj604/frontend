@@ -9,21 +9,7 @@ import "../style/Owner.css";
 const Owner = () => {
   const role = false;
 
-  const bio = () => {
-    axios
-      .get(`${server}/user/me`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        setUser(res.data.user);
 
-        setIsAuthenticated(true);
-      })
-      .catch((error) => {
-        setUser({});
-        setIsAuthenticated(false);
-      });
-  };
 
   useEffect(() => {
     //Runs only on the first render
