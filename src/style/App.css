@@ -51,3 +51,14 @@ color: #5c5470 ;
   background-color: #4a3777;
   border-radius: 10px;
 }
+
+.filter{
+  background-color: #8877ae;
+  height: 40px;
+}
+
+.new{
+  background-color: #fdfdfd;
+  border-radius: 4px;
+  padding: 2px;
+}

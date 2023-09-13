@@ -7,7 +7,7 @@ export const server = "/v1";
 // export const server = "http://localhost:4000/v1";
 // export const server = "https://hsrooms.onrender.com/v1";
 export const Context = createContext({ isAuthenticated: false });
-
+//  "proxy": "http://3.111.197.98",
 const AppWrapper = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(false);
