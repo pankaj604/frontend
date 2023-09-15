@@ -29,11 +29,11 @@ const Register = () => {
         }
       );
 
-      toast.success(data.message);
+      toast.success(data.massage);
       setIsAuthenticated(true);
     } catch (error) {
-      toast.error(error.response.data.message);
-      seterror(error.response.data.message);
+      toast.error(error.response.data.massage);
+      seterror(error.response.data.massage);
       setIsAuthenticated(false);
     }
   };
