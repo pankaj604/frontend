@@ -63,7 +63,7 @@ const Boys = () => {
         <link rel="canonical" href="https://www.wellroom.in/boys" />
         <meta name="theme-color" content="#E6E6FA" />
         <meta property="og:site_name" content="https://www.wellroom.in" />
-        {/* <meta property="og:type" content="article" /> */}
+        <meta property="og:type" content="article" />
 
         <meta
           property="og:title"
