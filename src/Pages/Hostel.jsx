@@ -81,6 +81,7 @@ const Hostel = () => {
                     status={i.status ? "ON" : "OFF"}
                     key={i._id}
                     date={i.date}
+                    hostelid={i.hostelid}
                   />
                 </>
               );

@@ -10,6 +10,7 @@ const Boysdata = ({
   facilities,
   date,
   image2,
+  roomid,
 }) => {
   //
   const [daysLeft, setDaysLeft] = useState(null);
@@ -100,12 +101,14 @@ const Boysdata = ({
             <span className="visually-hidden">Next</span>
           </button>
         </div>
+
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
             Room Rent is ={" "}
             <p className="m-0 d-inline rent-value">
               {" "}
-              <b className="left-days">{rent}</b>
+              <b className="left-days d-inline">{rent} </b>
+              id = <p className="roomid d-inline p-1 ">{roomid}</p>
             </p>
           </h6>
           <br />
@@ -133,6 +136,7 @@ const Boysdata = ({
           <h6 className="d-inline m-0 h6">
             Address = <p className="m-0 d-inline value">{address}</p>
           </h6>
+
           <br />
         </div>
       </div>

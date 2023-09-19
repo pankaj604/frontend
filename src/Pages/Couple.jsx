@@ -47,6 +47,30 @@ const Couple = () => {
         />
         <meta name="theme-color" content="#E6E6FA" />
         <link rel="canonical" href="https://www.wellroom.in/couple" />
+        <meta name="theme-color" content="#E6E6FA" />
+        <meta property="og:site_name" content="https://www.wellroom.in" />
+        {/* <meta property="og:type" content="article" /> */}
+
+        <meta
+          property="og:title"
+          content="Home - Wellroom , room  without brokerage"
+        />
+        <meta
+          property="og:description"
+          content=" we are providing rooms flats hostels shops free without brokerage , Find all room`s pg hostels and shop or offices free without charge and brokerage "
+        />
+        <meta property="og:url" content="https://www.wellroom.in" />
+        <meta name="twitter:title" content="Home - wellroom free brokerage" />
+        <meta
+          name="twitter:description"
+          content=" we are providing rooms flats hostels shops free without brokerage , Find all room`s pg hostels and shop or offices free without charge and brokerage|"
+        />
+        <meta name="twitter:site" content="https://www.wellroom.in" />
+        <meta name="twitter:label1" content="Written by" />
+
+        <meta name="twitter:data1" content=" wellroom " />
+
+        <meta name="author" content="https://www.wellroom.in" />
       </Helmet>
       <div className="nav-main-cont d-flex flex-row justify-content-center mt-1  text text-center">
         <div className="m-0 p-1">
@@ -83,6 +107,7 @@ const Couple = () => {
                     size={i.size}
                     facilities={i.facilities}
                     date={i.date}
+                    roomid = {i.roomid}
                   />
                 </>
               );

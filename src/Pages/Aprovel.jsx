@@ -62,6 +62,7 @@ const Aprovel = () => {
                       food={i.food}
                       date={i.date}
                       image2={i.image2}
+                      roomid={i.roomid}
                     />
                   </>
                 );

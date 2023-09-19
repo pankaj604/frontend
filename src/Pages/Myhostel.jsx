@@ -79,6 +79,7 @@ const Myhostel = () => {
                     date={i.date}
                     days={i.days}
                     image2={i.image2}
+                    hostelid={i.hostelid}
                   />
                 </>
               );

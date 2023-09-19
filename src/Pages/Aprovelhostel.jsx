@@ -61,6 +61,7 @@ const Aprovelhostel = () => {
                     isApproved={i.isApproved}
                     key={i._id}
                     date={i.date}
+                    hostelid={i.hostelid}
                   />
                 </>
               );

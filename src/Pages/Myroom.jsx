@@ -84,6 +84,7 @@ const Myroom = () => {
                     food={i.food}
                     date={i.date}
                     days={i.days}
+                    roomid={i.roomid}
                   />
                 </>
               );

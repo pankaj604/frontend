@@ -11,6 +11,7 @@ const Pgdata = ({
   facilities,
   food,
   date,
+  roomid
 }) => {
   const [daysLeft, setDaysLeft] = useState(null);
   function generateUniqueId() {
@@ -105,7 +106,8 @@ const Pgdata = ({
         </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Room rent = <b className="m-0 d-inline rent-value left-days">{rent}</b>
+            Room rent = <b className="m-0 d-inline rent-value left-days">{rent} , </b>
+            id = <p className="roomid d-inline p-1 ">{roomid}</p> 
           </h6>
           <br />
 

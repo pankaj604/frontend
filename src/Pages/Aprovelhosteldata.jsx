@@ -19,7 +19,8 @@ const Aprovelhosteldata = ({
   id,
   status,
   isApproved,
-  date
+  date,
+  hostelid
 }) => {
   const [button, setbutton] = useState(false);
   const { refresh, setRefresh } = useContext(Context);
@@ -126,7 +127,8 @@ const Aprovelhosteldata = ({
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
             room rent is <p className="m-0 d-inline value">{rent} </p>
-            City <p className="m-0 d-inline value">{city}</p>
+            City <p className="m-0 d-inline value">{city}  , </p>
+            id = <p className="roomid d-inline p-1 ">{hostelid}</p>
           </h6>
           <br />
 

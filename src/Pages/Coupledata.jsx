@@ -9,7 +9,8 @@ const Coupledata = ({
   size,
   facilities,
   date,
-  image2
+  image2,
+  roomid
 }) => {
   const [daysLeft, setDaysLeft] = useState(null);
 
@@ -106,8 +107,9 @@ const Coupledata = ({
           <h6 className="d-inline m-0 h6">
             Room rent ={" "}
             <p className="m-0 d-inline rent-value">
-              <b>{rent}</b>
+              <b>{rent} , </b>
             </p>
+            id = <p className="roomid d-inline p-1 ">{roomid}</p>  
           </h6>
           <br />
 

@@ -15,7 +15,8 @@ const Aprovelshopdata = ({
   id,
   isApproved,
   date,
-  image2
+  image2,
+  shopid
 }) => {
   const [button, setbutton] = useState(false);
   const {refresh,setRefresh } = useContext(Context);
@@ -93,7 +94,8 @@ const Aprovelshopdata = ({
         </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            room rent is <p className="m-0 d-inline value">{rent}</p>
+            room rent is <p className="m-0 d-inline value">{rent} , </p>
+            id = <p className="roomid d-inline p-1 ">{shopid}</p>
           </h6>
           <br />
 

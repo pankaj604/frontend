@@ -14,7 +14,8 @@ const Hosteldata = ({
   facilites,
   image,
   date,
-  image2
+  image2,
+  hostelid
 }) => {
   const [daysLeft, setDaysLeft] = useState(null);
 
@@ -109,7 +110,8 @@ const Hosteldata = ({
         </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Seat rent = <p className="m-0 d-inline rent-value">{rent}</p>
+            Seat rent = <p className="m-0 d-inline rent-value">{rent} , </p>
+            id. = <p className="roomid d-inline p-1 ">{hostelid}</p>
             <br />
             <p className="m-0 d-inline  hostel-name">
               Hostel Name = <p className="m-0 d-inline ">{area}</p>

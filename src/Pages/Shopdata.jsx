@@ -10,7 +10,8 @@ const Shopdata = ({
   nearby,
   size,
   date,
-  image2
+  image2,
+  shopid
 }) => {
   //
   const [daysLeft, setDaysLeft] = useState(null);
@@ -109,7 +110,8 @@ const Shopdata = ({
         </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Shop/Rent = <p className="m-0 d-inline rent-value">{rent}</p>
+            Shop/Rent = <p className="m-0 d-inline rent-value">{rent} , </p>
+            id = <p className="roomid d-inline p-1 ">{shopid}</p>
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">

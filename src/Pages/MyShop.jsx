@@ -59,6 +59,7 @@ const MyShop = () => {
                     date={i.date}
                     days={i.days}
                     image2={i.image2}
+                    shopid={i.shopid}
                   />
                 </>
               );

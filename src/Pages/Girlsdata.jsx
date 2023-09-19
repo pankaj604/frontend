@@ -10,6 +10,7 @@ const Girlsdata = ({
   size,
   facilities,
   date,
+  roomid
 }) => {
   const [daysLeft, setDaysLeft] = useState(null);
 
@@ -105,7 +106,8 @@ const Girlsdata = ({
           <h6 className="d-inline m-0 h6">
             Room rent is ={" "}
             <p className="m-0 d-inline rent-value">
-              <b>{rent}</b>
+              <b>{rent} , </b>
+              id = <p className="roomid d-inline p-1 ">{roomid}</p>  
             </p>
           </h6>
           <br />

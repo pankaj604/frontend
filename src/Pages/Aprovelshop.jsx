@@ -50,6 +50,7 @@ const Aprovelshop = () => {
                       status={i.status ? "ON" : "OFF"}
                       isApproved={i.isApproved}
                       date={i.date}
+                      shopid={i.shopid}
                     />
                   </>
                 );

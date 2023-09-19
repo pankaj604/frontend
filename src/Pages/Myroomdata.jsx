@@ -20,6 +20,7 @@ const Myroomdata = ({
   food,
   date,
   image2,
+  roomid
 }) => {
   const [selectedDate, setSelectedDate] = useState("");
   const { setRefresh, refresh } = useContext(Context);
@@ -244,7 +245,8 @@ const Myroomdata = ({
         </div> */}
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            room rent is <p className="m-0 d-inline value">{rent}</p>
+            room rent is <p className="m-0 d-inline value">{rent} , </p>
+            id = <p className="roomid d-inline p-1 ">{roomid}</p>
           </h6>
           <br />
 
