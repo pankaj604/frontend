@@ -42,6 +42,7 @@ import { Policy } from "@mui/icons-material";
 import Policyprivacy from "./Pages/Policyprivacy";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+import Pagenot from "./Pages/Pagenot";
 
 function App() {
   const { setUser, setIsAuthenticated,isAuthenticated, setLoading } = useContext(Context);
@@ -73,6 +74,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/*" element={<Pagenot />} />
         <Route path="/header" element={<Header />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/addroom" element={<Addroom />} />
