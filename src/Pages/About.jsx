@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About</title>
+        <title>About us more - wellroom</title>
         <meta
           name="description"
           content=" our details what we do for student - we are providing rooms flats hostels shops free without brokerage "

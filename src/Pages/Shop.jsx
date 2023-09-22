@@ -43,7 +43,7 @@ const Shop = () => {
       </div>
       <Helmet>
         
-        <title>Shop</title>
+        <title>Shop/office on rent in your city</title>
         <meta
           name="description"
           content="we are providing rooms flats hostels shops free without brokerage "

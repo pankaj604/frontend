@@ -12,7 +12,7 @@ function Landing() {
   return (
     <>
       <Helmet>
-        <title>Home</title>
+        <title>Wellroom - rooms without brokerage</title>
         <link rel="canonical" href="https://www.wellroom.in" />
         <meta
           name="description"

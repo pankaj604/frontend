@@ -42,7 +42,7 @@ const PG = () => {
     <>  
      <Helmet>
         
-        <title>pg</title>
+        <title>pg for girls and boys </title>
         <meta
           name="description"
           content="we are providing rooms flats hostels shops free without brokerage "

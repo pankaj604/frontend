@@ -36,7 +36,7 @@ const Couple = () => {
     <>  
       <Helmet>
         
-        <title>Couple</title>
+        <title> room for Couple/family in your city</title>
         <meta
           name="description"
           content="for couple in indore we provide rooms flats hostels shops free without brokerage "

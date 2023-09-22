@@ -50,7 +50,7 @@ const Boys = () => {
 
       <Helmet>
         
-        <title>Boys</title>
+        <title> Room for Boys on rent </title>
         <meta
           name="description"
           content="for boys in indore we provide rooms flats hostels shops free without brokerage "
