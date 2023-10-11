@@ -13,6 +13,28 @@ const Girlsdata = ({
   roomid
 }) => {
   const [daysLeft, setDaysLeft] = useState(null);
+  const [newDate , setdate] = useState(date)
+
+  //
+  function reverseDateString(inputDateString) {
+    const dateComponents = inputDateString.split('-'); // Assuming the date format is YYYY-MM-DD
+    if (dateComponents.length !== 3) {
+      // Check if the date string has the correct format
+      return null;
+    }
+  
+    const [year, month, day] = dateComponents;
+    const reversedDateString = `${day}-${month}-${year}`;
+    return reversedDateString;
+  }
+  
+  // Example usage:
+  // const inputDateString = '2023-10-11';
+  const reversedDateString = reverseDateString(newDate+"");
+
+
+  //
+
 
   //
   function generateUniqueId() {
@@ -21,7 +43,7 @@ const Girlsdata = ({
   const newid = generateUniqueId();
 
   const update = () => {
-    const inputDate = new Date(date);
+    const inputDate = new Date(newDate);
 
     const currentDate = new Date();
 
@@ -30,7 +52,9 @@ const Girlsdata = ({
     if (daysRemaining >= 1) {
       setDaysLeft(daysRemaining);
     } else {
+    
       setDaysLeft("Available Now");
+      setdate(null);
     }
 
   };
@@ -104,9 +128,9 @@ const Girlsdata = ({
         </div>
         <div className="text p-1">
           <h6 className="d-inline m-0 h6">
-            Room rent is ={" "}
+            Rent  ={" "}
             <p className="m-0 d-inline rent-value">
-              <b>{rent} , </b>
+              <b>₹{rent} , </b>
               id = <p className="roomid d-inline p-1 ">{roomid}</p>  
             </p>
           </h6>
@@ -125,9 +149,9 @@ const Girlsdata = ({
           </h6>
           <br />
           <h6 className="d-inline m-0 h6">
-            {date && <>Available on </>}
+            {newDate && <>Available on </>}
             <p className="m-0 d-inline value">
-              <b> {date}</b>{" "}
+              <b> {reversedDateString}</b>{" "}
               <b className="left-days"> left -days= {daysLeft} </b>
             </p>
           </h6>
