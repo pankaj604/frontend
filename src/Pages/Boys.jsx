@@ -103,6 +103,8 @@ const Boys = () => {
               </>
             )}
 
+           {boys.length < 1  &&  <h5 className="text-center ">All Rooms are Sold out please come back after some time for new rooms, Take Care</h5>}
+
             {boys &&
               boys.map((i) => {
                 return (

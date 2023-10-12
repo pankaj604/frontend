@@ -94,6 +94,7 @@ const Couple = () => {
         <div className="container-fluid">
           <div className="row">
             {" "}
+            {couple.length < 1  &&  <h5 className="text-center ">All Rooms are Sold out please come back after some time for new rooms, Take Care</h5>}
             {couple && couple.map((i) => {
               return (
                 <>

@@ -101,6 +101,7 @@ const PG = () => {
                 </div>
               </>
             )}
+             {pg.length < 1  &&  <h5 className="text-center ">All Rooms are Sold out please come back after some time for new rooms, Take Care</h5>}
             {pg && pg.map((i) => {
               return (
                 <>

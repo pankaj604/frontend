@@ -94,6 +94,7 @@ const Shop = () => {
                 </div>
               </>
             )}
+             {shops.length < 1  &&  <h5 className="text-center ">All shops are Sold out please come back after some time for new rooms, Take Care</h5>}
             { shops && shops.map((i) => {
               return (
                 <>
