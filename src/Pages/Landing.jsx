@@ -52,7 +52,7 @@ function Landing() {
           <div className=" d-inline logo-img text-center m-0 p-0  ">
             <img
               className="img-logo"
-              src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1694497611/done_dindh1.png"
+              src="https://res.cloudinary.com/dvgumv3vu/image/upload/v1697112055/android-chrome-512x512_oxsl2w.png"
               alt="logo"
             />
           </div>
